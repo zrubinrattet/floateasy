@@ -1,0 +1,45 @@
+@media only screen {
+	.page{
+		margin: 40px auto;
+		text-align: left;
+		max-width: 1024px;
+		width: calc(100% - 40px);
+		img{
+			padding: 20px 0;
+		}
+		p{
+			padding: 7px 0;
+		}
+		a{
+			color: $blue;
+			@include transition(color 0.4s ease);
+			font-weight: 400;
+			&:visited{
+				color: darken($blue, 20%);
+			}
+			&:hover{
+				color: darken($blue, 10%);
+			}
+		}
+		ul{
+			list-style-position: inside;
+			padding: 7px 0;
+		}
+	}
+	.page-content p{
+		line-height: 1.5;
+	}
+}
+
+@media only screen and (min-width: $medium){
+	.page{
+		margin: 70px auto;
+		width: calc(100% - 80px);
+	}
+}
+
+@media only screen and (min-width: $large){
+	.page{
+		margin: 40px auto;
+	}
+}

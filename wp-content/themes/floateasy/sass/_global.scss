@@ -1,0 +1,37 @@
+@media only screen {
+	.section{
+		text-align: center;
+		padding: 40px 20px;
+	}
+	.section-header{
+		font-weight: 900;
+		font-size: 5rem;
+		letter-spacing: -2px;
+		// text-align: left;
+		text-align: center;
+		line-height: 1;
+		margin-bottom: 40px;
+	}	
+}
+@media only screen and (min-width: $medium){
+	.section{
+		padding: 40px;
+	}
+}
+@media only screen and (min-width: $large){
+	.section{
+		padding: 80px 40px;
+	}
+	.section-wrapper{
+		max-width: 1440px;
+		margin: 0 auto;
+	}	
+	.section-header{
+		font-size: 11rem;
+		width: 640px;
+	}
+}
+
+@media only screen and (min-width: 1520px){
+	
+}

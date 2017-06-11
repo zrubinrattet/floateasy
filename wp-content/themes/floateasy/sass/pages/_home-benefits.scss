@@ -1,0 +1,142 @@
+@media only screen {
+	.homebenefits{
+		position: relative;
+	}
+	.homebenefits-module{
+		padding: 40px 20px;
+		&:nth-child(1){
+			background-color: $blue;
+		}
+		&:nth-child(3){
+			background-color: $yellow;
+		}
+		&:nth-child(5){
+			background-color: $red;
+		}
+	}
+
+
+	.homebenefits-module-bigheader,
+	.homebenefits-module-header{
+		color: white;
+		font-size: 3.8rem;
+	}
+
+	.homebenefits-module-bigheader {
+		margin-bottom: 20px;
+	}
+
+	.homebenefits-module-header{
+		font-weight: 600;
+		font-size: 2.6rem;
+		margin-bottom: 10px;
+	}
+	.homebenefits-module-list{
+		list-style-type: none;
+		color: white;
+		font-size: 1.8rem;
+		font-weight: 400;
+	}
+	.homebenefits-module-list-item{
+		// margin: 10px 0 10px 30px; too much padding
+		margin-left: 30px;
+		width: calc(100% - 30px);
+		color: white;
+		&:before{
+			content: '';
+			width: 8px;
+			height: 8px;
+			border-radius: 100%;
+			border: 4px solid white;
+			display: block;
+			margin-right: 5px;
+			position: relative;
+			right: 30px;
+			top: 18px;
+			line-height: 0;
+		}
+	}
+}
+
+@media only screen and (min-width: $medium){
+	.homebenefits-module{
+		// padding: 40px;
+	}
+}
+
+@media only screen and (min-width: $large){
+
+	// here
+	.homebenefits-module{
+		// all sections
+		padding: 10rem 10rem 8rem 10rem;
+		// blue section
+		&:nth-child(1) {
+			padding-bottom: 2rem;	
+		}
+		// orange section
+		&:nth-child(3){
+			padding: 16rem 10rem 12rem 10rem;
+			text-align: right;
+			.homebenefits-module-header{
+				margin-bottom: 30px;
+			}
+			.homebenefits-module-list-item{
+				margin: 10px 0 25px 30px;
+				&:before{
+					display: none;
+				}
+				&:after{
+					content: '';
+					width: 8px;
+					height: 8px;
+					border-radius: 100%;
+					border: 4px solid white;
+					display: inline-block;
+					margin-left: 15px;
+					position: relative;
+				}
+			}
+		}
+		// red section
+		&:nth-child(5) {
+			// padding-top: 4rem;
+		}
+	}
+	.homebenefits-module-wrapper{
+		max-width: 1440px;
+		margin: 0 auto;
+	}
+	.homebenefits-module-bigheader{
+		font-size: 7.2rem;
+		width: 640px;
+	}	
+	.homebenefits-module-header{
+		font-size: 4.8rem;
+	}
+	/* 
+		Dividers:
+	 */
+	.homebenefits-divider{
+		position: absolute;
+		// 2nd diver
+		&:nth-child(2){
+			font-size: 0px;
+			line-height: 0%;
+			width: 0;
+			border-top: 160px solid $blue;
+			border-bottom: 10px solid transparent;
+			border-right: 100vw solid transparent;	
+		}
+		// 3rd divider
+		&:nth-child(4){
+			font-size: 0px;
+			line-height: 0%;
+			width: 0;
+			border-bottom: 160px solid $red;
+			border-top: 10px solid transparent;
+			border-right: 100vw solid transparent;	
+			bottom: 514px;	
+		}
+	}
+}

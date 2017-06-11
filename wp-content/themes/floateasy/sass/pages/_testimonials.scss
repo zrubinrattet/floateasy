@@ -1,0 +1,79 @@
+@media only screen {
+	.testimonials-grid{
+		margin-top: 20px;
+	}
+	.testimonials-grid-item{
+		margin: 40px auto;
+		text-align: center;
+		background-color: $lightgrey;
+		padding: 20px;
+		position: relative;
+		width: calc(100% - 80px);
+		box-shadow: $boxshadow; 
+		&.hasimage{
+			margin-top: 80px;
+			.testimonials-grid-item-textwrap{
+				margin-top: 90px;
+			}
+		}
+	}
+	.testimonials-grid-item-personinfo{
+		padding-top: 20px;
+	}
+	.testimonials-grid-item-personinfo-name{
+		font-weight: bold;
+	}
+	.testimonials-grid-item-image{
+		position: absolute;
+		left: 50%;
+		@include transform(translate(-50%, -50%));
+		width: 140px;
+		height: 140px;
+	    border-radius: 220px;
+	    background-size: cover;
+	    box-shadow: 0px 0px 8px lightgrey;
+	}
+	.testimonials-grid-item-social{
+		padding-top: 10px;
+	}
+	a.testimonials-grid-item-social-link{
+		color: $offblack;
+		padding: 10px;
+		display: inline-block;
+		&:visited{
+			color: $offblack;
+		}
+		&:hover{
+			color: $offblack;	
+		}
+	}
+	.testimonials-grid-item-social-link-icon{
+		font-size: 2.4rem;
+	}
+	.testimonials-arrows{
+		display: none;
+	}
+	.testimonials-viewall{
+		text-decoration: none;
+		color: black;
+		text-transform: uppercase;
+		background-color: $blue;
+		padding: 15px 20px;
+		margin-top: 40px;
+		margin-bottom: 80px;
+		display: inline-block;
+	}
+	.testimonials-grid-item-youtubecontainer{
+		iframe, object, embed{
+			width: 100%;	
+		}
+	}
+}
+
+@media only screen and (min-width: $medium){
+
+}
+
+@media only screen and (min-width: $large){
+	
+}

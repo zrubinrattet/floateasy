@@ -1,0 +1,26 @@
+@media only screen {
+	.faq{
+		margin: 40px auto;
+		text-align: left;
+		max-width: 1024px;
+		width: calc(100% - 40px);
+	}
+	.faq-grid-item{
+		margin: 40px 0;
+	}
+	.faq-grid-item-header{
+		margin-bottom: 10px;
+	}
+}
+
+@media only screen and (min-width: $medium){
+	.faq{
+		margin: 70px auto;
+	}
+}
+
+@media only screen and (min-width: $large){
+	.faq{
+		margin: 40px auto;
+	}
+}
