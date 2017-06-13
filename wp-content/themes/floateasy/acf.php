@@ -192,6 +192,46 @@ function add_acf_fields() {
 		),
 	));
 
+	// Benefits Page (not homepage)
+
+	acf_add_local_field_group(array(
+		'key' => 'group_1329238dasfeggsc',
+		'title' => ' ',
+		'fields' => array (
+			array (
+				'key' => 'field_8fsefo',
+				'label' => '<h1>Add Benefits</h1>',
+				'name' => 'benefits-repeater',
+				'type' => 'repeater',
+				'button_label' => 'add a Benefit',
+				'layout' => 'row',
+				'sub_fields' => array(
+					array(
+						'key' => 'field_ncz8128g',
+						'label' => 'Header',
+						'type' => 'text',
+						'name' => 'header',
+					),
+					array(
+						'key' => 'field_nz1652a9f',
+						'label' => 'Content',
+						'type' => 'textarea',
+						'new_lines' => 'br',
+						'name' => 'content',
+					),
+				),
+			)
+		),
+		'location' => array (
+			array (
+				array (
+					'param' => 'page',
+					'operator' => '==',
+					'value' => 1842,
+				),
+			),
+		),
+	));
 
 
 	// Terms & Conditions Settings

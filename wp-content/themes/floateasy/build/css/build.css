@@ -726,10 +726,20 @@ footer, header, hgroup, menu, nav, section, img {
   .removefadein div:last-of-type {
     opacity: 1; }
 
-  .header-content-bookappointment {
-    color: white;
-    font-weight: 500; } }
+  .header-fixed {
+    display: none; } }
 @media only screen and (min-width: 1025px) {
+  .header-fixed {
+    display: inline-block;
+    position: fixed;
+    top: 10vh;
+    right: 2rem; }
+    .header-fixed .header-fixed-meta {
+      list-style-type: none; }
+    .header-fixed .header-fixed-button {
+      text-transform: uppercase;
+      background-color: #27A8E0; }
+
   .header {
     display: block;
     position: fixed;
@@ -765,35 +775,6 @@ footer, header, hgroup, menu, nav, section, img {
   .header-content-logo-image {
     max-width: 195px;
     max-height: 56px; }
-
-  .header-content-menus-social-menu {
-    font-size: 0;
-    text-align: right; }
-
-  .header-content-menus-social-menu-item {
-    display: inline-block;
-    margin: 0 5px;
-    vertical-align: top; }
-    .header-content-menus-social-menu-item:last-of-type {
-      position: relative;
-      bottom: 7px; }
-      .header-content-menus-social-menu-item:last-of-type .header-content-menus-social-menu-item-link {
-        width: auto;
-        height: auto;
-        background-color: transparent;
-        color: #2E282A;
-        font-size: 2.4rem;
-        text-decoration: none;
-        position: relative;
-        top: 0.5px; }
-
-  .header-content-menus-social-menu-item-link {
-    position: relative;
-    display: inline-block; }
-
-  .header-content-menus-social-menu-item-link-image {
-    width: 19px;
-    height: 19px; }
 
   .header-content-menus-pages-menu {
     font-size: 0;
@@ -863,21 +844,6 @@ footer, header, hgroup, menu, nav, section, img {
     font-size: 1.6rem;
     letter-spacing: 1px; }
 
-  .header-content-bookappointment {
-    font-size: 1.6rem;
-    text-align: center;
-    text-transform: uppercase;
-    background-color: #27A8E0;
-    padding: 16px 10px;
-    display: inline-block;
-    vertical-align: bottom;
-    position: relative;
-    bottom: 0px;
-    margin-left: 10px;
-    font-weight: normal;
-    text-decoration: none;
-    border-radius: 4px; }
-
   .header-tint {
     background-color: white;
     box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.25);
@@ -892,22 +858,7 @@ footer, header, hgroup, menu, nav, section, img {
     height: 82px; } }
 @media only screen and (min-width: 1440px) {
   .header-content-menus-pages-menu-item {
-    margin: 0 7px 0 10px; }
-
-  .header-content-menus-social {
-    position: relative;
-    top: 6px; }
-
-  .header-content-menus-social-menu-item-link-image {
-    width: 20px;
-    height: 20px;
-    bottom: 2px;
-    position: relative; }
-
-  .header-content-menus-social-menu-item:last-of-type .header-content-menus-social-menu-item-link {
-    font-size: 2.3rem;
-    position: relative;
-    top: -5px; } }
+    margin: 0 7px 0 10px; } }
 @media only screen {
   .mobileheader {
     width: 100vw;
@@ -1712,12 +1663,18 @@ footer, header, hgroup, menu, nav, section, img {
       top: 2px;
       font-size: 1.2rem; }
 
+  .homepricing-nonmember {
+    width: calc( 90% - 40px);
+    max-width: 66vw;
+    background-color: rgba(255, 255, 255, 0.8);
+    box-shadow: none; }
+
   .homepricing-nonmember-header {
     background-color: #618E32; }
 
   .homepricing-nonmember-grid-item-content-price {
     color: #618E32;
-    font-size: 6rem; }
+    font-size: 5.2rem; }
 
   .homepricing-nonmember-grid-item-content-description {
     font-size: 1.8rem; }
@@ -1727,6 +1684,7 @@ footer, header, hgroup, menu, nav, section, img {
 
   .homepricing-member-grid-item-content-price {
     color: #D49100;
+    color: #F9AC00;
     font-size: 6rem; }
 
   .homepricing-member-header {
@@ -1761,7 +1719,7 @@ footer, header, hgroup, menu, nav, section, img {
     font-size: 2.4rem; }
 
   .homepricing-module-grid-item-content-price {
-    font-size: 8rem; }
+    font-size: 6.8rem; }
 
   .homepricing-module-grid-item-content-description {
     font-size: 2.1rem; }
@@ -1836,8 +1794,6 @@ footer, header, hgroup, menu, nav, section, img {
     text-align: left;
     max-width: 1024px;
     width: calc(100% - 40px); }
-    .page img {
-      padding: 20px 0; }
     .page p {
       padding: 7px 0; }
     .page a {
@@ -1876,7 +1832,17 @@ footer, header, hgroup, menu, nav, section, img {
     margin: 40px 0; }
 
   .faq-grid-item-header {
-    margin-bottom: 10px; } }
+    position: relative;
+    z-index: 2;
+    margin-bottom: 10px;
+    padding: 1rem;
+    border-bottom: 1px solid lightgrey; }
+
+  .faq-grid-item-content {
+    display: none;
+    border-bottom: 1px solid lightgrey;
+    padding: 2rem 1rem;
+    line-height: 150%; } }
 @media only screen and (min-width: 641px) {
   .faq {
     margin: 70px auto; } }
@@ -2020,11 +1986,48 @@ footer, header, hgroup, menu, nav, section, img {
   .video .gallery-locations-location-grid-item iframe {
     height: 240px; } }
 @media only screen {
+  .blog {
+    max-width: 90vw;
+    position: relative; }
+
+  .blog-posts {
+    text-align: center;
+    width: 100%; }
+
+  .blog-posts-categories {
+    border: 1px solid lightgrey;
+    padding: 2rem;
+    margin: 2rem; }
+
+  .blog-posts-categories-title {
+    font-size: 2.8rem;
+    color: #27A8E0;
+    text-transform: uppercase; }
+
   .blog-posts-post {
-    padding: 60px 0;
-    text-align: center; }
-    .blog-posts-post:not(:last-child) {
-      border-bottom: 1px solid lightgrey; }
+    display: inline-block;
+    vertical-align: top;
+    position: relative;
+    width: 66vw;
+    height: 66vw;
+    margin: 2rem 0;
+    overflow: hidden; }
+
+  .blog-posts-post-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    padding: 0; }
+
+  .blog-posts-post-content {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.8); }
 
   a.blog-posts-post-header {
     font-size: 3rem;
@@ -2036,22 +2039,41 @@ footer, header, hgroup, menu, nav, section, img {
     font-weight: 400;
     margin-top: 7px; }
 
-  .blog-posts-post-image {
-    width: 100%; }
-
-  .blog-posts-post-content {
-    line-height: 1.5; } }
+  .blog-sidebar {
+    display: none; } }
 @media only screen and (min-width: 641px) {
-  .blog-posts-post-image {
-    max-width: 640px;
-    margin: 0 auto; } }
-@media only screen and (min-width: 1025px) {
   .blog-posts-post {
-    text-align: left; }
+    max-width: 240px;
+    max-height: 240px;
+    margin: 2rem;
+    box-shadow: 0 0 1rem lightgrey; } }
+@media only screen and (min-width: 1025px) {
+  .blog-posts {
+    width: 80%;
+    margin-left: 20%; }
 
-  .blog-posts-post-image {
-    width: 50%;
-    margin: 0; } }
+  .blog-sidebar {
+    display: block;
+    position: absolute;
+    top: 25vh;
+    left: 0;
+    text-align: center;
+    border-right: 1px solid lightgrey;
+    width: 20%;
+    list-style-type: none; }
+    .blog-sidebar h2 {
+      margin-bottom: 4rem;
+      text-transform: uppercase;
+      font-weight: 400; }
+    .blog-sidebar li {
+      text-align: right;
+      margin-right: 2rem;
+      margin-top: 1rem;
+      cursor: pointer;
+      border-bottom: 1px solid lightgrey;
+      padding: 0.5rem 0;
+      font-size: 1.8rem;
+      letter-spacing: 1px; } }
 @media only screen {
   .locations {
     margin-top: 48px; }

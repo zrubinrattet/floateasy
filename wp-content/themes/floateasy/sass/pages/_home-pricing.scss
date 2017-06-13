@@ -45,12 +45,21 @@
 			font-size: 1.2rem;
 		}
 	}
+
+	.homepricing-nonmember {
+		width: calc( 90% - 40px);
+		max-width: 66vw;
+		background-color: transparentize( white, 0.2 );
+		box-shadow: none;
+	}
+
+
 	.homepricing-nonmember-header{
 		background-color: $darkgreen;
 	}
 	.homepricing-nonmember-grid-item-content-price{
 		color: $darkgreen;
-		font-size: 6rem;
+		font-size: 5.2rem;
 	}
 	.homepricing-nonmember-grid-item-content-description{
 		font-size: 1.8rem;
@@ -60,6 +69,7 @@
 	}
 	.homepricing-member-grid-item-content-price{
 		color: $darkyellow;
+		color: #F9AC00;
 		font-size: 6rem;
 	}
 
@@ -116,7 +126,7 @@
 		font-size: 2.4rem;
 	}
 	.homepricing-module-grid-item-content-price{
-		font-size: 8rem;
+		font-size: 6.8rem;
 	}
 	.homepricing-module-grid-item-content-description{
 		font-size: 2.1rem;

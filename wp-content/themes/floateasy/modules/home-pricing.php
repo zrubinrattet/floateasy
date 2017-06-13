@@ -4,35 +4,12 @@
 	BEM is out of control here man!
  -->
 <section class="homepricing section fade">
+	
 	<div class="section-wrapper">
+	
 		<h1 class="homepricing-header section-header">Pricing</h1>
-		<div class="homepricing-nonmember homepricing-module fade fade-up">
-			<h2 class="homepricing-nonmember-header homepricing-module-header">Non-Member</h2>
-			<div class="homepricing-nonmember-grid homepricing-module-grid">
-				<div class="homepricing-nonmember-grid-item homepricing-module-grid-item">
-					<div class="homepricing-nonmember-grid-item-content homepricing-module-grid-item-content">
-						<h3 class="homepricing-nonmember-grid-item-content-price homepricing-module-grid-item-content-price">Free!</h3>
-						<p class="homepricing-nonmember-grid-item-content-description homepricing-module-grid-item-content-description">1<sup>st</sup> Float</p>
-					</div>
-				</div>
-				<div class="homepricing-nonmember-grid-item homepricing-module-grid-item">
-					<div class="homepricing-nonmember-grid-item-content homepricing-module-grid-item-content">
-						<h3 class="homepricing-nonmember-grid-item-content-price homepricing-module-grid-item-content-price">$79</h3>
-						<p class="homepricing-nonmember-grid-item-content-description homepricing-module-grid-item-content-description">Additional Floats</p>
-					</div>
-				</div>
-				
-				<!-- Depricated
+	
 
-					<div class="homepricing-nonmember-grid-item homepricing-module-grid-item">
-						<div class="homepricing-nonmember-grid-item-content homepricing-module-grid-item-content">
-							<h3 class="homepricing-nonmember-grid-item-content-price homepricing-module-grid-item-content-price">$59</h3>
-							<p class="homepricing-nonmember-grid-item-content-description homepricing-module-grid-item-content-description">Additional Hour</p>
-						</div>
-					</div>
-				 -->
-			</div>
-		</div>
 		<div class="homepricing-member homepricing-module fade fade-up">
 
 			<h2 class="homepricing-member-header homepricing-module-header">Member</h2>
@@ -86,7 +63,35 @@
 					</div>
 				 -->
 			</div>
-
 		</div>
+		
+		<div class="homepricing-nonmember homepricing-module fade fade-up">
+			<h2 class="homepricing-nonmember-header homepricing-module-header">Non-Member</h2>
+			<div class="homepricing-nonmember-grid homepricing-module-grid">
+				<div class="homepricing-nonmember-grid-item homepricing-module-grid-item">
+					<div class="homepricing-nonmember-grid-item-content homepricing-module-grid-item-content">
+						<h3 class="homepricing-nonmember-grid-item-content-price homepricing-module-grid-item-content-price">Free!</h3>
+						<p class="homepricing-nonmember-grid-item-content-description homepricing-module-grid-item-content-description">1<sup>st</sup> Float</p>
+					</div>
+				</div>
+				<div class="homepricing-nonmember-grid-item homepricing-module-grid-item">
+					<div class="homepricing-nonmember-grid-item-content homepricing-module-grid-item-content">
+						<h3 class="homepricing-nonmember-grid-item-content-price homepricing-module-grid-item-content-price">$79</h3>
+						<p class="homepricing-nonmember-grid-item-content-description homepricing-module-grid-item-content-description">Additional Floats</p>
+					</div>
+				</div>
+				
+				<!-- Depricated
+					<div class="homepricing-nonmember-grid-item homepricing-module-grid-item">
+						<div class="homepricing-nonmember-grid-item-content homepricing-module-grid-item-content">
+							<h3 class="homepricing-nonmember-grid-item-content-price homepricing-module-grid-item-content-price">$59</h3>
+							<p class="homepricing-nonmember-grid-item-content-description homepricing-module-grid-item-content-description">Additional Hour</p>
+						</div>
+					</div>
+				 -->
+			</div>
+		</div>
+
+
 	</div>
 </section>

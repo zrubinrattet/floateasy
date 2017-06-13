@@ -33,6 +33,36 @@ var objectFitImages=function(){"use strict";function t(t){for(var e,r=getCompute
 
 	$(document).ready(function(){
 		
+
+		/*
+			FAQ Accordions:
+		*/
+		var FaqAccordion = {
+
+			items : $('.faq-grid-item'),
+			label : $('.faq-grid-item-header'),
+			content : $('.faq-grid-item-content'),
+
+
+			_init : function(){
+				FaqAccordion.label.on('click', FaqAccordion._clickHandler);
+			},
+			_clickHandler : function(e){
+				// get index of label
+				var faqIndex = $(this).parent().index();
+				// slideOpen that content index
+				$(FaqAccordion.content[faqIndex]).slideToggle();
+			},
+		}
+		FaqAccordion._init();
+
+
+
+
+
+
+
+
 		// // test for whitespace
 		// var k = document.querySelectorAll('*');
 

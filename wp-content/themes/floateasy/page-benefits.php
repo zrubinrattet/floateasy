@@ -8,9 +8,9 @@
 
 		<div class="faq-content"><?php echo apply_filters( 'the_content', $post->post_content ); ?></div>
 		
-		<?php if( have_rows('faq-repeater') ): ?>
+		<?php if( have_rows('benefits-repeater') ): ?>
 		<div class="faq-grid">
-			<?php while( have_rows('faq-repeater') ): the_row(); ?>
+			<?php while( have_rows('benefits-repeater') ): the_row(); ?>
 				<div class="faq-grid-item fade fade-up">
 					<h2 class="faq-grid-item-header"><?php the_sub_field('header') ?></h2>
 					<p class="faq-grid-item-content"><?php the_sub_field('content') ?></p>
