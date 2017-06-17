@@ -1,5 +1,9 @@
 <?php 
+/*
+	Options Pages:
+*/
 if( function_exists('acf_add_options_page') ) {
+	// General Settings
 	acf_add_options_page(array(
 		'page_title' 	=> 'General Settings',
 		'menu_title'	=> 'General Settings',
@@ -9,7 +13,7 @@ if( function_exists('acf_add_options_page') ) {
 		'redirect'		=> false,
 		'position'      => 7,
 	));
-
+	// Terms and Conditions
 	acf_add_options_page(array(
 		'page_title' 	=> 'Terms & Conditions',
 		'menu_title'	=> 'Terms & Conditions',
@@ -19,8 +23,7 @@ if( function_exists('acf_add_options_page') ) {
 		'redirect'		=> false,
 		'position'      => 88,
 	));
-
-
+	// Testimonials
 	acf_add_options_page(array(
 		'page_title' 	=> 'Testimonials',
 		'menu_title'	=> 'Testimonials',
@@ -30,7 +33,7 @@ if( function_exists('acf_add_options_page') ) {
 		'redirect'		=> false,
 		'position'      => 87,
 	));
-
+	// Benefits
 	acf_add_options_page(array(
 		'page_title' 	=> 'Benefits',
 		'menu_title'	=> 'Benefits',
@@ -40,15 +43,13 @@ if( function_exists('acf_add_options_page') ) {
 		'redirect'		=> false,
 		'position'      => 83,
 	));
-
 }
 
-
+/*
+	Custom Fields
+*/ 
 function add_acf_fields() {
-	
-
 	// Benefits Settings
-
 	acf_add_local_field_group(array(
 		'key' => 'group_1032af32afhfd',
 		'title' => ' ',
@@ -150,9 +151,7 @@ function add_acf_fields() {
 			),
 		),
 	));
-
 	// FAQ Settings
-
 	acf_add_local_field_group(array(
 		'key' => 'group_1032hf0329238d',
 		'title' => ' ',
@@ -191,9 +190,7 @@ function add_acf_fields() {
 			),
 		),
 	));
-
 	// Benefits Page (not homepage)
-
 	acf_add_local_field_group(array(
 		'key' => 'group_1329238dasfeggsc',
 		'title' => ' ',
@@ -232,10 +229,7 @@ function add_acf_fields() {
 			),
 		),
 	));
-
-
 	// Terms & Conditions Settings
-
 	acf_add_local_field_group(array(
 		'key' => 'group_1032hfd',
 		'title' => ' ',
@@ -257,10 +251,7 @@ function add_acf_fields() {
 			),
 		),
 	));
-
-
 	// Terms & Conditions Settings
-
 	acf_add_local_field_group(array(
 		'key' => 'group_10aefuahi32hfd',
 		'title' => ' ',
@@ -282,10 +273,7 @@ function add_acf_fields() {
 			),
 		),
 	));
-
-
 	// General Settings 
-
 	acf_add_local_field_group(array(
 		'key' => 'group_5',
 		'title' => ' ',
@@ -505,10 +493,7 @@ function add_acf_fields() {
 			),
 		),
 	));
-
-
 	// Testimonials Settings 
-
 	acf_add_local_field_group(array(
 		'key' => 'group_6',
 		'title' => ' ',
@@ -646,10 +631,7 @@ function add_acf_fields() {
 			),
 		),
 	));
-
-
 	// Locations Settings 
-
 	acf_add_local_field_group(array(
 		'key' => 'group_7',
 		'title' => ' ',
@@ -902,10 +884,7 @@ function add_acf_fields() {
 		),
 	));
 }
-
 add_action('acf/init', 'add_acf_fields');
-
-
 
 // update google map api key
 function set_acf_google_api_key(){
@@ -915,14 +894,9 @@ function set_acf_google_api_key(){
 	else{
 		acf_update_setting('google_api_key', 'AIzaSyBrRJwJFfNCdVLJwa6yhR8UBZR1m2A018Q');
 	}
-
 }
-
 add_action('acf/init', 'set_acf_google_api_key');
-
-
 function my_acf_input_admin_footer() {
-	
 ?>
 	<script type="text/javascript">
 		
@@ -952,9 +926,6 @@ function my_acf_input_admin_footer() {
 		
 	</script>
 <?php
-		
 }
-
 add_action('acf/input/admin_footer', 'my_acf_input_admin_footer');
-
 ?>

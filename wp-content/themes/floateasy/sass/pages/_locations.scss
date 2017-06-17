@@ -138,6 +138,10 @@
 			color: darken($blue, 12.5%);
 		}
 	}
+	.locations-sidebar-grid-item-name,
+	.locations-sidebar-grid-item-locationlink {
+		display: inline-block;
+	}
 	.locations-map{
 		display: block;
 		position: absolute;

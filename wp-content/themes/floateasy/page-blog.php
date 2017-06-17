@@ -54,6 +54,7 @@
 							$catID = $category->cat_ID;
 							$args = array(
 								'category' => $catID,
+								'posts_per_page' => -1,
 							);
 							$posts = get_posts($args);
 							foreach ($posts as $post):

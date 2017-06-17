@@ -1,7 +1,7 @@
 <?php get_header(); ?>
 	<div class="location">
+		<!-- get random image with fallbacks -->
 		<?php 
-			// get random image with fallbacks
 			$bg_url = '';
 			$gallery = get_field('gallery', $post->ID);
 			if( !empty($gallery) ){
@@ -13,50 +13,67 @@
 			else{
 				$bg_url = get_template_directory_uri() . '/library/img/plcaeholder-bg.jpg';
 			}
-
 		?>
 		<section class="location-hero" style="background-image: url('<?php echo $bg_url; ?>');">
+	
 			<div class="location-hero-content">
-				<h1 class="location-hero-content-header"><?php echo $post->post_title; ?></h1>
-				<div class="location-hero-content-address"><?php 
-					$gmap = get_field('addresses-gmap', $post->ID); 
-
-					$explosion = explode(',', $gmap['address']);
-					$line2 = get_field('addresses-extra', $post->ID);
-					$address = '';
-					foreach($explosion as $index => $bit){
-						if( $index == 1 && !empty($line2) ){
-							$address .= (string) ' ' . $line2;
-							$address .= ',<br/>' . $bit;
-						}
-						else if ( $index == 0 ){
-							$address .= (string) $bit;
-						}
-						else{
-							$address .= (string) ',' . $bit;
-						}
-					}
-					echo $address;
-				?></div>
-				<?php 
-				if( empty(get_field('yelp', $post->ID)) && empty(get_field('yelp', $post->ID)) ):
-
-				else:
-				?>
-				<div class="location-hero-buttons">
-					<?php if( !empty(get_field('yelp', $post->ID)) ): ?>
-						<a target="_blank" href="<?php the_field('yelp', $post->ID); ?>" class="location-hero-buttons-button">Write a Review</a>
-					<?php endif; ?>
-					<?php if( !empty(get_field('mindbody', $post->ID)) ): ?>
-						<a target="_blank" href="<?php the_field('mindbody', $post->ID); ?>" class="location-hero-buttons-button">Book an Appointment</a>
-					<?php endif; ?>
+				
+				<!-- Logo -->
+				<div class="location-hero-content-logo">
+					<img src="<?php echo get_logo(); ?>" alt="">
 				</div>
-				<?php
-				endif;
-				?>
+				
+				<!-- Location (Title) -->
+				<div class="location-hero-content-header">
+					<h1><?php echo $post->post_title; ?></h1>
+				</div>
+				
+				<!-- Address -->
+				<div class="location-hero-content-address">
+					<?php 
+						$gmap = get_field('addresses-gmap', $post->ID);
+						$explosion = explode(',', $gmap['address']);
+						$line2 = get_field('addresses-extra', $post->ID);
+						$address = '';
+						foreach($explosion as $index => $bit){
+							if( $index == 1 && !empty($line2) ){
+								$address .= (string) ' ' . $line2;
+								$address .= ',<br/>' . $bit;
+							}
+							else if ( $index == 0 ){
+								$address .= (string) $bit;
+							}
+							else{
+								$address .= (string) ',' . $bit;
+							}
+						}
+						echo $address;
+					?>
+				</div>
+				
+				<!-- Get Directions -->
+				<h4 class="location-hero-content-getdirections">
+					<a target="_blank" href="<?php echo 'https://maps.google.com/?q=' . htmlentities(get_field('addresses-gmap')['address']); ?>">Directions</a>
+				</h4>
+
+
+
+				<!-- Buttons -->
+				<?php if( empty(get_field('yelp', $post->ID)) && empty(get_field('yelp', $post->ID)) ) : else :	?>
+					<div class="location-hero-buttons">
+						<?php if( !empty(get_field('yelp', $post->ID)) ): ?>
+							<a target="_blank" href="<?php the_field('yelp', $post->ID); ?>" class="location-hero-buttons-button">Write a Review</a>
+						<?php endif; ?>
+						<?php if( !empty(get_field('mindbody', $post->ID)) ): ?>
+							<a target="_blank" href="<?php the_field('mindbody', $post->ID); ?>" class="location-hero-buttons-button">Book an Appointment</a>
+						<?php endif; ?>
+					</div>
+				<?php endif; ?>
 			</div>
-			<div class="location-hero-tint"></div>
+			<div class="location-hero-tint"></div>			
 		</section>
+
+
 		<section class="location-main page">
 			<?php 
 			if( have_rows('members_repeater', $post->ID) ):

@@ -1,11 +1,26 @@
+
 <?php static $count = 0; ?>
+
 <div class="locations-sidebar-grid-item">
-	<h2 class="locations-sidebar-grid-item-name"><?php the_field('addresses-name'); ?></h2>	
+
+	<h2 class="locations-sidebar-grid-item-name"><a href="<?php the_permalink(); ?>"><?php the_field('addresses-name'); ?></a></h2>	
+	
+	<h4 class="locations-sidebar-grid-item-locationlink"><a target="_blank" href="<?php echo 'https://maps.google.com/?q=' . htmlentities(get_field('addresses-gmap')['address']); ?>" class="locations-sidebar-grid-item-getdirections">Directions</a></h4>
+	
+	<!-- street address -->
 	<p class="locations-sidebar-grid-item-address"><?php echo get_field('addresses-gmap')['address']; ?></p>
+
+	
+	<!-- tel num -->
 	<a href="tel:<?php echo filter_var(get_field('contact-office'), FILTER_SANITIZE_NUMBER_INT); ?>" class="locations-sidebar-grid-item-phone"><?php the_field('contact-office'); ?></a>
+	
+
+	<!-- no hours default -->
 	<?php if(!have_rows('addresses-hours-repeater')): ?>
 		<div class="locations-sidebar-grid-item-hours">Open 24/7</div>
 	<?php endif; ?>
+	
+	<!-- Hours  -->
 	<?php 
 	if(have_rows('addresses-hours-repeater')): ?>
 		<div class="locations-sidebar-grid-item-hours">
@@ -32,7 +47,13 @@
 		<?php endwhile; ?>
 		</div>
 	<?php endif; ?>
+	
+	<!-- 'Get Directions' -->
 	<a target="_blank" href="<?php echo 'https://maps.google.com/?q=' . htmlentities(get_field('addresses-gmap')['address']); ?>" class="locations-sidebar-grid-item-getdirections">Get Directions</a>
+
+	<!-- Visit Page -->
 	<a target="_blank" href="<?php the_permalink(); ?>" class="locations-sidebar-grid-item-locationlink">Visit Location Page</a>
+
 </div>
+
 <?php $count++; ?>

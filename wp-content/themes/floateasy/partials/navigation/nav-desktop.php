@@ -3,10 +3,13 @@
 <header class="header">
 
 	<div class="header-content">
-
-		<a href="<?php echo site_url(); ?>" class="header-content-logo">
-			<img src="<?php echo get_logo(); ?>" class="header-content-logo-image">
-		</a>
+		
+			
+		<div class="header-content-logo-wrapper">
+			<a href="<?php echo site_url(); ?>" class="header-content-logo">
+				<img src="<?php echo get_logo(); ?>" class="header-content-logo-image">
+			</a>
+		</div>
 
 		<div class="header-content-rightwrap">
 			<div class="header-content-menus">
@@ -27,11 +30,14 @@
 	
 	<!-- Fixed C2A -->
 	<nav class="header-fixed">
-		<a href="<?php the_field('book-appointment-url', 'option'); ?>" class="header-fixed-button">Book Appointment</a>
-		<ul class="header-fixed-meta">
-			<li class="header-fixed-meta-tel">
-				<a href="tel:<?php echo get_the_phone('tel'); ?>" class="header-fixed-meta-tel-num"><?php echo get_the_phone(); ?></a>
-			</li>
-		</ul>
+		<div class="header-fixed-book header-fixed-collapsed">
+			<i class="fa fa-book"></i>
+			<a href="<?php the_field('book-appointment-url', 'option'); ?>">Book Appointment</a>
+		</div>
+		<div class="header-fixed-tel header-fixed-collapsed">
+			<i class="fa fa-phone"></i>
+			<a href="tel:<?php echo get_the_phone('tel'); ?>"><?php echo get_the_phone(); ?></a>
+		</div>
 	</nav>
 </header>
+			

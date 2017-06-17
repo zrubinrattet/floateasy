@@ -51,17 +51,6 @@
 						<p class="homepricing-member-grid-item-content-description homepricing-module-grid-item-content-description">just $49 per Additional Hour</p>
 					</div>
 				</div>
-
-
-				<!-- 
-					Depricated
-					<div class="homepricing-member-grid-item homepricing-module-grid-item">
-						<div class="homepricing-member-grid-item-content homepricing-module-grid-item-content">
-							<h3 class="homepricing-member-grid-item-content-price homepricing-module-grid-item-content-price">$49</h3>
-							<p class="homepricing-member-grid-item-content-description homepricing-module-grid-item-content-description">additional hour</p>
-						</div>
-					</div>
-				 -->
 			</div>
 		</div>
 		
@@ -80,15 +69,6 @@
 						<p class="homepricing-nonmember-grid-item-content-description homepricing-module-grid-item-content-description">Additional Floats</p>
 					</div>
 				</div>
-				
-				<!-- Depricated
-					<div class="homepricing-nonmember-grid-item homepricing-module-grid-item">
-						<div class="homepricing-nonmember-grid-item-content homepricing-module-grid-item-content">
-							<h3 class="homepricing-nonmember-grid-item-content-price homepricing-module-grid-item-content-price">$59</h3>
-							<p class="homepricing-nonmember-grid-item-content-description homepricing-module-grid-item-content-description">Additional Hour</p>
-						</div>
-					</div>
-				 -->
 			</div>
 		</div>
 

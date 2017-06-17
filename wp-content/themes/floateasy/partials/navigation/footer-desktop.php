@@ -15,17 +15,13 @@
 			?>
 		</div>
 		<div class="footer-social">
-			<div class="footer-social-hours">
-				<h2 class="footer-social-hours-header">Hours</h2>
-				<p class="footer-social-hours-content fade fade-up">9am-12pm: 7 Days per Week</p>
-			</div>
 			<div class="footer-social-subscribe">
 				<div class="footer-social-subscribe-content">
 					<h2 class="footer-social-subscribe-content-header">Subscribe</h2>
 					<link href="//cdn-images.mailchimp.com/embedcode/slim-10_7.css" rel="stylesheet" type="text/css">
 					<form action="//floateasy.us16.list-manage.com/subscribe/post?u=9229d51c8914bdb1adae4f055&amp;id=2b4b97ccb6" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
 					    <div id="mc_embed_signup_scroll">
-							<input type="email" value="" name="EMAIL" class="email footer-social-subscribe-content-form-input"  id="mce-EMAIL" placeholder="email address" required>
+							<input type="email" value="" name="EMAIL" class="email footer-social-subscribe-content-form-input"  id="mce-EMAIL" placeholder="Subscribe to our Daily FREE Float Raffle" required>
 						    <div style="position: absolute; left: -5000px;" aria-hidden="true">
 						    	<input type="text" name="b_9229d51c8914bdb1adae4f055_2b4b97ccb6" tabindex="-1" value="">
 					    	</div>    

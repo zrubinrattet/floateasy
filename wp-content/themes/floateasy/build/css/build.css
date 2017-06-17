@@ -137,7 +137,10 @@ footer, header, hgroup, menu, nav, section, img {
     letter-spacing: -2px;
     text-align: center;
     line-height: 1;
-    margin-bottom: 40px; } }
+    margin-bottom: 40px; }
+
+  body {
+    overflow-x: hidden; } }
 @media only screen and (min-width: 641px) {
   .section {
     padding: 40px; } }
@@ -727,18 +730,92 @@ footer, header, hgroup, menu, nav, section, img {
     opacity: 1; }
 
   .header-fixed {
-    display: none; } }
+    display: none; }
+
+  .header-content-rightwrap {
+    position: relative; } }
 @media only screen and (min-width: 1025px) {
+  /* 
+  	Fixed C2A's
+  		Book + Tel
+  */
   .header-fixed {
-    display: inline-block;
+    display: inline-block; }
+
+  .header-fixed-tel,
+  .header-fixed-book {
     position: fixed;
-    top: 10vh;
-    right: 2rem; }
-    .header-fixed .header-fixed-meta {
-      list-style-type: none; }
-    .header-fixed .header-fixed-button {
+    top: 12rem;
+    right: 0;
+    background: #27A8E0;
+    height: 5.8rem;
+    width: 28rem;
+    text-align: right;
+    box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.34); }
+    .header-fixed-tel a, .header-fixed-tel i,
+    .header-fixed-book a,
+    .header-fixed-book i {
+      color: #F5F5F5;
+      font-weight: 500;
+      position: absolute;
+      display: inline-block;
+      top: 50%;
+      -moz-transform: translate(0, -50%);
+      -o-transform: translate(0, -50%);
+      -ms-transform: translate(0, -50%);
+      -webkit-transform: translate(0, -50%);
+      transform: translate(0, -50%); }
+    .header-fixed-tel i,
+    .header-fixed-book i {
+      top: 50%;
+      left: 1rem;
+      font-size: 2.8rem;
+      padding: 1rem; }
+    .header-fixed-tel a,
+    .header-fixed-book a {
+      text-decoration: none;
       text-transform: uppercase;
-      background-color: #27A8E0; }
+      overflow: hidden;
+      transform-origin: 100% 50%;
+      right: 2rem;
+      font-size: 2rem; }
+
+  .header-fixed-tel {
+    top: 20rem; }
+    .header-fixed-tel a {
+      position: relative;
+      overflow: visible; }
+    .header-fixed-tel span {
+      color: #F5F5F5;
+      position: absolute;
+      z-index: 10;
+      top: 90%;
+      right: 0.5rem;
+      font-size: 1.4rem; }
+
+  .header-fixed-collapsed {
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    -ms-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+    -moz-transform: translateX(22rem);
+    -o-transform: translateX(22rem);
+    -ms-transform: translateX(22rem);
+    -webkit-transform: translateX(22rem);
+    transform: translateX(22rem); }
+    .header-fixed-collapsed:hover {
+      -moz-transform: translateX(0);
+      -o-transform: translateX(0);
+      -ms-transform: translateX(0);
+      -webkit-transform: translateX(0);
+      transform: translateX(0); }
+
+  .header-content-logo-wrapper {
+    display: inline-block;
+    position: relative;
+    width: 180px;
+    text-align: center; }
 
   .header {
     display: block;
@@ -764,8 +841,7 @@ footer, header, hgroup, menu, nav, section, img {
 
   .header-content-logo,
   .header-content-rightwrap,
-  .header-content-menus,
-  .header-content-bookappointment {
+  .header-content-menus {
     display: inline-block;
     vertical-align: middle; }
 
@@ -792,6 +868,7 @@ footer, header, hgroup, menu, nav, section, img {
       display: block; }
     .header-content-menus-pages-menu-item .sub-menu {
       position: absolute;
+      z-index: 20;
       left: calc(50% + 15px);
       width: 160%;
       padding-top: 30px;
@@ -1041,7 +1118,8 @@ footer, header, hgroup, menu, nav, section, img {
     padding: 40px;
     font-size: 0;
     max-width: 1440px;
-    margin: 0 auto; }
+    margin: 0 auto;
+    text-align: center; }
 
   .footer-pagelinks {
     width: 60%;
@@ -1087,22 +1165,25 @@ footer, header, hgroup, menu, nav, section, img {
     font-size: 1.6rem; }
 
   .footer-social {
-    display: table;
-    width: 100%;
+    display: inline-block;
+    width: 66%;
+    margin: 0 auto;
     font-size: 1.6rem; }
-    .footer-social > div, .footer-social ul {
-      display: table-cell;
-      vertical-align: top; }
-    .footer-social > ul {
-      text-align: right; }
 
   .footer-social-subscribe {
     text-align: center; }
 
-  .footer-social-subscribe-content {
+  #mce-EMAIL {
     display: inline-block;
-    text-align: left;
-    vertical-align: middle; }
+    overflow: hidden;
+    width: 100%;
+    text-align: center; }
+
+  .footer-social-subscribe-content {
+    width: 100%;
+    display: inline-block;
+    vertical-align: middle;
+    margin: 0 auto; }
 
   .footer-social-hours-header,
   .footer-social-subscribe-content-header {
@@ -1132,7 +1213,8 @@ footer, header, hgroup, menu, nav, section, img {
     display: inline-block;
     vertical-align: middle;
     position: relative;
-    top: 1px; }
+    top: 1px;
+    display: none !important; }
 
   .footer-social-links-item {
     display: inline-block;
@@ -2216,6 +2298,10 @@ footer, header, hgroup, menu, nav, section, img {
     .locations-sidebar-grid-item-locationlink:hover {
       color: #1981ae; }
 
+  .locations-sidebar-grid-item-name,
+  .locations-sidebar-grid-item-locationlink {
+    display: inline-block; }
+
   .locations-map {
     display: block;
     position: absolute;
@@ -2255,16 +2341,27 @@ footer, header, hgroup, menu, nav, section, img {
     text-align: center;
     width: 100%;
     padding: 20px;
-    box-sizing: border-box; }
+    box-sizing: border-box;
+    text-align: center; }
 
   .location-hero-content-header,
   .location-hero-content-address {
     color: white; }
 
-  .location-hero-content-header {
-    font-size: 4.8rem;
-    font-weight: 500;
+  .location-hero-content-header h1 {
+    display: inline-block;
+    color: #F5F5F5;
+    font-size: 7.6rem;
+    font-weight: 700;
     text-transform: uppercase; }
+
+  .location-hero-content-logo {
+    width: 126px;
+    height: 88px;
+    margin: 0 auto;
+    border-radius: 50%;
+    background-color: rgba(245, 245, 245, 0.9);
+    padding: 2rem; }
 
   .location-hero-content-address {
     font-size: 1.8rem; }

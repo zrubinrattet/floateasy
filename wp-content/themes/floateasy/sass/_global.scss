@@ -12,6 +12,10 @@
 		line-height: 1;
 		margin-bottom: 40px;
 	}	
+
+	body {
+		overflow-x: hidden;
+	}
 }
 @media only screen and (min-width: $medium){
 	.section{

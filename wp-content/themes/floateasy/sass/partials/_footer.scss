@@ -28,6 +28,7 @@
 		font-size: 0;
 		max-width: 1440px;
 		margin: 0 auto;
+		text-align: center;
 	}
 	.footer-pagelinks{
 		width: 60%;
@@ -83,24 +84,28 @@
 		font-size: 1.6rem;
 	}
 	.footer-social{
-		display: table;
-		width: 100%;
+		display: inline-block;
+		width: 66%;
+		margin: 0 auto;
 		font-size: 1.6rem;
-		> div, ul{
-			display: table-cell;
-			vertical-align: top;
-		}
-		> ul{
-			text-align: right;
-		}
+
 	}
 	.footer-social-subscribe{
 		text-align: center;
 	}
-	.footer-social-subscribe-content{
+
+	#mce-EMAIL {
 		display: inline-block;
-		text-align: left;
+		overflow: hidden;
+		width: 100%;
+		text-align: center;
+	}
+
+	.footer-social-subscribe-content{
+		width: 100%;
+		display: inline-block;
 		vertical-align: middle;
+		margin: 0 auto;
 	}
 	.footer-social-hours-header,
 	.footer-social-subscribe-content-header{
@@ -131,6 +136,7 @@
 		vertical-align: middle;
 		position: relative;
 		top: 1px;
+		display: none !important;
 	}
 	.footer-social-links-item{
 		display: inline-block;
