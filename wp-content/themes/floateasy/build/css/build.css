@@ -2133,6 +2133,14 @@ footer, header, hgroup, menu, nav, section, img {
     margin: 2rem;
     box-shadow: 0 0 1rem lightgrey; } }
 @media only screen and (min-width: 1025px) {
+  .category {
+    width: 100%;
+    min-height: 50vh; }
+
+  .category-testzone {
+    width: 100%;
+    height: 70vh; }
+
   .blog-posts {
     width: 80%;
     margin-left: 20%; }
@@ -2203,7 +2211,8 @@ footer, header, hgroup, menu, nav, section, img {
     pointer-events: none; }
 
   .locations-sidebar-grid-item-name {
-    font-size: 2.4rem; }
+    font-size: 2.4rem;
+    text-transform: uppercase; }
 
   .locations-sidebar-grid-item-address {
     margin: 10px 0; }
@@ -2299,17 +2308,24 @@ footer, header, hgroup, menu, nav, section, img {
     .locations-sidebar-grid-item-locationlink:hover {
       color: #1981ae; }
 
-  .locations-sidebar-grid-item-name,
-  .locations-sidebar-grid-item-locationlink {
-    display: inline-block; }
-
   .locations-map {
     display: block;
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
-    height: 100vh; } }
+    height: 100vh; }
+
+  .locations-infowindow {
+    text-align: center; }
+    .locations-infowindow a {
+      display: block;
+      margin: 1rem auto; }
+    .locations-infowindow .locations-infowindow-hours {
+      margin: 1rem auto; }
+    .locations-infowindow .locations-infowindow-name {
+      margin: 1rem auto;
+      text-transform: uppercase; } }
 @media only screen {
   .location-hero {
     width: 100%;
@@ -2381,8 +2397,10 @@ footer, header, hgroup, menu, nav, section, img {
       .location-hero-content-getdirections a:hover {
         color: #27A8E0; }
 
-  .location-hero-content .locations-sidebar-grid-item-hours span {
+  .location-hero-content .locations-sidebar-grid-item-hours {
     color: #F5F5F5; }
+    .location-hero-content .locations-sidebar-grid-item-hours span {
+      color: #F5F5F5; }
 
   .location-hero-content-address {
     font-size: 1.8rem; }
@@ -2414,8 +2432,11 @@ footer, header, hgroup, menu, nav, section, img {
   .location-main-videos-header,
   .location-main-members-header {
     font-size: 4rem;
-    margin-bottom: 20px;
-    font-weight: 600; }
+    text-align: center;
+    text-transform: uppercase;
+    margin: 2rem auto;
+    font-weight: 600;
+    border-bottom: 2px solid #F5F5F5; }
 
   .location-main-gallery-grid {
     width: calc(100% + 40px);

@@ -6,42 +6,14 @@
 
 	<h1 class="section-header page-header blog-header"><?php echo $post->post_title ?></h1>
 	
-
-	<!-- WP_Query All Posts (not CPTs) -->
-	<?php 
-		$the_query = new WP_Query(array(
-			'post_type' => 'post',
-			'posts_per_page' => -1,
-			'orderby' => 'date',
-			'order' => 'DESC',
-		));
-		if( $the_query->have_posts() ):
-	?>
-
-		<ul class="blog-sidebar">
-			<h2>Categories</h2>
-			<?php 
-				$args = array(
-					'hide_empty' => 0,
-					'exclude' => 1,
-				);
-				$categories = get_categories( $args );
-				foreach ( $categories as $category ) :
-			 ?>
-				<li><?php echo $category->name; ?></li>
-
-			<?php endforeach; ?>
-			<h2>Archive</h2>
-			<?php  ?>
-		</ul>
+		<?php include locate_template('modules/subModules/blog-sidebar.php'); ?>
 
 		<div class="blog-posts">
 			
 			<?php 
 				$args = array(
 					'exclude' => 1,
-					'order' => 'DSC',
-
+					'order' => 'ASC',
 				);
 				$categories = get_categories($args);
 				foreach( $categories as $category) : 
@@ -83,10 +55,7 @@
 				</div>
 
 			<?php endforeach; ?>
-
 		</div>
-	<?php endif; ?>
-
 
 </section>
 

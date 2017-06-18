@@ -8,7 +8,7 @@
 <div class="locations-sidebar-grid-item">
 
 	<!-- city name -->
-	<h2 class="locations-sidebar-grid-item-name"><a href="<?php the_permalink(); ?>"><?php the_field('addresses-name'); ?></a></h2>	
+	<h2 class="locations-sidebar-grid-item-name"><?php the_field('addresses-name'); ?></h2>	
 		
 	<!-- street address -->
 	<p class="locations-sidebar-grid-item-address"><?php echo get_field('addresses-gmap')['address']; ?></p>
