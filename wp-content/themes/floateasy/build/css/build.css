@@ -153,8 +153,7 @@ footer, header, hgroup, menu, nav, section, img {
     margin: 0 auto; }
 
   .section-header {
-    font-size: 11rem;
-    width: 640px; } }
+    font-size: 11rem; } }
 @media only screen {
   .fade {
     opacity: 1;
@@ -2000,8 +1999,12 @@ footer, header, hgroup, menu, nav, section, img {
     width: 100%; } }
 @media only screen {
   .pricing-wrapper {
+    max-width: 1600px;
     text-align: center;
     margin-top: 20px; } }
+@media only screen and (min-width: 1025px) {
+  .pricing > h1 {
+    margin: 4rem auto; } }
 @media only screen {
   .gallery-locations-location {
     margin: 40px 0; }
@@ -2277,13 +2280,11 @@ footer, header, hgroup, menu, nav, section, img {
     position: relative;
     z-index: 5;
     display: inline-block;
-    overflow: scroll;
+    overflow-y: scroll;
+    overflow-x: hidden;
     margin-top: 20px;
     margin-left: 20px;
     box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.15); }
-
-  .locations-sidebar-grid-item {
-    text-align: left; }
 
   .locations-sidebar-grid-item-getdirections,
   .locations-sidebar-grid-item-locationlink {
@@ -2362,6 +2363,26 @@ footer, header, hgroup, menu, nav, section, img {
     border-radius: 50%;
     background-color: rgba(245, 245, 245, 0.9);
     padding: 2rem; }
+
+  .location-hero-content-getdirections {
+    margin: 2rem 0; }
+    .location-hero-content-getdirections a {
+      font-weight: 500;
+      letter-spacing: 1px;
+      text-decoration: none;
+      text-transform: uppercase;
+      color: #F5F5F5;
+      border-bottom: 2px solid #27A8E0;
+      -webkit-transition: color 0.3s ease;
+      -moz-transition: color 0.3s ease;
+      -ms-transition: color 0.3s ease;
+      -o-transition: color 0.3s ease;
+      transition: color 0.3s ease; }
+      .location-hero-content-getdirections a:hover {
+        color: #27A8E0; }
+
+  .location-hero-content .locations-sidebar-grid-item-hours span {
+    color: #F5F5F5; }
 
   .location-hero-content-address {
     font-size: 1.8rem; }

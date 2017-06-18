@@ -65,17 +65,20 @@ function localize_contact_address(){
 	$fields = [];
 	$locations_query = new Locations_Query();
 	foreach($locations_query->query->posts as $row){
-
+		// variable
 		$infowindow = '';
-
+		// wrapper
 		$infowindow .= '<div class="windowinfo-content">';
+			// name
 			$infowindow .= '<h2 class="locations-sidebar-grid-item-name">' . get_field('addresses-name', $row->ID) . '</h2>';	
+			// address
 			$infowindow .= '<p class="locations-sidebar-grid-item-address">' . get_field('addresses-gmap', $row->ID)['address'] . '</p>';
+			// tel#
 			$infowindow .= '<a href="tel:' . filter_var(get_field('contact-office', $row->ID), FILTER_SANITIZE_NUMBER_INT) . '" class="locations-sidebar-grid-item-phone">' . get_field('contact-office', $row->ID) . '</a>';
+			// hours
 			if(!have_rows('addresses-hours-repeater', $row->ID)):
 				$infowindow .= '<div class="locations-sidebar-grid-item-hours">Open 24/7</div>';
 			endif;
-			
 			if(have_rows('addresses-hours-repeater', $row->ID)): 
 				$infowindow .= '<div class="locations-sidebar-grid-item-hours">';
 				while(have_rows('addresses-hours-repeater', $row->ID)): the_row();
@@ -101,6 +104,13 @@ function localize_contact_address(){
 				endwhile;
 				$infowindow .= '</div>';
 			endif;
+			// get directions;
+			$infowindow .= '<a target="_blank" href="' . 'https://maps.google.com/?q=' . htmlentities(get_field('addresses-gmap')['address']) . '">Get Directions</a>';
+
+			// visit location;
+			$infowindow .= '<a href="<?php the_permalink(); ?>" class="locations-sidebar-grid-item-locationlink">Visit Location Page</a>';
+
+			// end wrapper
 		$infowindow .= '</div>';
 
 		$field = array(

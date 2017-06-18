@@ -55,7 +55,10 @@
 				<h4 class="location-hero-content-getdirections">
 					<a target="_blank" href="<?php echo 'https://maps.google.com/?q=' . htmlentities(get_field('addresses-gmap')['address']); ?>">Directions</a>
 				</h4>
-
+				
+				<!-- Hours (per location) -->
+				<!-- Hours  -->
+				<?php include locate_template('modules/subModules/single-location-hours.php'); ?>
 
 
 				<!-- Buttons -->
