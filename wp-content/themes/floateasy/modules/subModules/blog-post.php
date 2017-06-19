@@ -1,26 +1,25 @@
-<?php get_header(); ?>
-
-	<?php include locate_template('modules/subModules/blog-sidebar.php'); ?>
-
+<div class="blog-posts">
 	
-	<section class="section page category">
-		<div class="blog-posts">
+	<?php 
+		$args = array(
+			'exclude' => 1,
+			'order' => 'ASC',
+		);
+		$categories = get_categories($args);
+		foreach( $categories as $category) : 
+	?>
+		<div class="blog-posts-categories fade fade-up">				
+			<h3 class="blog-posts-categories-title"><?php echo $category->name; ?></h3>
 			
 			<?php 
-				$cat_ID = get_queried_object_id();
-
-			 ?>
-
-			<h1 class="section-header page-header category-header"><?php echo get_the_category_by_id( $cat_ID ); ?></h1>
-
-			<?php 
+				$catID = $category->cat_ID;
 				$args = array(
-					'category' => $cat_ID,
+					'category' => $catID,
+					'posts_per_page' => -1,
 				);
 				$posts = get_posts($args);
-				foreach ( $posts as $post ) :
+				foreach ($posts as $post):
 			 ?>
-
 				<div class="blog-posts-post">
 						
 					<!-- Post Thumbnail -->
@@ -36,13 +35,11 @@
 						<h3 class="blog-posts-post-date"><?php echo get_the_date('D M j') ?><sup><?php echo get_the_date('S') ?></sup><?php echo get_the_date(' Y') . ' at ' . get_the_date('h:i A') ; ?></h3>
 					</div>
 				</div>
+
 			<?php 
 				endforeach;
-				wp_reset_postdata();
 			 ?>
 		</div>
-	</section>
 
-
-
-<?php get_footer(); ?>
+	<?php endforeach; ?>
+</div>

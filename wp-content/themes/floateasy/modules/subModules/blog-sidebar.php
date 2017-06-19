@@ -24,5 +24,14 @@
 		<?php foreach ( $categories as $category ) : ?>
 			<li><a href="<?php echo get_category_link( $category ); ?>"><?php echo $category->name; ?></a></li>
 		<?php endforeach; ?>
+	
 	<h2>Archive</h2>
+	<?php wp_get_archives( array( 'type' => 'monthly', 'limit' => 6, 'show_post_count' => 1 ) ); ?>
+	
 </ul>
+
+
+<!-- not sure if i need this but i think it cant hurt -->
+<?php 
+	wp_reset_postdata();
+ ?>

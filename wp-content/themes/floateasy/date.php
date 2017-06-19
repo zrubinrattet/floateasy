@@ -1,26 +1,35 @@
 <?php get_header(); ?>
 
-	<?php include locate_template('modules/subModules/blog-sidebar.php'); ?>
-
 	
-	<section class="section page category">
+	<!--  -->
+	<section class="page section archive archive-month">
+		
+		<?php 
+			require 'modules/subModules/blog-sidebar.php';
+		?>
+		
+
 		<div class="blog-posts">
 			
+			<h1 class="page-header section-header archive-header">
+				<?php the_date('F, Y'); ?>
+			</h1>
+				
 			<?php 
-				$cat_ID = get_queried_object_id();
+				$month = get_the_date('n');
+				$year = get_the_date('Y');
 
-			 ?>
-
-			<h1 class="section-header page-header category-header"><?php echo get_the_category_by_id( $cat_ID ); ?></h1>
-
-			<?php 
 				$args = array(
-					'category' => $cat_ID,
+					'date_query' => array(
+						array(
+							'year' => $year,
+							'month' => $month,
+						),
+					),
 				);
-				$posts = get_posts($args);
-				foreach ( $posts as $post ) :
+				$posts = get_posts( $args );
+				foreach ( $posts as $post ) : 
 			 ?>
-
 				<div class="blog-posts-post">
 						
 					<!-- Post Thumbnail -->
@@ -36,11 +45,14 @@
 						<h3 class="blog-posts-post-date"><?php echo get_the_date('D M j') ?><sup><?php echo get_the_date('S') ?></sup><?php echo get_the_date(' Y') . ' at ' . get_the_date('h:i A') ; ?></h3>
 					</div>
 				</div>
+
 			<?php 
 				endforeach;
-				wp_reset_postdata();
 			 ?>
+
 		</div>
+
+
 	</section>
 
 
