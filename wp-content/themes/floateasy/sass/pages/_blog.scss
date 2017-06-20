@@ -2,11 +2,13 @@
 	.blog {
 		width: 100%;
 		padding: 4rem 0;
+		position: relative;
 	}
 	.blog-posts {
 	}
 	
 	.blog-posts-categories {
+		text-align: center;
 		margin: 4rem auto;
 		padding: 2rem 0;
 		&:nth-of-type(odd) {
@@ -136,27 +138,38 @@
 		display: block;
 		position: absolute;
 		top: 25vh;
-		left: 0;
+		left: -5%;
 		text-align: center;
 		border-right: 1px solid lightgrey;
 		width: 20%;
 		list-style-type: none;
 
 		h2 {
-			margin-bottom: 4rem;
+			margin-top: 4rem;
+			margin-bottom: 2rem;
 			text-transform: uppercase;
 			font-weight: 400;
-
+			&:nth-of-type(1) {
+				margin-top: 0;
+			}
 		}
 		li {
-			text-align: right;
-			margin-right: 2rem;
-			margin-top: 1rem;
+			display: inline-block;
+			min-width: 66%;
+			margin: 1rem auto;
+			padding: 5px;
 			cursor: pointer;
-			border-bottom: 1px solid lightgrey;
-			padding: 0.5rem 0;
+			border-bottom: 2px solid $lightgrey;
+			@include transition(all 0.4s ease);
+			&:hover {
+				border-bottom: 2px solid transparentize($blue, 0.5);
+				min-width: 80%;
+			}
+		}
+		a, a:visited {
+			color: $blue;
+			text-decoration: none;
 			font-size: 1.8rem;
-			letter-spacing: 1px;
 		}
 	}
 

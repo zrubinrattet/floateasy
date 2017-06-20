@@ -1,3 +1,10 @@
+@mixin centerer {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  @include transform(translate(-50%,-50%));
+}
+
 @mixin transform($transforms) {
      -moz-transform: $transforms;
        -o-transform: $transforms;

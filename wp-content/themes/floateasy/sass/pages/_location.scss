@@ -7,9 +7,6 @@
 		background-position: center center;
 		position: relative;
 	}
-	.location-hero{
-		position: relative;
-	}
 	.location-hero-tint{
 		position: absolute;
 		width: 100%;
@@ -18,20 +15,15 @@
 		background-color: rgba(0,0,0,0.35);
 	}
 	.location-hero-content{
-		position: absolute;
-		top: 50%;
-		left: 50%;
-		@include transform(translate(-50%,-50%));
+		@include centerer;
 		z-index: 2;
 		text-align: center;
 		width: 100%;
 		padding: 20px;
-		box-sizing: border-box;
-		text-align: center;
-	}
-	.location-hero-content-header,
-	.location-hero-content-address{
-		color: white;
+		color: $lightgrey;
+		a, a:visited {
+			color: $lightgrey;
+		}
 	}
 	.location-hero-content-header{
 		h1 {
@@ -42,18 +34,24 @@
 			text-transform: uppercase;
 		}
 	}
-	// Site Logo on Locations Hero???
 	.location-hero-content-logo {
-		width: 126px;
-		height: 88px;
 		margin: 0 auto;
 		border-radius: 50%;
-		background-color: transparentize( $lightgrey, 0.1 );
-		padding: 2rem;
+		background-color: transparentize( $lightgrey, 0.2 );
+		padding: 2.5rem;
+		// must be the logo-image size exactly
+		width: 126px;
+		height: 88px;
+		.location-hero-content-logo-image {
+			width: 100%;
+			height: 100%;
+		}
 	}
+
 	.location-hero-content-getdirections {
 		margin: 2rem 0;
 		a {
+			font-size: 2rem;
 			font-weight: 500;
 			letter-spacing: 1px;
 			text-decoration: none;
@@ -66,26 +64,22 @@
 			}
 		}
 	}
-	// Hours "subModule" currently not styled BEM specifically (cutpaste)
-	.location-hero-content {
-		// crush the sidebar styles with specificity
-		.locations-sidebar-grid-item-hours {
+
+	.locations-sidebar-grid-item-hours {
+		color: $lightgrey;
+		span {
 			color: $lightgrey;
-			span {
-				color: $lightgrey;
-			}
 		}
 	}
-
-
-
-
-
 	.location-hero-content-address{
 		font-size: 1.8rem;
+		color: $lightgrey;
 	}
 	.location-hero-buttons{
 		margin-top: 20px;
+		a {
+			display: inline-block;
+		}
 	}
 	.location-hero-buttons-button{
 		color: white;

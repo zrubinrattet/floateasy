@@ -14,21 +14,19 @@
 				$bg_url = get_template_directory_uri() . '/library/img/plcaeholder-bg.jpg';
 			}
 		?>
+		<!-- page start -->
 		<section class="location-hero" style="background-image: url('<?php echo $bg_url; ?>');">
 	
 			<div class="location-hero-content">
-				
-				<!-- Logo -->
+
 				<div class="location-hero-content-logo">
-					<img src="<?php echo get_logo(); ?>" alt="">
+					<img class="location-hero-content-logo-image" src="<?php echo get_logo(); ?>" alt="">
 				</div>
-				
-				<!-- Location (Title) -->
+
 				<div class="location-hero-content-header">
 					<h1><?php echo $post->post_title; ?></h1>
 				</div>
-				
-				<!-- Address -->
+
 				<div class="location-hero-content-address">
 					<?php 
 						$gmap = get_field('addresses-gmap', $post->ID);
@@ -39,29 +37,22 @@
 							if( $index == 1 && !empty($line2) ){
 								$address .= (string) ' ' . $line2;
 								$address .= ',<br/>' . $bit;
-							}
-							else if ( $index == 0 ){
+							} else if ( $index == 0 ){
 								$address .= (string) $bit;
-							}
-							else{
+							} else {
 								$address .= (string) ',' . $bit;
 							}
 						}
 						echo $address;
 					?>
 				</div>
-				
-				<!-- Get Directions -->
 				<h4 class="location-hero-content-getdirections">
 					<a target="_blank" href="<?php echo 'https://maps.google.com/?q=' . htmlentities(get_field('addresses-gmap')['address']); ?>">Directions</a>
 				</h4>
-				
-				<!-- Hours (per location) -->
-				<!-- Hours  -->
+
 				<?php include locate_template('modules/subModules/single-location-hours.php'); ?>
-
-
-				<!-- Buttons -->
+				
+				<!-- C2A || Yelp -->
 				<?php if( empty(get_field('yelp', $post->ID)) && empty(get_field('yelp', $post->ID)) ) : else :	?>
 					<div class="location-hero-buttons">
 						<?php if( !empty(get_field('yelp', $post->ID)) ): ?>

@@ -1,3 +1,4 @@
+// Hidden On Mobile
 @media only screen {
 	.footer{
 		display: none;
@@ -8,12 +9,8 @@
 	.copyright{
 		display: none;
 	}
-}	
-
-@media only screen and (min-width: $medium){
-
 }
-
+// Only Desktop:
 @media only screen and (min-width: $large){
 	.footer{
 		display: block;
@@ -30,6 +27,9 @@
 		margin: 0 auto;
 		text-align: center;
 	}
+	/* 
+		First Row (siteLinks)
+	*/
 	.footer-pagelinks{
 		width: 60%;
 		padding: 20px 0;
@@ -83,39 +83,34 @@
 		display: inline-block;
 		font-size: 1.6rem;
 	}
+	/* 
+		Second Row (social)
+	*/
 	.footer-social{
-		display: inline-block;
-		width: 66%;
 		margin: 0 auto;
 		font-size: 1.6rem;
-
 	}
+
 	.footer-social-subscribe{
+		display: inline-block;
+		vertical-align: middle;
 		text-align: center;
+		position: relative;
+		padding: 1rem 2rem;
+		margin: 1rem 2rem;
 	}
-
 	#mce-EMAIL {
 		display: inline-block;
 		overflow: hidden;
 		width: 100%;
 		text-align: center;
+		padding: 1rem;
 	}
-
-	.footer-social-subscribe-content{
-		width: 100%;
-		display: inline-block;
-		vertical-align: middle;
-		margin: 0 auto;
-	}
-	.footer-social-hours-header,
 	.footer-social-subscribe-content-header{
 		font-weight: 700;
 		font-size: 2.6rem;
 		text-transform: uppercase;
 		margin-bottom: 10px;
-	}
-	.footer-social-hours-content{
-		font-weight: 500;
 	}
 	.footer-social-subscribe-content-form-input{
 		font-size: 1.5rem;
@@ -129,41 +124,46 @@
 		font-size: 1.5rem;
 		padding: 7px 10px;
 		text-transform: uppercase;
+		margin-top: 2rem;
 	}
-	.footer-social-links{
-		font-size: 0;
+
+	/* 
+		Social Icons 
+	*/
+	.footer-social-links,
+	.footer-social-links-item,
+	.footer-social-links-item-link,
+	.footer-social-links-item-link-icon, {
 		display: inline-block;
 		vertical-align: middle;
 		position: relative;
-		top: 1px;
-		display: none !important;
-	}
-	.footer-social-links-item{
-		display: inline-block;
-		width: 45px;
-		height: 45px;
-		border-radius: 330px;
-		position: relative;
-		margin-left: 15px;
-	}
-	.footer-social-links-item-link{
-		font-size: 3.6rem;
 		color: $offblack;
-		position: absolute;
-		top: 50%;
-		left: 50%;
-		@include transform(translate(-50%,-50%));
-		display: inline-block;
+		text-align: center;
 	}
-	.footer-social-links-item-link-icon{
-		display: inline-block;
-	    vertical-align: top;
-	    position: relative;
-	    top: 3px;
-	    &:before{
-			color: $offblack;
+	.footer-social-links {
+		margin: 0 auto;
+	}
+	.footer-social-links-item-link-icon {
+		@include centerer;
+		@include transition(color 0.3s ease);
+		font-size: 3.6rem;
+
+	}
+	.footer-social-links-item-link {
+		background: $blue;
+		border-radius: 50%;
+		width: 6.6rem;
+		height: 6.6rem;
+		margin: 0 1rem;
+		&:hover {
+			i {
+				color: $lightgrey;
+			}
 		}
 	}
+	/*
+		copyright
+	*/
 	.copyright{
 		color: $offblack;
 		font-size: 1.3rem;
