@@ -21,7 +21,7 @@
 				foreach ( $posts as $post ) :
 			 ?>
 
-				<div class="blog-posts-post">
+				<div class="blog-posts-post fade fade-up">
 						
 					<!-- Post Thumbnail -->
 					<?php if( has_post_thumbnail() ): ?>

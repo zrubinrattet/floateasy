@@ -2,14 +2,14 @@
 
 	
 	<!--  -->
-	<section class="page section archive archive-month">
+	<section class="page section category archive archive-month">
 		
 		<?php 
 			require 'modules/subModules/blog-sidebar.php';
 		?>
 		
 
-		<div class="blog-posts">
+		<div class="blog-posts archive-posts">
 			
 			<h1 class="page-header section-header archive-header">
 				<?php the_date('F, Y'); ?>
@@ -18,7 +18,6 @@
 			<?php 
 				$month = get_the_date('n');
 				$year = get_the_date('Y');
-
 				$args = array(
 					'date_query' => array(
 						array(
@@ -29,7 +28,7 @@
 				);
 				$posts = get_posts( $args );
 				foreach ( $posts as $post ) : 
-			 ?>
+			?>
 				<div class="blog-posts-post">
 						
 					<!-- Post Thumbnail -->
@@ -46,9 +45,7 @@
 					</div>
 				</div>
 
-			<?php 
-				endforeach;
-			 ?>
+			<?php endforeach; ?>
 
 		</div>
 
