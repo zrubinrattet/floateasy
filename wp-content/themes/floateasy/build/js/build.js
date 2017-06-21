@@ -57,7 +57,18 @@ var objectFitImages=function(){"use strict";function t(t){for(var e,r=getCompute
 		FaqAccordion._init();
 
 
+		var OSDetection = {
+			_init : function(){
+				if (navigator.userAgent.indexOf('Mac OS X') != -1) {
+					$("html").addClass("mac");
+				} 
+				else {
+					$("html").addClass("pc");
+				}
+			},
+		}
 
+		OSDetection._init();
 
 
 
