@@ -21,12 +21,21 @@
 ?>
 <ul class="blog-sidebar">
 	<h2>Categories</h2>
-		<?php foreach ( $categories as $category ) : ?>
-			<li><a href="<?php echo get_category_link( $category ); ?>"><?php echo $category->name; ?></a></li>
-		<?php endforeach; ?>
+	<?php foreach ( $categories as $category ) : ?>
+		<li class="fade fade-up"><a href="<?php echo get_category_link( $category ); ?>"><?php echo $category->name; ?></a></li>
+	<?php endforeach; ?>
 	
 	<h2>Archive</h2>
-	<?php wp_get_archives( array( 'type' => 'monthly', 'limit' => 6, 'show_post_count' => 1 ) ); ?>
+	<?php 
+		wp_get_archives(array(
+			'type' => 'monthly',
+			'limit' => 6,
+			'show_post_count' => 1,
+			'format' => 'custom',
+			'before' => '<li class="fade fade-up">',
+			'after' => '</li>' )
+		);
+	?>
 	
 </ul>
 

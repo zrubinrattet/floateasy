@@ -1,10 +1,13 @@
 <?php get_header(); ?>
 
-	<?php include locate_template('modules/subModules/blog-sidebar.php'); ?>
 
 	
 	<section class="section page category">
-		<div class="blog-posts">
+
+
+		<?php include locate_template('modules/subModules/blog-sidebar.php'); ?>
+		
+		<div class="blog-posts category-posts">
 			
 			<?php 
 				$cat_ID = get_queried_object_id();
@@ -21,7 +24,7 @@
 				foreach ( $posts as $post ) :
 			 ?>
 
-				<div class="blog-posts-post fade fade-up">
+				<div class="blog-posts-post">
 						
 					<!-- Post Thumbnail -->
 					<?php if( has_post_thumbnail() ): ?>
@@ -33,9 +36,10 @@
 						<a href="<?php the_permalink(); ?>" class="blog-posts-post-header"><?php the_title(); ?></a>
 					
 						<!-- Meta -->
-						<h3 class="blog-posts-post-date"><?php echo get_the_date('D M j') ?><sup><?php echo get_the_date('S') ?></sup><?php echo get_the_date(' Y') . ' at ' . get_the_date('h:i A') ; ?></h3>
+						<h3 class="blog-posts-post-date"><?php echo get_the_date('D M j') ?><sup><?php echo get_the_date('S') ?></sup><?php echo get_the_date(' Y') . ' at ' . get_the_date('g:i A') ; ?></h3>
 					</div>
 				</div>
+
 			<?php 
 				endforeach;
 				wp_reset_postdata();
