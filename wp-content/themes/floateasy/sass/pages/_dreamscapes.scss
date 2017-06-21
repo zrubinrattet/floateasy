@@ -1,0 +1,55 @@
+@media only screen{
+
+	.dreamscapes {
+		max-width: none;
+		text-align: center;
+		width: 100%;
+		padding: 4rem 0;
+		margin: 4rem 0;
+	}
+
+	.dreamscapes-post {
+		background-size: cover;
+	}
+	.dreamscapes-post-content {
+		text-align: center !important;
+	}
+
+	.dreamscapes-hero {
+		width: 100%;
+		height: 50vh;
+		position: relative;
+		background-size: cover;
+	}
+	.dreamscapes-main {
+		margin: 4rem auto;
+		width: 80%;
+	}
+	.dreamscapes-main-content {
+		margin: 4rem auto;
+		p {
+			text-align: left;
+			line-height: 150%;
+			font-size: 1.8rem;
+		}
+	}
+
+}
+@media only screen and (min-width: $medium){
+
+
+
+
+
+
+
+}
+@media only screen and (min-width: $large){
+
+
+
+
+
+
+
+}
