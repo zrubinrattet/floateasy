@@ -36,7 +36,7 @@
 		</div>
 		<div class="header-fixed-tel header-fixed-collapsed">
 			<i class="fa fa-phone"></i>
-			<a href="tel:<?php echo get_the_phone('tel'); ?>"><?php echo get_the_phone(); ?></a>
+			<a href="tel:18552223279"><?php echo get_the_phone(); ?></a>
 		</div>
 	</nav>
 </header>
