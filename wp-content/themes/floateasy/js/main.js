@@ -2,6 +2,10 @@
 
 	$(document).ready(function(){
 		
+		/*
+			Lazy Load
+		*/
+
 
 		/*
 			FAQ Accordions:
