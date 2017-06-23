@@ -83,9 +83,14 @@
 		margin-top: 7px;
 		color: transparentize($lightgrey, 0.33);
 	}
-
 	.blog-sidebar {
-		display: none;
+		position: relative;
+		width: 100%;
+		margin: 2rem 0;
+		text-align: center;
+		h2, li {
+			display: none;
+		}
 	}
 } // end mobile query
 @media only screen and (min-width: $medium){
@@ -111,22 +116,16 @@
 		padding: 4rem 0;
 		margin-left: 25%;
 	}
-
 	.blog-posts-post {
 		max-width: 360px;
 		max-height: 240px;
 	}
-
 	.blog-sidebar {
-		display: block;
 		position: absolute;
+		width: 20%;
 		top: 20vh;
 		left: -5%;
-		text-align: center;
 		border-right: 1px solid lightgrey;
-		width: 20%;
-		list-style-type: none;
-
 		h2 {
 			margin-top: 4rem;
 			margin-bottom: 2rem;

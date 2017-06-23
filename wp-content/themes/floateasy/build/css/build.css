@@ -1425,6 +1425,32 @@ footer, header, hgroup, menu, nav, section, img {
   .mobilefooter {
     display: none; } }
 @media only screen {
+  .searchform {
+    margin: 2rem auto; }
+
+  .searchform-label {
+    display: none; }
+
+  .searchform-input,
+  input[type="submit"].searchform-submit {
+    padding: 5px 10px;
+    display: inline-block;
+    vertical-align: middle;
+    height: 4.4rem;
+    -webkit-transition: color 0.3s ease;
+    -moz-transition: color 0.3s ease;
+    -ms-transition: color 0.3s ease;
+    -o-transition: color 0.3s ease;
+    transition: color 0.3s ease; }
+    .searchform-input:hover,
+    input[type="submit"].searchform-submit:hover {
+      color: #27A8E0; }
+
+  input[type="submit"].searchform-submit {
+    font-family: FontAwesome;
+    width: 4.4rem;
+    font-size: 2rem; } }
+@media only screen {
   .hero {
     height: 100vh;
     width: 100%;
@@ -2174,7 +2200,12 @@ footer, header, hgroup, menu, nav, section, img {
     color: rgba(245, 245, 245, 0.67); }
 
   .blog-sidebar {
-    display: none; } }
+    position: relative;
+    width: 100%;
+    margin: 2rem 0;
+    text-align: center; }
+    .blog-sidebar h2, .blog-sidebar li {
+      display: none; } }
 @media only screen and (min-width: 641px) {
   .blog-posts-post {
     max-width: 240px;
@@ -2200,14 +2231,11 @@ footer, header, hgroup, menu, nav, section, img {
     max-height: 240px; }
 
   .blog-sidebar {
-    display: block;
     position: absolute;
+    width: 20%;
     top: 20vh;
     left: -5%;
-    text-align: center;
-    border-right: 1px solid lightgrey;
-    width: 20%;
-    list-style-type: none; }
+    border-right: 1px solid lightgrey; }
     .blog-sidebar h2 {
       margin-top: 4rem;
       margin-bottom: 2rem;
@@ -2724,6 +2752,7 @@ footer, header, hgroup, menu, nav, section, img {
     position: relative;
     min-height: 300px;
     padding-top: 120px;
+    top: 45px;
     background-size: cover;
     background-repeat: no-repeat;
     background-position: 50% 50%; }
@@ -2761,6 +2790,9 @@ footer, header, hgroup, menu, nav, section, img {
 
   .single-single-content {
     line-height: 2.8rem; } }
+@media only screen and (min-width: 641px) {
+  .single-hero {
+    top: 74px; } }
 @media only screen and (min-width: 1025px) {
   .single-hero {
     min-height: 450px; }
@@ -2772,5 +2804,66 @@ footer, header, hgroup, menu, nav, section, img {
     padding: 40px 60px;
     margin: 0 auto;
     max-width: 1024px; } }
+@media only screen {
+  .dreamscapes {
+    max-width: none;
+    text-align: center;
+    width: 100%;
+    padding: 4rem 0;
+    margin: 4rem auto; }
+
+  .dreamscapes-posts-post {
+    background-size: cover;
+    box-shadow: 0 0 1rem rgba(46, 40, 42, 0.5); }
+
+  .dreamscapes-post-content {
+    text-align: center !important; }
+
+  .dreamscapes-hero {
+    width: 100%;
+    height: 50vh;
+    position: relative;
+    background-size: cover; }
+
+  .dreamscapes-main {
+    margin: 4rem auto;
+    margin-top: 0;
+    width: 100%; }
+
+  .dreamscapes-main-content {
+    width: 100%;
+    background: rgba(46, 40, 42, 0.1);
+    padding: 4rem 0; }
+    .dreamscapes-main-content p {
+      display: inline-block;
+      margin: 1rem auto;
+      width: 80%;
+      text-align: left;
+      line-height: 150%;
+      font-size: 2rem; }
+
+  .dreamscapes-header {
+    position: relative;
+    top: 50%;
+    -moz-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+    color: #F5F5F5;
+    background: rgba(46, 40, 42, 0.5);
+    padding: 4rem 8rem;
+    display: inline-block;
+    border-radius: 2rem 0; } }
+@media only screen and (min-width: 641px) {
+  .dreamscapes-posts {
+    padding: 2rem;
+    width: 75%;
+    margin: 0 auto; }
+
+  .dreamscapes-posts-post {
+    max-width: 240px;
+    max-height: 240px;
+    margin: 2rem 4rem; } }
 
 /*# sourceMappingURL=build.css.map */

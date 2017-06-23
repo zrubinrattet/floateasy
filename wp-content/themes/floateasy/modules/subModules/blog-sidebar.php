@@ -9,10 +9,11 @@
 	if($the_query->have_posts()) {
 
 		$args = array(
-			'hide_empty' => 0,
-			'exclude' => 1,
+			'hide_empty' => 1,
+			'exclude' => 1,  // uncategoried
 		);
 		$categories = get_categories($args);
+
 		$args = array(
 			'posts_per_page' => -1,
 		);
@@ -20,7 +21,11 @@
 	}
 ?>
 <ul class="blog-sidebar">
+	
+	<?php get_search_form( $echo = true ); ?>
+
 	<h2>Categories</h2>
+	
 	<?php foreach ( $categories as $category ) : ?>
 		<li class="fade fade-up"><a href="<?php echo get_category_link( $category ); ?>"><?php echo $category->name; ?></a></li>
 	<?php endforeach; ?>

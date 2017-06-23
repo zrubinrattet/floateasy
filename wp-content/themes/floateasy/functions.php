@@ -426,14 +426,10 @@ if(!function_exists('the_bg')){
 }
 
 
-/**
-* Registers a new post type
-* @uses $wp_post_types Inserts new post type object into the list
-*
-* @param string  Post type key, must not exceed 20 characters
-* @param array|string  See optional args description above.
-* @return object|WP_Error the registered post type object, or an error object
+/*
+	Custom Post Types
 */
+// Locations
 function register_location_post_type() {
 
 	$labels = array(
@@ -477,18 +473,63 @@ function register_location_post_type() {
 
 	register_post_type( 'location', $args );
 }
-
 add_action( 'init', 'register_location_post_type' );
+// Dreamscapes
+function register_dreamscapes_post_type() {
+	$labels = array(
+		'name'                => __( 'Dreamscapes Posts', 'text-domain' ),
+		'singular_name'       => __( 'Dreamscape Post', 'text-domain' ),
+		'add_new'             => _x( 'Add New Dreamscape Post', 'text-domain', 'text-domain' ),
+		'add_new_item'        => __( 'Add New Dreamscape Post', 'text-domain' ),
+		'edit_item'           => __( 'Edit Dreamscape Post', 'text-domain' ),
+		'new_item'            => __( 'New Dreamscape Post', 'text-domain' ),
+		'view_item'           => __( 'View Dreamscape Post', 'text-domain' ),
+		'search_items'        => __( 'Search Dreamscapes Posts', 'text-domain' ),
+		'not_found'           => __( 'No Dreamscapes Posts found', 'text-domain' ),
+		'not_found_in_trash'  => __( 'No Dreamscapes Posts found in Trash', 'text-domain' ),
+		'parent_item_colon'   => __( 'Parent Dreamscape Post:', 'text-domain' ),
+		'menu_name'           => __( 'Dreamscapes Posts', 'text-domain' ),
+	);
+	$args = array(
+		'labels'                   => $labels,
+		'hierarchical'        => false,
+		'description'         => 'description',
+		'taxonomies'          => array(),
+		'public'              => true,
+		'show_ui'             => true,
+		'show_in_menu'        => true,
+		'show_in_admin_bar'   => true,
+		'menu_position'       => null,
+		'menu_icon'           => null,
+		'show_in_nav_menus'   => true,
+		'publicly_queryable'  => true,
+		'exclude_from_search' => false,
+		'has_archive'         => true,
+		'query_var'           => true,
+		'can_export'          => true,
+		'rewrite'             => true,
+		'capability_type'     => 'post',
+		'supports'            => array(
+			'title', 'editor', 'author', 'thumbnail',
+			'excerpt','custom-fields', 'trackbacks', 'comments',
+			'revisions', 'page-attributes', 'post-formats'
+			)
+	);
+
+	register_post_type( 'dreamscape_posts', $args );
+}
+add_action( 'init', 'register_dreamscapes_post_type' );
 
 
+
+/*
+	Nav Walker
+*/
 require get_template_directory() . '/partials/NavWalker.php';
 
-
-
-
-
-
-// retrieve and return locations search results/errors/messages
+/*
+	retrieve and return locations search results/errors/messages
+*/
 class Locations_Query{
 	public $search_query;
 	private $states = array(
@@ -643,28 +684,9 @@ class Locations_Query{
 	}
 }
 
+/*
 
+	end functions.php
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+*/
 ?>

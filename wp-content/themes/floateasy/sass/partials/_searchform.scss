@@ -1,0 +1,28 @@
+@media only screen {
+	.searchform {
+		margin: 2rem auto;
+	}
+	.searchform-label {
+		display: none;
+	}
+	.searchform-input,
+	input[type="submit"].searchform-submit {
+		padding: 5px 10px;
+		display: inline-block;
+		vertical-align: middle;
+		height: 4.4rem;
+		@include transition(color 0.3s ease);
+		&:hover {
+			color: $blue;
+		}
+	}
+	input[type="submit"].searchform-submit {
+		font-family: FontAwesome;
+		width: 4.4rem;
+		font-size: 2rem;
+	}
+}
+@media only screen and (min-width: $medium) {
+}
+@media only screen and (min-width: $large) {
+}
