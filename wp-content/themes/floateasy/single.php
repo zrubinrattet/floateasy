@@ -11,15 +11,25 @@
 		}
 
 		// show dreamscapes CPTs
-		if (is_singular( 'dreamscape_posts' )) :
+		if (is_singular( array('dreamscape_posts', 'testimonials_cpt') )) :
+
+			// get the single post object
+			$single_cpt_ = get_queried_object();
+			// get the single post objects ID
+			$single_cpt_id = get_queried_object_id();
+
+			var_dump(get_queried_object());
+
 			global $post;
 			$args = array(
-				'post_type' => 'dreamscape_posts',
+				'post_type' => array('dreamscape_posts', 'testimonials_cpt'),
+				'p' => $single_cpt_id,
 			);
 			$posts = get_posts( $args );
 		endif;
 			foreach ( $posts as $post ) :
 				setup_postdata( $post );
+				$bg_url = get_the_post_thumbnail_url();
 		?>
 
 	<section class="single-hero" style="background-image: url('<?php echo $bg_url; ?>');">

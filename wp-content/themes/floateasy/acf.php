@@ -151,7 +151,7 @@ function add_acf_fields() {
 			),
 		),
 	));
-	// FAQ Settings
+	// FAQ Settings    !!! NOT FINISHED
 	acf_add_local_field_group(array(
 		'key' => 'group_1032hf0329238d',
 		'title' => ' ',
@@ -190,7 +190,7 @@ function add_acf_fields() {
 			),
 		),
 	));
-	// Benefits Page (not homepage)
+	// Benefits Page (not homepage) !!! NOT FINISHED
 	acf_add_local_field_group(array(
 		'key' => 'group_1329238dasfeggsc',
 		'title' => ' ',
@@ -493,7 +493,7 @@ function add_acf_fields() {
 			),
 		),
 	));
-	// Testimonials Settings 
+	// Testimonials Settings !!! depricated??? !!!
 	acf_add_local_field_group(array(
 		'key' => 'group_6',
 		'title' => ' ',
@@ -883,8 +883,55 @@ function add_acf_fields() {
 			),
 		),
 	));
+	// Testimonials CPT !!!!!!
+	acf_add_local_field_group(array(
+		'key' => 'group_a8s4ag81b28af1',
+		'title' => '<h1 style="text-align: center; text-transform: uppercase;">add/edit video testimonials</h1>',
+		'fields' => array (
+			array (
+				'key' => 'field_fgf16ab65tjjgb',
+				'label' => 'Featured Testimonial?',
+				'name' => 'featured_testimonial',
+				'type' => 'true_false',
+				'message' => 'check to put on home page',
+			),
+			array (
+				'key' => 'field_gobl7350digb00k',
+				'label' => '<h1 style="text-align: center;">YouTube Link</h1>',
+				'name' => 'youtube_link',
+				'type' => 'oembed',
+			),
+		),
+		'location' => array (
+			array (
+				array (
+					'param' => 'post_type',
+					'operator' => '==',
+					'value' => 'testimonials_cpt',
+				),
+			),
+		),
+	));
 }
+/*
+	End Registering Fields
+*/
 add_action('acf/init', 'add_acf_fields');
+/*
+	End Add Action
+*/
+
+
+
+
+
+
+
+
+
+
+
+
 
 // update google map api key
 function set_acf_google_api_key(){

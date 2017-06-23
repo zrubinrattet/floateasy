@@ -2865,5 +2865,8 @@ footer, header, hgroup, menu, nav, section, img {
     max-width: 240px;
     max-height: 240px;
     margin: 2rem 4rem; } }
+@media only screen {
+  .testimonials_cpt-posts {
+    display: inline-block; } }
 
 /*# sourceMappingURL=build.css.map */

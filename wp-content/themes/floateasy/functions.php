@@ -429,6 +429,7 @@ if(!function_exists('the_bg')){
 /*
 	Custom Post Types
 */
+
 // Locations
 function register_location_post_type() {
 
@@ -474,6 +475,7 @@ function register_location_post_type() {
 	register_post_type( 'location', $args );
 }
 add_action( 'init', 'register_location_post_type' );
+
 // Dreamscapes
 function register_dreamscapes_post_type() {
 	$labels = array(
@@ -511,7 +513,6 @@ function register_dreamscapes_post_type() {
 		'capability_type'     => 'post',
 		'supports'            => array(
 			'title', 'editor', 'author', 'thumbnail',
-			'excerpt','custom-fields', 'trackbacks', 'comments',
 			'revisions', 'page-attributes', 'post-formats'
 			)
 	);
@@ -519,6 +520,96 @@ function register_dreamscapes_post_type() {
 	register_post_type( 'dreamscape_posts', $args );
 }
 add_action( 'init', 'register_dreamscapes_post_type' );
+
+// Testimonials (videos)
+/**
+* Registers a new post type
+* @uses $wp_post_types Inserts new post type object into the list
+*
+* @param string  Post type key, must not exceed 20 characters
+* @param array|string  See optional args description above.
+* @return object|WP_Error the registered post type object, or an error object
+*/
+function register_testimonials_type() {
+
+	$labels = array(
+		'name'                => __( 'Video Testimonials', 'text-domain' ),
+		'singular_name'       => __( 'a Testimonial', 'text-domain' ),
+		'add_new'             => _x( 'Add New a Testimonial', 'text-domain', 'text-domain' ),
+		'add_new_item'        => __( 'Add New a Testimonial', 'text-domain' ),
+		'edit_item'           => __( 'Edit a Testimonial', 'text-domain' ),
+		'new_item'            => __( 'New a Testimonial', 'text-domain' ),
+		'view_item'           => __( 'View a Testimonial', 'text-domain' ),
+		'search_items'        => __( 'Search Video Testimonials', 'text-domain' ),
+		'not_found'           => __( 'No Video Testimonials found', 'text-domain' ),
+		'not_found_in_trash'  => __( 'No Video Testimonials found in Trash', 'text-domain' ),
+		'parent_item_colon'   => __( 'Parent a Testimonial:', 'text-domain' ),
+		'menu_name'           => __( 'Video Testimonials', 'text-domain' ),
+	);
+
+	$args = array(
+		'labels'                   => $labels,
+		'hierarchical'        => false,
+		'description'         => 'description',
+		'taxonomies'          => array('testimonial_categories'),
+		'public'              => true,
+		'show_ui'             => true,
+		'show_in_menu'        => true,
+		'show_in_admin_bar'   => true,
+		'menu_position'       => null,
+		'menu_icon'           => null,
+		'show_in_nav_menus'   => true,
+		'publicly_queryable'  => true,
+		'exclude_from_search' => false,
+		'has_archive'         => true,
+		'query_var'           => true,
+		'can_export'          => true,
+		'rewrite'             => true,
+		'capability_type'     => 'post',
+		'supports'            => array(
+			'title', 'thumbnail',
+			)
+	);
+
+	register_post_type( 'testimonials_cpt', $args );
+}
+add_action( 'init', 'register_testimonials_type' );
+/*
+ 	add Taxonomies...
+*/
+function testimonial_categories() {
+	$labels = array(
+		'name'					=> _x( 'Testimonial Categories', 'Taxonomy plural name', 'text-domain' ),
+		'singular_name'			=> _x( 'Testimonial Category', 'Taxonomy singular name', 'text-domain' ),
+		'search_items'			=> __( 'Search Testimonial Categories', 'text-domain' ),
+		'popular_items'			=> __( 'Popular Testimonial Categories', 'text-domain' ),
+		'all_items'				=> __( 'All Testimonial Categories', 'text-domain' ),
+		'parent_item'			=> __( 'Parent Testimonial Category', 'text-domain' ),
+		'parent_item_colon'		=> __( 'Parent Testimonial Category', 'text-domain' ),
+		'edit_item'				=> __( 'Edit Testimonial Category', 'text-domain' ),
+		'update_item'			=> __( 'Update Testimonial Category', 'text-domain' ),
+		'add_new_item'			=> __( 'Add New Testimonial Category', 'text-domain' ),
+		'new_item_name'			=> __( 'New Testimonial Category Name', 'text-domain' ),
+		'add_or_remove_items'	=> __( 'Add or remove Testimonial Categories', 'text-domain' ),
+		'choose_from_most_used'	=> __( 'Choose from most used text-domain', 'text-domain' ),
+		'menu_name'				=> __( 'Testimonial Category', 'text-domain' ),
+	);
+	$args = array(
+		'labels'            => $labels,
+		'public'            => true,
+		'show_in_nav_menus' => true,
+		'show_admin_column' => false,
+		'hierarchical'      => false,
+		'show_tagcloud'     => true,
+		'show_ui'           => true,
+		'query_var'         => true,
+		'rewrite'           => true,
+		'query_var'         => true,
+		'capabilities'      => array(),
+	);
+	register_taxonomy( 'testimonial_categories', array( 'testimonials_cpt' ), $args );
+}
+add_action( 'init', 'testimonial_categories' );
 
 
 
