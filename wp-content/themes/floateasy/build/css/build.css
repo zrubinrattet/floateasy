@@ -3379,6 +3379,8 @@ button.swiper-pagination-bullet {
   .book-an-appointment .section {
     padding: 40px 0px; }
 
+  div.healcode .healcode-title-text {
+    visibility: hidden; }
   div.healcode .header {
     position: relative;
     z-index: 1;
@@ -3409,12 +3411,31 @@ button.swiper-pagination-bullet {
       font-weight: 600;
       color: #2E282A; }
   div.healcode.list_view div.header h1 {
-    font-size: 2rem; } }
+    font-size: 2rem; }
+  div.healcode .pre-filters div:nth-child(2) {
+    width: auto;
+    position: relative;
+    display: inline-block; }
+    div.healcode .pre-filters div:nth-child(2):after {
+      content: '\25BC';
+      position: absolute;
+      right: 17px;
+      top: 5px;
+      display: inline-block; }
+    div.healcode .pre-filters div:nth-child(2) select {
+      -webkit-appearance: none;
+      padding: 5px 30px 5px 10px;
+      border-radius: 4px;
+      font-size: 1.2rem;
+      width: auto;
+      position: relative; } }
 @media only screen and (min-width: 641px) {
   .book-an-appointment .section-header {
     font-size: 5rem; } }
 @media only screen and (min-width: 1025px) {
   .book-an-appointment .section-header {
-    font-size: 11rem; } }
+    font-size: 11rem; }
+  .book-an-appointment .section {
+    padding: 70px 0px; } }
 
 /*# sourceMappingURL=build.css.map */

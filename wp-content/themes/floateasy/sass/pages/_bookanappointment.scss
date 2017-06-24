@@ -8,6 +8,9 @@
 		}
 	}
 	div.healcode{
+		.healcode-title-text{
+			visibility: hidden;
+		}
 		.header{
 			position: relative;
 			z-index: 1;
@@ -42,6 +45,26 @@
 		&.list_view div.header h1{
 			font-size: 2rem;
 		}
+		.pre-filters div:nth-child(2){
+			width: auto;
+    	    position: relative;
+    	    display: inline-block;
+		    &:after{
+		    	content: '\25BC';
+		    	position: absolute;
+		    	right: 17px;
+		    	top: 5px;
+		    	display: inline-block
+		    }
+		    select{
+	    		-webkit-appearance: none;
+	    	    padding: 5px 30px 5px 10px;
+	    	    border-radius: 4px;
+	    	    font-size: 1.2rem;
+	    	    width: auto;
+	    	    position: relative;
+		    }
+		}
 	}
 }
 
@@ -57,6 +80,9 @@
 	.book-an-appointment{
 		.section-header{
 			font-size: 11rem;
+		}
+		.section{
+			padding: 70px 0px;
 		}
 	}
 }
