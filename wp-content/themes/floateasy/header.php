@@ -36,7 +36,7 @@
 			$extra_body_class = $post->post_name;
 		}
 	?>
-	<body <?php body_class($extra_body_class); ?>>
+	<body<?php echo $extra_body_class == '' ? '' : ' class="' . $extra_body_class . '"' ?>>
 		
 		<?php get_template_part('partials/navigation/nav', 'desktop'); ?>
 		<?php get_template_part('partials/navigation/nav', 'mobile'); ?>
