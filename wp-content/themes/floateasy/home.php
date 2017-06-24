@@ -5,7 +5,7 @@ get_header();
 $modules = array(
 	'hero',
 	'benefits',
-	'testimonials',
+	'testimonialsCPT',
 	'pricing',
 );
 

@@ -1,17 +1,45 @@
 @media only screen {
 
-	.testimonials_cpt {
+
+
+
+
+
+
+	.testimonials-cpt {
 
 	}
 
 	.testimonials_cpt-posts {
-		display: inline-block;
 	}
 
+	.testimonials_cpt-posts-post {
+
+	}
+	.testimonials_cpt-posts-post-placeholder {
+		width: 100%;
+		height: 100%;
+	}
+
+	.testimonials_cpt-posts-post-iframe {
+		width: 100%;
+		height: 100%;
+	}
+
+	.testimonials_cpt-posts-video {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+	}
 
 }
 @media only screen and (min-width: $medium) {
+	
 
+	.testimonials_cpt-posts-post {
+		display: inline-block;
+
+	}
 
 
 

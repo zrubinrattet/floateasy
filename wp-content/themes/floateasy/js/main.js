@@ -3,9 +3,12 @@
 	$(document).ready(function(){
 		
 		/*
-			Lazy Load
+			Swiper
 		*/
 
+		var mySwiper = new Swiper('.swiper-container', {
+			
+		});
 
 		/*
 			FAQ Accordions:

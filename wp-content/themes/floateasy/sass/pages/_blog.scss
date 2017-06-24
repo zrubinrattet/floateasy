@@ -1,7 +1,5 @@
 @media only screen {
 	.blog {
-		width: 100%;
-		padding: 4rem 0;
 		position: relative;
 	}
 	.blog-posts-categories {
@@ -28,6 +26,9 @@
 			color: $blue;
 			border-bottom: 1px solid transparentize( $blue, 0.5 );
 		}
+	}
+	.blog-posts {
+		text-align: center;
 	}
 	.blog-posts-post {
 		display: inline-block;
