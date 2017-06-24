@@ -1324,6 +1324,7 @@ button.swiper-pagination-bullet {
     display: block;
     position: fixed;
     top: 0;
+    left: 0px;
     z-index: 10;
     width: 100%; }
 
@@ -1385,7 +1386,7 @@ button.swiper-pagination-bullet {
       box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.25);
       display: none; }
       .header-content-menus-pages-menu-item .sub-menu:before {
-        content: 'Γû╝';
+        content: '▼';
         display: block;
         position: absolute;
         color: #27A8E0;
@@ -1444,6 +1445,7 @@ button.swiper-pagination-bullet {
     width: 100vw;
     position: fixed;
     top: 0px;
+    left: 0px;
     padding: 10px 20px;
     box-sizing: border-box;
     z-index: 10;
@@ -3371,5 +3373,48 @@ button.swiper-pagination-bullet {
 @media only screen and (min-width: 641px) {
   .testimonials_cpt-posts-post {
     display: inline-block; } }
+@media only screen {
+  .book-an-appointment .section-header {
+    font-size: 3.6rem; }
+  .book-an-appointment .section {
+    padding: 40px 0px; }
+
+  div.healcode .header {
+    position: relative;
+    z-index: 1;
+    display: block; }
+  div.healcode div a.hc-button,
+  div.healcode div input.hc-button {
+    font-size: 1.5rem;
+    padding: 10px 20px;
+    border-radius: 4px;
+    font-family: 'Proxima Nova'; }
+  div.healcode #hc-find-appt {
+    background-color: #27A8E0;
+    -webkit-transition: background-color 0.4s ease;
+    -moz-transition: background-color 0.4s ease;
+    -ms-transition: background-color 0.4s ease;
+    -o-transition: background-color 0.4s ease;
+    transition: background-color 0.4s ease; }
+    div.healcode #hc-find-appt:hover {
+      color: white;
+      background-color: #1b89b9; }
+  div.healcode.appointments .trainer-label {
+    font-size: 2rem;
+    text-transform: uppercase;
+    margin: 10px 0px 5px 0px; }
+    div.healcode.appointments .trainer-label a {
+      text-decoration: none;
+      font-size: 2rem;
+      font-weight: 600;
+      color: #2E282A; }
+  div.healcode.list_view div.header h1 {
+    font-size: 2rem; } }
+@media only screen and (min-width: 641px) {
+  .book-an-appointment .section-header {
+    font-size: 5rem; } }
+@media only screen and (min-width: 1025px) {
+  .book-an-appointment .section-header {
+    font-size: 11rem; } }
 
 /*# sourceMappingURL=build.css.map */
