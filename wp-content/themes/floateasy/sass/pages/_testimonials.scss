@@ -1,79 +1,154 @@
 @media only screen {
-	.testimonials-grid{
-		margin-top: 20px;
+
+	.testimonials-header {
+		width: auto;
+		margin: 0 auto;
 	}
-	.testimonials-grid-item{
-		margin: 40px auto;
-		text-align: center;
-		background-color: $lightgrey;
-		padding: 20px;
-		position: relative;
-		width: calc(100% - 80px);
-		box-shadow: $boxshadow; 
-		&.hasimage{
-			margin-top: 80px;
-			.testimonials-grid-item-textwrap{
-				margin-top: 90px;
+	.testimonials-posts {
+		font-size: 0;
+		.testimonials-posts-post {
+			background: transparentize($lightgrey, 0.5);
+		}
+		.testimonials-posts-post:nth-child(odd) {
+			background: $lightgrey;
+		}	
+	}
+
+	.testimonials-posts-post {
+		margin: 4rem 1rem;
+	}
+
+	.testimonials-posts-meta {
+		text-align: left;
+		font-size: 100%;
+	}
+	.testimonials-posts-meta-title{
+		font-size: 2.6rem;
+		padding: 5px;
+	}
+	.testimonials-posts-meta-subtitle {
+		display: inline-block;
+		font-size: 1.8rem;
+		padding: 5px;
+		a {
+			text-decoration: none;
+		}
+	}
+
+	.testimonials-posts-post-placeholder {
+		width: 100%;
+		height: 100%;
+	}
+	.testimonials-posts-post-iframe {
+		width: 100%;
+		height: 100%;
+	}
+	.testimonials-posts-video {
+		margin: 1rem auto;
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		iframe {
+			min-height: 260px;
+		}
+	}
+	/* 	Home Testimonials
+			Move to its own SCSS file; but for now its good to see these 'linked' modules together
+	*/
+		.hometestimonials-section { // top-level for the module;
+			padding: 4rem 0;
+		}
+
+		.hometestimonials-section-slide {
+			padding: 2rem;
+			text-align: center;
+			overflow: hidden;
+			box-shadow: 0 0 1rem transparentize( $offblack, 0.5 );
+		}
+		.hometestimonials-section-slide-header {
+			font-weight: 700;
+			text-transform: uppercase;
+			font-size: 2.8rem;
+			padding: 1rem 0;
+			margin: 1rem 0;
+		}
+		.hometestimonials-section-slide-iframe {
+			iframe {
+				width: 100%;
+				object-fit: cover;
 			}
 		}
-	}
-	.testimonials-grid-item-personinfo{
-		padding-top: 20px;
-	}
-	.testimonials-grid-item-personinfo-name{
-		font-weight: bold;
-	}
-	.testimonials-grid-item-image{
-		position: absolute;
-		left: 50%;
-		@include transform(translate(-50%, -50%));
-		width: 140px;
-		height: 140px;
-	    border-radius: 220px;
-	    background-size: cover;
-	    box-shadow: 0px 0px 8px lightgrey;
-	}
-	.testimonials-grid-item-social{
-		padding-top: 10px;
-	}
-	a.testimonials-grid-item-social-link{
-		color: $offblack;
-		padding: 10px;
-		display: inline-block;
-		&:visited{
-			color: $offblack;
+
+		// swiper.js layout modifications:
+		.swiper-container {
+			margin: 0 auto;
+			padding: 4rem;
 		}
-		&:hover{
-			color: $offblack;	
+		.swiper-wrapper {
+
+			// use flexbox for vertical center 
+			-webkit-box-align: center;
+			-moz-box-align: center;
+			-ms-flex-align: center;
+			-webkit-align-items: center;
+			align-items: center;
 		}
-	}
-	.testimonials-grid-item-social-link-icon{
-		font-size: 2.4rem;
-	}
-	.testimonials-arrows{
-		display: none;
-	}
-	.testimonials-viewall{
-		text-decoration: none;
-		color: black;
-		text-transform: uppercase;
-		background-color: $blue;
-		padding: 15px 20px;
-		margin-top: 40px;
-		margin-bottom: 80px;
-		display: inline-block;
-	}
-	.testimonials-grid-item-youtubecontainer{
-		iframe, object, embed{
-			width: 100%;	
+		.swiper-button-next {
+			right: 0;
 		}
-	}
+		.swiper-button-prev {
+			left: 0;
+		}
 }
+@media only screen and (min-width: $medium) {
+	.testimonials-posts-post {
 
-@media only screen and (min-width: $medium){
+	}
 
-}
 
-@media only screen and (min-width: $large){
+	.testimonials-posts-post-placeholder {
+		max-width: 640px;
+		max-height: 480px;
+		margin: 0 auto;
+	}
+
+	.testimonials-posts-meta {
+		text-align: center;
+	}
+
+
 	
+	/* 
+		Hometestimonials Section;
+	*/
+		.swiper-container {
+			width: 80%;
+		}
+
+}
+@media only screen and (min-width: $large) {
+
+	.testimonials-header {
+		width: 75%;
+		font-size: 7rem;
+		margin-left: 25%;
+		margin-right: 0;
+	}
+
+	.testimonials-posts {
+		margin: 4rem auto;
+		margin-left: 5%;
+	}
+
+	.testimonials-posts-post {
+		display: inline-block;
+		padding: 2rem 0;
+		padding-top: 0;
+		width: 45%;
+		margin: 1rem;
+	}
+
+
+
+
 }

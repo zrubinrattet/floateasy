@@ -121,9 +121,10 @@
 		color: white;
 		border: none;
 		font-size: 1.5rem;
-		padding: 7px 10px;
+		padding: 11px 30px;
 		text-transform: uppercase;
-		margin-top: 2rem;
+		margin-top: 5px;
+		width: 100%;
 	}
 
 	/* 
@@ -145,14 +146,14 @@
 	.footer-social-links-item-link-icon {
 		@include centerer;
 		@include transition(color 0.3s ease);
-		font-size: 3.6rem;
+		font-size: 2.4rem;
 
 	}
 	.footer-social-links-item-link {
 		background: $blue;
 		border-radius: 50%;
-		width: 6.6rem;
-		height: 6.6rem;
+		width: 5.6rem;
+		height: 5.6rem;
 		margin: 0 1rem;
 		&:hover {
 			i {

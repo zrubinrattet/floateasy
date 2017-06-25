@@ -8,6 +8,7 @@
 	<div class="section-wrapper">
 	
 		<h1 class="homepricing-header section-header">Pricing</h1>
+		<h3 class="homepricing-subheader">(Can change your package up or down at any time)</h3>
 	
 
 		<div class="homepricing-member homepricing-module fade fade-up">

@@ -1,26 +1,43 @@
 <?php get_header(); ?>
+<section class="section page blog testimonials">
 
-<section class="section page blog testimonials-cpt">
-
-		<h1 class="section-header page-header"><?php post_type_archive_title( $prefix, true ); ?></h1>
+		<h1 class="section-header page-header testimonials-header"><?php post_type_archive_title(); ?></h1>
 			
 		<?php include locate_template('modules/subModules/blog-sidebar.php'); ?>
 		<?php 
 			$args = array(
-				'post_type' => 'testimonials_cpt',
+				'post_type' => 'testimonials',
 				'posts_per_page' => -1,
 			);
 			$posts = get_posts( $args );
 		 ?>
-		<div class="testimonials_cpt-posts blog-posts">
+		<div class="testimonials-posts blog-posts">
 
-			<?php if( !empty($posts) ) : foreach( $posts as $post ) : ?>
+			<?php if( !empty($posts) ) : 
+					foreach( $posts as $post ) : 
+						// it would be nice to have $term->taxonomy available here!
+						$customCats = get_the_terms( $post->ID, 'testimonial_categories' );
+			 ?>
 
-				<div class="testimonials_cpt-posts-post blog-posts-post">
-					<h1 class="testimonials_cpt-posts-title"><?php echo $post->post_title; ?></h1>
-					<div class="testimonials_cpt-posts-video">
+				<div class="testimonials-posts-post">
+					
+					<div class="testimonials-posts-meta">
+						<h1 class="testimonials-posts-meta-title"><?php echo $post->post_title; ?></h1>
+							<?php 
+								foreach ($customCats as $customCat) :
+									$customCatLink = get_term_link( $customCat, 'testimonial_categories' );
+							 ?>
+						<h3 class="testimonials-posts-meta-subtitle"><a href="<?php echo $customCatLink; ?>"><?php echo $customCat->name; ?></a></h3>
+
+							<?php endforeach; ?>
+					</div>
+						
+
+
+
+					<div class="testimonials-posts-video">
 						<?php
-							$placeholder = '<img class="testimonials_cpt-posts-post-placeholder" 
+							$placeholder = '<img class="testimonials-posts-post-placeholder" 
 													src="' . get_template_directory_uri() . '/library/img/placeholder.png" alt="">';
 							if ( !empty(get_field('youtube_link')) ) {
 								$iframe = get_field('youtube_link');
@@ -36,7 +53,7 @@
 								$new_src = add_query_arg($params, $src);
 								$iframe = str_replace($src, $new_src, $iframe);
 								// add extra attributes to iframe html + class for lazysizes.js
-								$attributes = 'frameborder="0" class="lazyload testimonials_cpt-posts-post-iframe"'. ' ' . 'data-src="' . $matches[1] . '"';
+								$attributes = 'frameborder="0" class="lazyload testimonials-posts-post-iframe"'. ' ' . 'data-src="' . $matches[1] . '"';
 								// cache modified iframe var
 								$iframe = str_replace('></iframe>', ' ' . $attributes . '></iframe>', $iframe);//
 								// echo $iframe

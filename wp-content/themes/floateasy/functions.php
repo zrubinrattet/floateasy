@@ -571,7 +571,7 @@ function register_testimonials_type() {
 			)
 	);
 
-	register_post_type( 'testimonials_cpt', $args );
+	register_post_type( 'testimonials', $args );
 }
 add_action( 'init', 'register_testimonials_type' );
 /*
@@ -607,7 +607,7 @@ function testimonial_categories() {
 		'query_var'         => true,
 		'capabilities'      => array(),
 	);
-	register_taxonomy( 'testimonial_categories', array( 'testimonials_cpt' ), $args );
+	register_taxonomy( 'testimonial_categories', array( 'testimonials' ), $args );
 }
 add_action( 'init', 'testimonial_categories' );
 
