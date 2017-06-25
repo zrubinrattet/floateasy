@@ -2729,6 +2729,7 @@ button.swiper-pagination-bullet {
     left: -5%;
     border-right: 1px solid lightgrey; }
     .blog-sidebar h2 {
+      display: inline-block;
       margin-top: 4rem;
       margin-bottom: 2rem;
       text-transform: uppercase;
