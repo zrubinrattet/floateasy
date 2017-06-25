@@ -31,8 +31,10 @@
 
 				foreach ( $posts as $post ) : 
 					$customCats = get_the_terms( $post->ID, 'testimonial_categories' );
+					
 				?>
 					<div class="testimonials-posts-post">
+
 						<div class="testimonials-posts-meta">
 							<h1 class="testimonials-posts-meta-title"><?php echo $post->post_title; ?></h1>
 								<?php 
