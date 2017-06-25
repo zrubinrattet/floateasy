@@ -18,8 +18,6 @@
 			// get the single post objects ID
 			$single_cpt_id = get_queried_object_id();
 
-			var_dump(get_queried_object());
-
 			global $post;
 			$args = array(
 				'post_type' => array('dreamscape_posts', 'testimonials'),
