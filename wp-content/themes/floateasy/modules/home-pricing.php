@@ -1,8 +1,3 @@
-
-<!-- 
-	Seriously?
-	BEM is out of control here man!
- -->
 <section class="homepricing section fade">
 	
 	<div class="section-wrapper">

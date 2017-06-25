@@ -82,7 +82,6 @@ var objectFitImages=function(){"use strict";function t(t){for(var e,r=getCompute
 			},
 			_dispatchEvent : function(){
 				$(document).trigger($.Event('breakpoint', {device: Breakpoint.name}));
-				console.log(Breakpoint._dispatchEvent);
 			}
 		}
 		Breakpoint._init();
@@ -412,6 +411,102 @@ var objectFitImages=function(){"use strict";function t(t){for(var e,r=getCompute
 			HomeTestimonialsSlider._init();
 		}
 
+		var PA = {
+			container : $('.pa.popupcontainer'),
+			_init : function(){
+				PA.container.click(PA._clickHandler);
+			},
+			_clickHandler : function(e){
+				e.preventDefault();
+
+				console.log($(e.target).attr('href'));
+
+				if($(e.target).hasClass('pa-content-button')){
+					// set cookie for 30 days
+					CookieMonster._setCookie('ad_set', 'active', 30, true);
+					CookieMonster._deleteCookie('ad_notset');
+					CookieMonster._deleteCookie('ad_firsttime');	
+					PA.container.off('click');
+					window.location.href = $(e.target).attr('href');
+				}					
+				PA._hidePA();	
+			},
+			_hidePA : function(){
+				PA.container.fadeOut(250);
+				if(CookieMonster._cookieExists('ad_set') == false){
+					// set cookie for 1 hr
+					CookieMonster._setCookie('ad_notset', 'active', 3600, false);
+					CookieMonster._listenCookieExpire('ad_notset', CookieMonster._firstTimeExpire);	
+				}
+			},
+			_showPA : function(){
+				if(PA.container.css('display') == 'none'){
+					PA.container.fadeIn(250);	
+				}
+			}
+		}
+
+		PA._init();
+
+		var CookieMonster = {
+			_init : function(){
+				// CookieMonster._deleteCookie('ad_firsttime');
+				// CookieMonster._deleteCookie('ad_set');
+				if(CookieMonster._cookieExists('ad_notset') == false && CookieMonster._cookieExists('ad_set') == false && CookieMonster._cookieExists('ad_firsttime') == false){
+					CookieMonster._setCookie('ad_firsttime', 'active', 30, false);
+				}
+				if(CookieMonster._cookieExists('ad_set') == false && CookieMonster._cookieExists('ad_notset') == false){
+					CookieMonster._listenCookieExpire('ad_firsttime', CookieMonster._firstTimeExpire);	
+				}
+			},
+			_listenCookieExpire : function(cookieName, callback) {
+			    var si = setInterval(function() {
+			        if (CookieMonster._cookieExists(cookieName) === false) {
+			        	clearInterval(si);
+		                return callback();
+			        } 
+			    }, 100);
+			},
+			_setCookie : function(cname,cvalue,ctime,days){
+				var d = new Date();
+				// if days is set to false use seconds
+				if(days == undefined || days){
+					days = true;
+					d.setTime(d.getTime() + (ctime*24*60*60*1000));
+				}
+				else if(days == false){
+					d.setTime(d.getTime() + (ctime*1000));
+				}			    
+			    var expires = "expires="+ d.toUTCString();
+			    document.cookie = cname + "=" + cvalue + "; " + expires;
+			},
+			_getCookieValue : function(cname){
+				var nameEQ = cname + "=";
+			    var ca = document.cookie.split(';');
+			    for (var i = 0; i < ca.length; i++) {
+			        var c = ca[i];
+			        while (c.charAt(0) == ' ') c = c.substring(1, c.length);
+			        if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length, c.length);
+			    }
+			    return null;
+			},
+			_cookieExists : function(cname){
+			    if (CookieMonster._getCookieValue(cname) != null) {
+			        return true;
+			    } 
+			    else {
+			        return false;
+			    }
+			},
+			_deleteCookie : function( name ) {
+				document.cookie = name + '=; expires=Thu, 01 Jan 1970 00:00:01 GMT;';
+			},
+			_firstTimeExpire : function(){
+				PA._showPA();
+			},
+		};
+
+		CookieMonster._init();
 
 
 	});
