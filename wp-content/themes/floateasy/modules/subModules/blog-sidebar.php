@@ -17,6 +17,10 @@
 			$myPostType = 'testimonials';
 		}
 	}
+	else if( is_date() ){
+		$myPostTax = 'category';
+		$myPostType = 'post';
+	}
 	else{
 		if( strpos($_SERVER['REQUEST_URI'], 'blog') !== false ){
 			$myPostType = 'post';

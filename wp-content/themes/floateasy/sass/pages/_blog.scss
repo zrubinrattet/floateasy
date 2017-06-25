@@ -38,11 +38,7 @@
 		margin: 2rem 0;
 		overflow: hidden;
 		box-shadow: 0 0 2rem transparentize(black, 0.33);
-		&:nth-child(odd) {
-			.blog-posts-post-content {
-				text-align: right;
-			}
-		}
+		
 	}
 	.blog-posts-post-image {
 		position: absolute;
@@ -83,6 +79,20 @@
 		margin-top: 7px;
 		color: transparentize($lightgrey, 0.33);
 	}
+	.blog-posts-post-categories{
+		margin-top: 10px;
+	}
+	a.blog-posts-post-categories-category{
+		font-size: 1.4rem;
+		color: white;
+		padding-right: 10px;
+		&:visited{
+			color: white;
+		}
+		&:hover{
+			color: #ddd;
+		}
+	}
 	.blog-sidebar {
 		position: relative;
 		width: 100%;
@@ -122,6 +132,15 @@
 	.blog-posts-post {
 		max-width: 360px;
 		max-height: 240px;
+		&:nth-child(odd) {
+			.blog-posts-post-content {
+				text-align: right;
+			}
+			.blog-posts-post-categories-category{
+				padding-left: 10px;
+				padding-right: 0px;
+			}
+		}
 	}
 	.blog-sidebar {
 		display: inline-block;

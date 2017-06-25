@@ -28,6 +28,8 @@
 					<!-- Post Thumbnail -->
 					<?php if( has_post_thumbnail() ): ?>
 						<img src="<?php the_post_thumbnail_url(); ?>" class="blog-posts-post-image">
+					<?php else: ?>
+						<img src="<?php echo get_template_directory_uri(); ?>/library/img/placeholder.png" class="blog-posts-post-image">
 					<?php endif; ?>
 					
 					<div class="blog-posts-post-content">

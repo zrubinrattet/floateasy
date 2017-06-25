@@ -3,6 +3,7 @@
 		margin: 2rem auto;
 		text-align: left;
 		display: inline-block;
+		width: 100%;
 	}
 	.searchform-label {
 		display: none;
@@ -11,6 +12,7 @@
 	.searchform-input {
 		width: calc(100% - 5.4rem);
 		padding: 5px;
+		border: 1px solid lightgrey;
 	}
 	.searchform-input,
 	input[type="submit"].searchform-submit {
@@ -28,7 +30,7 @@
 		font-family: 'fontawesome';
 		width: 4.4rem;
 		font-size: 2rem;
-
+		border: 1px solid transparent;
 	}
 
 	
@@ -42,6 +44,10 @@
 	}
 }
 @media only screen and (min-width: $medium) {
+
 }
 @media only screen and (min-width: $large) {
+	.searchform{
+		width: auto;
+	}
 }

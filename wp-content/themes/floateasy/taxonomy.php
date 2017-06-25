@@ -37,13 +37,17 @@
 
 						<div class="testimonials-posts-meta">
 							<h1 class="testimonials-posts-meta-title"><?php echo $post->post_title; ?></h1>
+							<h3 class="testimonials-posts-meta-subtitle">
 								<?php 
 									foreach ($customCats as $customCat) :
 										$customCatLink = get_term_link( $customCat, 'testimonial_categories' );
 								 ?>
-							<h3 class="testimonials-posts-meta-subtitle"><a href="<?php echo $customCatLink; ?>"><?php echo $customCat->name; ?></a></h3>
+
+								<a href="<?php echo $customCatLink; ?>"><?php echo $customCat->name; ?></a>
+
 
 								<?php endforeach; ?>
+								</h3>
 						</div>
 
 						<div class="testimonials-posts-video">

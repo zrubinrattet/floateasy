@@ -738,8 +738,13 @@ function add_acf_fields() {
 	// Testimonials CPT !!!!!!
 	acf_add_local_field_group(array(
 		'key' => 'group_a8s4ag81b28af1',
-		'title' => '<h1 style="text-align: center; text-transform: uppercase;">add/edit video testimonials</h1>',
+		'title' => 'Testimonial Settings',
 		'fields' => array (
+			array(
+				'key' => 'field_ndp98y12',
+				'label' => '<h1 style="text-align: center; text-transform: uppercase;">add/edit video testimonials</h1>',
+				'type' => 'message',
+			),
 			array (
 				'key' => 'field_fgf16ab65tjjgb',
 				'label' => 'Featured Testimonial?',

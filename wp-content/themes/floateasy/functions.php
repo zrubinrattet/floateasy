@@ -501,8 +501,8 @@ function register_dreamscapes_post_type() {
 		'show_ui'             => true,
 		'show_in_menu'        => true,
 		'show_in_admin_bar'   => true,
-		'menu_position'       => null,
-		'menu_icon'           => null,
+		'menu_position'       => 84,
+		'menu_icon'           => 'dashicons-visibility',
 		'show_in_nav_menus'   => true,
 		'publicly_queryable'  => true,
 		'exclude_from_search' => false,
@@ -513,7 +513,7 @@ function register_dreamscapes_post_type() {
 		'capability_type'     => 'post',
 		'supports'            => array(
 			'title', 'editor', 'author', 'thumbnail',
-			'revisions', 'page-attributes', 'post-formats'
+			'page-attributes', 'post-formats'
 			)
 	);
 
@@ -556,8 +556,8 @@ function register_testimonials_type() {
 		'show_ui'             => true,
 		'show_in_menu'        => true,
 		'show_in_admin_bar'   => true,
-		'menu_position'       => null,
-		'menu_icon'           => null,
+		'menu_position'       => 89,
+		'menu_icon'           => 'dashicons-format-video',
 		'show_in_nav_menus'   => true,
 		'publicly_queryable'  => true,
 		'exclude_from_search' => false,
@@ -567,7 +567,7 @@ function register_testimonials_type() {
 		'rewrite'             => true,
 		'capability_type'     => 'post',
 		'supports'            => array(
-			'title', 'thumbnail',
+			'title',
 			)
 	);
 
@@ -707,7 +707,7 @@ class Locations_Query{
 				
 				$latlong = $this->json_results->geometry->location;
 
-				foreach($this->query->posts as $post){
+				foreach($this->query->posts as $index => $post){
 					$post_meta = get_field('addresses-gmap', $post->ID);
 
 					// is a state search
@@ -731,6 +731,37 @@ class Locations_Query{
 					else{
 						if( $this->distance($latlong->lat, $latlong->lng, $post_meta['lat'], $post_meta['lng']) < get_field('locations-search-radius', 'option') ){
 							array_push($this->search_results, $post);
+						}
+					}
+
+					// if we're at the last post and there's less than 5 search results found
+					if( $index + 1 == count($this->query->posts) && count($this->search_results) < 5 ){
+						// sort all results by distance (nearest first)
+						$results = $this->query->posts;
+						usort($results, function($a, $b) use ($latlong){
+							$a_meta = get_field('addresses-gmap', $a->ID);
+							$b_meta = get_field('addresses-gmap', $b->ID);
+
+							if( $this->distance($latlong->lat, $latlong->lng, $a_meta['lat'], $a_meta['lng']) == $this->distance($latlong->lat, $latlong->lng, $b_meta['lat'], $b_meta['lng']) ){
+								return 0;
+							}
+							else{
+								if( $this->distance($latlong->lat, $latlong->lng, $a_meta['lat'], $a_meta['lng']) > $this->distance($latlong->lat, $latlong->lng, $b_meta['lat'], $b_meta['lng']) ){
+									return 1;
+								}
+								else{
+									return -1;
+								}
+							}
+						});
+						// add the next closest results to search results and cap it at 5 results
+						foreach( $results as $result ){
+							if( !in_array($result, $this->search_results) ){
+								array_push($this->search_results, $result);
+							}
+							if( count($this->search_results) == 5 ){
+								break;
+							}
 						}
 					}
 				}
@@ -775,9 +806,4 @@ class Locations_Query{
 	}
 }
 
-/*
-
-	end functions.php
-
-*/
 ?>

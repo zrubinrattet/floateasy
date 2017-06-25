@@ -1,17 +1,18 @@
 <?php get_header(); ?>
 <section class="section page blog testimonials">
 
-		<h1 class="section-header page-header testimonials-header"><?php post_type_archive_title(); ?></h1>
 			
 		<?php include locate_template('modules/subModules/blog-sidebar.php'); ?>
 		<?php 
 			$args = array(
 				'post_type' => 'testimonials',
 				'posts_per_page' => -1,
+				's' => isset($_GET['sq']) ? $_GET['sq'] : '',
 			);
 			$posts = get_posts( $args );
 		 ?>
 		<div class="testimonials-posts blog-posts">
+			<h1 class="section-header page-header testimonials-header"><?php post_type_archive_title(); ?></h1>
 
 			<?php if( !empty($posts) ) : 
 					foreach( $posts as $post ) : 
@@ -23,13 +24,16 @@
 					
 					<div class="testimonials-posts-meta">
 						<h1 class="testimonials-posts-meta-title"><?php echo $post->post_title; ?></h1>
+						<h3 class="testimonials-posts-meta-subtitle">
 							<?php 
 								foreach ($customCats as $customCat) :
 									$customCatLink = get_term_link( $customCat, 'testimonial_categories' );
 							 ?>
-						<h3 class="testimonials-posts-meta-subtitle"><a href="<?php echo $customCatLink; ?>"><?php echo $customCat->name; ?></a></h3>
+
+							<a href="<?php echo $customCatLink; ?>"><?php echo $customCat->name; ?></a>
 
 							<?php endforeach; ?>
+							</h3>
 					</div>
 						
 
