@@ -14,10 +14,19 @@
 		 ?>
 		<div class="testimonials-posts blog-posts">
 
-			<?php if( !empty($posts) ) : foreach( $posts as $post ) : ?>
+			<?php if( !empty($posts) ) : 
+					foreach( $posts as $post ) : 
+						// it would be nice to have $term->taxonomy available here!
+						$customCats = get_the_terms( $post->ID, 'testimonial_categories' );
+			 ?>
 
 				<div class="testimonials-posts-post blog-posts-post">
+
 					<h1 class="testimonials-posts-title"><?php echo $post->post_title; ?></h1>
+
+					<h3 class="testimonials-posts-subtitle"><?php foreach ( $customCats as $customCat ) { echo $customCat->name; } ?></h3>
+
+
 					<div class="testimonials-posts-video">
 						<?php
 							$placeholder = '<img class="testimonials-posts-post-placeholder" 
