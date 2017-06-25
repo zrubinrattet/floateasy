@@ -160,7 +160,7 @@ footer, header, hgroup, menu, nav, section, img {
 @media only screen and (min-width: 1025px) {
   .section {
     padding: 80px 40px;
-    min-height: 100vh; }
+    min-height: 50vh; }
 
   .section-wrapper {
     max-width: 1440px;
@@ -2491,13 +2491,15 @@ button.swiper-pagination-bullet {
     width: auto;
     margin: 0 auto; }
 
-  .testimonials-posts .testimonials-posts-post {
-    margin: 4rem auto;
-    padding: 4rem 0;
-    width: 100%;
-    background: rgba(245, 245, 245, 0.5); }
-  .testimonials-posts .testimonials-posts-post:nth-child(odd) {
-    background: #F5F5F5; }
+  .testimonials-posts {
+    font-size: 0; }
+    .testimonials-posts .testimonials-posts-post {
+      background: rgba(245, 245, 245, 0.5); }
+    .testimonials-posts .testimonials-posts-post:nth-child(odd) {
+      background: #F5F5F5; }
+
+  .testimonials-posts-post {
+    margin: 4rem 1rem; }
 
   .testimonials-posts-meta {
     text-align: left;
@@ -2528,12 +2530,11 @@ button.swiper-pagination-bullet {
     height: 100%;
     object-fit: cover; }
     .testimonials-posts-video iframe {
-      min-height: 360px; }
+      min-height: 260px; }
 
-  /* 
-  	Home Testimonials
+  /* 	Home Testimonials
   		Move to its own SCSS file; but for now its good to see these 'linked' modules together
-   */
+  */
   .hometestimonials-section {
     padding: 4rem 0; }
 
@@ -2571,22 +2572,19 @@ button.swiper-pagination-bullet {
   .swiper-button-prev {
     left: 0; } }
 @media only screen and (min-width: 641px) {
-  .testimonials-posts-post {
-    display: inline-block; }
-
-  /* 
-  	Hometestimonials Section;
-  */
-  .swiper-container {
-    width: 80%; }
-
   .testimonials-posts-post-placeholder {
     max-width: 640px;
     max-height: 480px;
     margin: 0 auto; }
 
   .testimonials-posts-meta {
-    text-align: center; } }
+    text-align: center; }
+
+  /* 
+  	Hometestimonials Section;
+  */
+  .swiper-container {
+    width: 80%; } }
 @media only screen and (min-width: 1025px) {
   .testimonials-header {
     width: 75%;
@@ -2599,7 +2597,11 @@ button.swiper-pagination-bullet {
     margin-left: 5%; }
 
   .testimonials-posts-post {
-    margin: 4rem auto; } }
+    display: inline-block;
+    padding: 2rem 0;
+    padding-top: 0;
+    width: 45%;
+    margin: 1rem; } }
 @media only screen {
   .pricing-wrapper {
     max-width: 1600px;
@@ -3349,18 +3351,23 @@ button.swiper-pagination-bullet {
   .single-single-content {
     line-height: 2.8rem; } }
 @media only screen and (min-width: 641px) {
+  .single-single,
   .single-hero {
+    position: relative;
     top: 74px; } }
 @media only screen and (min-width: 1025px) {
   .single-hero {
     min-height: 450px; }
 
   .single-hero-header {
-    font-size: 7.2rem; }
+    font-size: 7.2rem;
+    text-align: center;
+    width: 80%;
+    margin: 0 auto; }
 
   .single-single {
     padding: 40px 60px;
-    margin: 0 auto;
+    margin: 4rem auto;
     max-width: 1024px; } }
 @media only screen {
   .dreamscapes {
@@ -3428,13 +3435,15 @@ button.swiper-pagination-bullet {
     width: auto;
     margin: 0 auto; }
 
-  .testimonials-posts .testimonials-posts-post {
-    margin: 4rem auto;
-    padding: 4rem 0;
-    width: 100%;
-    background: rgba(245, 245, 245, 0.5); }
-  .testimonials-posts .testimonials-posts-post:nth-child(odd) {
-    background: #F5F5F5; }
+  .testimonials-posts {
+    font-size: 0; }
+    .testimonials-posts .testimonials-posts-post {
+      background: rgba(245, 245, 245, 0.5); }
+    .testimonials-posts .testimonials-posts-post:nth-child(odd) {
+      background: #F5F5F5; }
+
+  .testimonials-posts-post {
+    margin: 4rem 1rem; }
 
   .testimonials-posts-meta {
     text-align: left;
@@ -3465,12 +3474,11 @@ button.swiper-pagination-bullet {
     height: 100%;
     object-fit: cover; }
     .testimonials-posts-video iframe {
-      min-height: 360px; }
+      min-height: 260px; }
 
-  /* 
-  	Home Testimonials
+  /* 	Home Testimonials
   		Move to its own SCSS file; but for now its good to see these 'linked' modules together
-   */
+  */
   .hometestimonials-section {
     padding: 4rem 0; }
 
@@ -3508,22 +3516,19 @@ button.swiper-pagination-bullet {
   .swiper-button-prev {
     left: 0; } }
 @media only screen and (min-width: 641px) {
-  .testimonials-posts-post {
-    display: inline-block; }
-
-  /* 
-  	Hometestimonials Section;
-  */
-  .swiper-container {
-    width: 80%; }
-
   .testimonials-posts-post-placeholder {
     max-width: 640px;
     max-height: 480px;
     margin: 0 auto; }
 
   .testimonials-posts-meta {
-    text-align: center; } }
+    text-align: center; }
+
+  /* 
+  	Hometestimonials Section;
+  */
+  .swiper-container {
+    width: 80%; } }
 @media only screen and (min-width: 1025px) {
   .testimonials-header {
     width: 75%;
@@ -3536,6 +3541,10 @@ button.swiper-pagination-bullet {
     margin-left: 5%; }
 
   .testimonials-posts-post {
-    margin: 4rem auto; } }
+    display: inline-block;
+    padding: 2rem 0;
+    padding-top: 0;
+    width: 45%;
+    margin: 1rem; } }
 
 /*# sourceMappingURL=build.css.map */

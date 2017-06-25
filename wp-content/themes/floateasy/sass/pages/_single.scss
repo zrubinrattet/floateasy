@@ -43,7 +43,9 @@
 
 @media only screen and (min-width: $medium){
 
+	.single-single,
 	.single-hero {
+		position: relative;
 		top: 74px;
 	}
 
@@ -55,10 +57,13 @@
 	}
 	.single-hero-header{
 		font-size: 7.2rem;
+		text-align: center;
+		width: 80%;
+		margin: 0 auto;
 	}
 	.single-single{
 		padding: 40px 60px;
-		margin: 0 auto;
+		margin: 4rem auto;
 		max-width: 1024px;
 	}
 }
