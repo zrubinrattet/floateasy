@@ -29,7 +29,14 @@
 		<script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
 		<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
 	</head>
-	<body>
+	<?php 
+		global $post;
+		$extra_body_class = '';
+		if( $post->post_name == 'book-an-appointment' ){
+			$extra_body_class = $post->post_name;
+		}
+	?>
+	<body<?php echo $extra_body_class == '' ? '' : ' class="' . $extra_body_class . '"' ?>>
 		
 		<?php get_template_part('partials/navigation/nav', 'desktop'); ?>
 		<?php get_template_part('partials/navigation/nav', 'mobile'); ?>
