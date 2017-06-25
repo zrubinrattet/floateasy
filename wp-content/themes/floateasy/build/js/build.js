@@ -54,13 +54,72 @@ var objectFitImages=function(){"use strict";function t(t){for(var e,r=getCompute
 
 	$(document).ready(function(){
 		
+
+
+
+
+		/*
+			Breakpoints
+		*/
+		var Breakpoint = {
+			name : '',
+			_init : function(){
+				$(window).on('resize load', Breakpoint._resizeLoadHander);
+			},
+			_resizeLoadHander : function(){
+				if( $(window).width() > 1024 && Breakpoint.name != 'desktop' ){
+					Breakpoint.name = 'desktop';
+					Breakpoint._dispatchEvent();
+				}
+				else if( $(window).width() <= 1024 && $(window).width() > 640 && Breakpoint.name != 'tablet' ){
+					Breakpoint.name = 'tablet';	
+					Breakpoint._dispatchEvent();
+				}
+				else if( $(window).width() < 641 && Breakpoint.name != 'mobile' ){		
+					Breakpoint.name = 'mobile';		
+					Breakpoint._dispatchEvent();
+				}
+			},
+			_dispatchEvent : function(){
+				$(document).trigger($.Event('breakpoint', {device: Breakpoint.name}));
+				console.log(Breakpoint._dispatchEvent);
+			}
+		}
+		Breakpoint._init();
+
+		// $(document).on('breakpoint', function(e){
+		// 	// run this code on page load or whenever you enter a new breakpoint
+		// 	if(e.device == 'desktop'){
+
+		// 	}
+		// 	if(e.device !== 'tablet'){
+				
+		// 	}
+		// });
+
 		/*
 			Swiper
 		*/
 
 		var mySwiper = new Swiper('.swiper-container', {
-			
+			centeredSlides: true,
+			slidesPerView: 1,
+			grabCursor: true,
+
+			pagination: '.swiper-pagination',
+			nextButton: '.swiper-button-next',
+			prevButton: '.swiper-button-prev',
+			paginationClickable: true,
+
+			spaceBetween: 100,
+
+			loop: true,
+
+			preloadImages: false,
+			lazyLoading: true,
 		});
+
+
 
 		/*
 			FAQ Accordions:

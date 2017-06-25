@@ -11,7 +11,7 @@
 		}
 
 		// show dreamscapes CPTs
-		if (is_singular( array('dreamscape_posts', 'testimonials_cpt') )) :
+		if (is_singular( array('dreamscape_posts', 'testimonials') )) :
 
 			// get the single post object
 			$single_cpt_ = get_queried_object();
@@ -22,7 +22,7 @@
 
 			global $post;
 			$args = array(
-				'post_type' => array('dreamscape_posts', 'testimonials_cpt'),
+				'post_type' => array('dreamscape_posts', 'testimonials'),
 				'p' => $single_cpt_id,
 			);
 			$posts = get_posts( $args );

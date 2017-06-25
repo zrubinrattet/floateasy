@@ -1,25 +1,45 @@
-<!-- WP_Query All Posts (not CPTs) -->
+<!-- 
+	WP_Query All Posts (not CPTs) 
+-->
 <?php 
+	
+	$myPostType = '';
+	$myPostTax = '';
+
+	if( strpos($_SERVER['REQUEST_URI'], 'blog') !== false ){
+		$myPostType = 'post';
+		$myPostTax = 'category';
+	}
+	if( strpos($_SERVER['REQUEST_URI'], 'testimonials') !== false ){
+		$myPostType = 'testimonials';
+		$myPostTax = 'testimonial_categories';
+	}
+
+	// 
 	$the_query = new WP_Query(array(
-		'post_type' => 'post',
+		'post_type' => $myPostType,
 		'posts_per_page' => -1,
 		'orderby' => 'date',
 		'order' => 'DESC',
 	));
 	if($the_query->have_posts()) {
 
+		// args for get_terms
 		$args = array(
 			'hide_empty' => 1,
-			'exclude' => 1,  // uncategoried
+			'exclude' => 1,  // hide uncategorized
 		);
-		$categories = get_categories($args);
+		$categories = get_terms( $myPostTax, $args );
 
+		// args for get_posts
 		$args = array(
 			'posts_per_page' => -1,
 		);
 		$posts = get_posts($args);
 	}
 ?>
+
+
 <ul class="blog-sidebar">
 	
 	<?php get_search_form( $echo = true ); ?>
@@ -32,14 +52,16 @@
 	
 	<h2>Archive</h2>
 	<?php 
-		wp_get_archives(array(
-			'type' => 'monthly',
-			'limit' => 6,
-			'show_post_count' => 1,
-			'format' => 'custom',
-			'before' => '<li class="fade fade-up">',
-			'after' => '</li>' )
-		);
+		if ($myPostType == 'post') {
+			wp_get_archives(array(
+				'type' => 'monthly',
+				'limit' => 6,
+				'show_post_count' => 1,
+				'format' => 'custom',
+				'before' => '<li class="fade fade-up">',
+				'after' => '</li>' )
+			);
+		}
 	?>
 	
 </ul>
