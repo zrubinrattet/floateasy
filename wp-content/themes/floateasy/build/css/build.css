@@ -3312,10 +3312,16 @@ button.swiper-pagination-bullet {
     position: relative;
     min-height: 300px;
     padding-top: 120px;
-    top: 45px;
     background-size: cover;
     background-repeat: no-repeat;
-    background-position: 50% 50%; }
+    background-position: 50% 50%;
+    text-align: center; }
+
+  .single-hero,
+  .single-single,
+  .single-footer {
+    position: relative;
+    top: 45px; }
 
   .single-hero-tint {
     position: absolute;
@@ -3349,7 +3355,12 @@ button.swiper-pagination-bullet {
     padding-bottom: 20px; }
 
   .single-single-content {
-    line-height: 2.8rem; } }
+    line-height: 2.8rem; }
+
+  .single-hero-header {
+    text-align: center;
+    width: 80%;
+    margin: 0 auto; } }
 @media only screen and (min-width: 641px) {
   .single-single,
   .single-hero {
@@ -3360,10 +3371,7 @@ button.swiper-pagination-bullet {
     min-height: 450px; }
 
   .single-hero-header {
-    font-size: 7.2rem;
-    text-align: center;
-    width: 80%;
-    margin: 0 auto; }
+    font-size: 7.2rem; }
 
   .single-single {
     padding: 40px 60px;

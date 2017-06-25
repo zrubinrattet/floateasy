@@ -46,4 +46,5 @@
 	 ?>
 </div>
 
-<?php get_footer(); ?>
+
+<div class="single-footer"><?php get_footer(); ?></div>
