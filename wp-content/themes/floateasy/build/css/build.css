@@ -1943,7 +1943,13 @@ button.swiper-pagination-bullet {
   input[type="submit"].searchform-submit {
     font-family: 'fontawesome';
     width: 4.4rem;
-    font-size: 2rem; } }
+    font-size: 2rem; }
+
+  input.searchform-input {
+    -webkit-appearance: textfield; }
+
+  input.searchform-submit {
+    -webkit-appearance: button; } }
 @media only screen {
   .hero {
     height: 100vh;
@@ -2485,7 +2491,14 @@ button.swiper-pagination-bullet {
     width: auto;
     margin: 0 auto; }
 
-  .testimonials-posts-title {
+  .testimonials-posts-meta {
+    text-align: left;
+    font-size: 100%; }
+
+  .testimonials-posts-meta-title {
+    font-size: 2.6rem; }
+
+  .testimonials-posts-meta-subtitle {
     font-size: 2rem; }
 
   .testimonials-posts-post-placeholder {
@@ -2641,8 +2654,7 @@ button.swiper-pagination-bullet {
   .blog-posts-categories {
     text-align: center;
     margin: 4rem auto;
-    padding: 2rem 0;
-    box-shadow: inset 0 0 1rem rgba(46, 40, 42, 0.2); }
+    padding: 2rem 0; }
     .blog-posts-categories:nth-of-type(odd) {
       background: #F5F5F5; }
     .blog-posts-categories:nth-of-type(even) {
@@ -2734,15 +2746,15 @@ button.swiper-pagination-bullet {
   .blog {
     width: 90%;
     max-width: 1440px;
-    margin: 0 auto;
+    margin: 8rem auto;
     font-size: 0; }
 
   .category-posts,
   .blog-posts {
     text-align: center;
-    width: 75%;
+    width: 70%;
     margin: 0 auto;
-    padding: 4rem 0;
+    margin-left: 5%;
     display: inline-block;
     vertical-align: top; }
 
@@ -3390,7 +3402,14 @@ button.swiper-pagination-bullet {
     width: auto;
     margin: 0 auto; }
 
-  .testimonials-posts-title {
+  .testimonials-posts-meta {
+    text-align: left;
+    font-size: 100%; }
+
+  .testimonials-posts-meta-title {
+    font-size: 2.6rem; }
+
+  .testimonials-posts-meta-subtitle {
     font-size: 2rem; }
 
   .testimonials-posts-post-placeholder {

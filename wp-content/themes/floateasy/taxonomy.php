@@ -29,9 +29,13 @@
 				$posts = get_posts($args);
 
 
-				foreach ( $posts as $post ) :?>
+				foreach ( $posts as $post ) : 
+					$customCats = get_the_terms( $post->ID, 'testimonial_categories' );
+				?>
 					<div class="testimonials-posts-post blog-posts-post">
 						<h1 class="testimonials-posts-title"><?php echo $post->post_title; ?></h1>
+						<h3 class="testimonials-posts-subtitle"><?php foreach ( $customCats as $customCat ) { echo $customCat->name; } ?></h3>
+						
 						<div class="testimonials-posts-video">
 							<?php
 								$placeholder = '<img class="testimonials-posts-post-placeholder" 

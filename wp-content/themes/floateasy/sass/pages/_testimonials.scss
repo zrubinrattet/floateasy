@@ -8,9 +8,20 @@
 	}
 	.testimonials-posts-post {
 	}
-	.testimonials-posts-title{
+	
+
+
+	.testimonials-posts-meta {
+		text-align: left;
+		font-size: 100%;
+	}
+	.testimonials-posts-meta-title{
+		font-size: 2.6rem;
+	}
+	.testimonials-posts-meta-subtitle {
 		font-size: 2rem;
 	}
+
 	.testimonials-posts-post-placeholder {
 		width: 100%;
 		height: 100%;
@@ -24,6 +35,15 @@
 		height: 100%;
 		object-fit: cover;
 	}
+
+
+
+
+
+
+
+
+
 	/* 
 		Home Testimonials
 			Move to its own SCSS file; but for now its good to see these 'linked' modules together

@@ -20,10 +20,19 @@
 			 ?>
 
 				<div class="testimonials-posts-post blog-posts-post">
+					
+					<div class="testimonials-posts-meta">
+						<h1 class="testimonials-posts-meta-title"><?php echo $post->post_title; ?></h1>
+							<?php 
+								foreach ($customCats as $customCat) :
+									$customCatLink = get_term_link( $customCat, 'testimonial_categories' ); 	
+							 ?>
+						<a href="<?php echo $customCatLink; ?>"><h3 class="testimonials-posts-meta-subtitle"><?php echo $customCat->name; ?></h3></a>
 
-					<h1 class="testimonials-posts-title"><?php echo $post->post_title; ?></h1>
+							<?php endforeach; ?>
+					</div>
+						
 
-					<h3 class="testimonials-posts-subtitle"><?php foreach ( $customCats as $customCat ) { echo $customCat->name; } ?></h3>
 
 
 					<div class="testimonials-posts-video">
