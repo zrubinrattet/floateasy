@@ -1914,10 +1914,15 @@ button.swiper-pagination-bullet {
     display: none; } }
 @media only screen {
   .searchform {
-    margin: 2rem auto; }
+    margin: 2rem auto;
+    text-align: left;
+    display: inline-block; }
 
   .searchform-label {
     display: none; }
+
+  .searchform-input {
+    width: calc(100% - 5.4rem); }
 
   .searchform-input,
   input[type="submit"].searchform-submit {
