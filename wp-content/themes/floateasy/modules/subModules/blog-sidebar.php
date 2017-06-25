@@ -10,6 +10,12 @@
 	if( is_tax() || is_category() ){
 		$term = get_queried_object();
 		$myPostTax = $term->taxonomy;
+		if( $term->taxonomy == 'category' ){
+			$myPostType = 'post';
+		}
+		else{
+			$myPostType = 'testimonials';
+		}
 	}
 	else{
 		if( strpos($_SERVER['REQUEST_URI'], 'blog') !== false ){
@@ -74,9 +80,3 @@
 	?>
 	
 </ul>
-
-
-<!-- not sure if i need this but i think it cant hurt -->
-<?php 
-	wp_reset_postdata();
- ?>

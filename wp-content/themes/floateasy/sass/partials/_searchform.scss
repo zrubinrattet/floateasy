@@ -28,6 +28,17 @@
 		font-family: 'fontawesome';
 		width: 4.4rem;
 		font-size: 2rem;
+
+	}
+
+	
+	// fix the appearance on macs
+	input.searchform-input {
+		-webkit-appearance: textfield;
+	}
+	input.searchform-submit {
+		-webkit-appearance: button;
+		
 	}
 }
 @media only screen and (min-width: $medium) {

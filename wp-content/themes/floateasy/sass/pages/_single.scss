@@ -4,10 +4,17 @@
 		position: relative;
 		min-height: 300px;
 		padding-top: 120px;
-		top: 45px;
 		background-size: cover;
 		background-repeat: no-repeat;
 		background-position: 50% 50%;
+		text-align: center;
+	}
+
+	.single-hero,
+	.single-single,
+	.single-footer {
+		position: relative;
+		top: 45px;
 	}
 	.single-hero-tint{
 		position: absolute;
@@ -39,11 +46,19 @@
 	.single-single-content{
 		line-height: 2.8rem;
 	}
+
+	.single-hero-header {
+		text-align: center;
+		width: 80%;
+		margin: 0 auto;
+	}
 }
 
 @media only screen and (min-width: $medium){
 
+	.single-single,
 	.single-hero {
+		position: relative;
 		top: 74px;
 	}
 
@@ -58,7 +73,7 @@
 	}
 	.single-single{
 		padding: 40px 60px;
-		margin: 0 auto;
+		margin: 4rem auto;
 		max-width: 1024px;
 	}
 }

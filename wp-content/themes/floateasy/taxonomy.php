@@ -1,27 +1,21 @@
 <?php get_header(); ?>
-
 	<section class="section page category">
-
 		<?php 
 			include locate_template('modules/subModules/blog-sidebar.php'); 
 			$term = get_queried_object();
 		?>
-		
+
 		<div class="blog-posts testimonials-posts">
 			<h1 class="section-header page-header category-header"><?php echo $term->name; ?></h1>
 			
-
 			<?php 
-
 				$post_type = '';
-
 				if( $term->taxonomy == 'category' ){
 					$post_type = 'post';
 				}
 				else{
 					$post_type = 'testimonials';
 				}
-
 				$args = array(
 					'post_type' => $post_type,
 					'tax_query' => array(
@@ -32,12 +26,26 @@
 						)
 					),
 				);
-
 				$posts = get_posts($args);
 
-				foreach ( $posts as $post ) :?>
-					<div class="testimonials-posts-post blog-posts-post">
-						<h1 class="testimonials-posts-title"><?php echo $post->post_title; ?></h1>
+
+				foreach ( $posts as $post ) : 
+					$customCats = get_the_terms( $post->ID, 'testimonial_categories' );
+					
+				?>
+					<div class="testimonials-posts-post">
+
+						<div class="testimonials-posts-meta">
+							<h1 class="testimonials-posts-meta-title"><?php echo $post->post_title; ?></h1>
+								<?php 
+									foreach ($customCats as $customCat) :
+										$customCatLink = get_term_link( $customCat, 'testimonial_categories' );
+								 ?>
+							<h3 class="testimonials-posts-meta-subtitle"><a href="<?php echo $customCatLink; ?>"><?php echo $customCat->name; ?></a></h3>
+
+								<?php endforeach; ?>
+						</div>
+
 						<div class="testimonials-posts-video">
 							<?php
 								$placeholder = '<img class="testimonials-posts-post-placeholder" 
