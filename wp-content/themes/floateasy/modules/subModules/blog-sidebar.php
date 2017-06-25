@@ -50,9 +50,11 @@
 		<li class="fade fade-up"><a href="<?php echo get_category_link( $category ); ?>"><?php echo $category->name; ?></a></li>
 	<?php endforeach; ?>
 	
-	<h2>Archive</h2>
 	<?php 
 		if ($myPostType == 'post') {
+
+			echo '<h2>Archive</h2>';
+
 			wp_get_archives(array(
 				'type' => 'monthly',
 				'limit' => 6,
