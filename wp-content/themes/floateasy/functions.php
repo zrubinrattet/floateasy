@@ -193,7 +193,18 @@ function setup_editor_admin(){
 
     if ( array_intersect($allowed_roles, $user->roles ) ) {
 		$user->add_cap('gform_full_access');
-		remove_menu_page( 'edit.php?post_type=page' );
+		$user->add_cap('edit_theme_options');
+
+		// Hide theme selection page
+	    remove_submenu_page( 'themes.php', 'themes.php' );
+	 
+	    // Hide widgets page
+	    remove_submenu_page( 'themes.php', 'widgets.php' );
+	 
+	    // Hide customize page
+	    global $submenu;
+	    unset($submenu['themes.php'][6]);
+
 		remove_menu_page( 'tools.php' );
 		remove_menu_page( 'profile.php' );
 		remove_menu_page( 'edit-comments.php' );

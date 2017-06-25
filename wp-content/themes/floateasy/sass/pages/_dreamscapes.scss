@@ -4,13 +4,12 @@
 		max-width: none;
 		text-align: center;
 		width: 100%;
-		padding: 4rem 0;
-		margin: 4rem auto;
+		padding: 4rem 0 0 0;
+		margin: 4rem auto 0 auto;
 	}
 
 	.dreamscapes-posts-post {
 		background-size: cover;
-		box-shadow: 0 0 1rem transparentize($offblack, 0.5);
 	}
 	.dreamscapes-post-content {
 		text-align: center !important;
@@ -23,7 +22,7 @@
 		background-size: cover;
 	}
 	.dreamscapes-main {
-		margin: 4rem auto;
+		margin: 4rem auto 0 auto;
 		margin-top: 0;
 		width: 100%;
 	}
@@ -51,6 +50,15 @@
 		display: inline-block;
 		border-radius: 2rem 0;
 	}
+	.dreamscapes-posts{
+		margin: 0 40px;
+		padding: 4rem 0;
+	}
+	.dreamscapes-post-content{
+		a{
+			border-bottom: none;
+		}
+	}
 
 }
 @media only screen and (min-width: $medium){
@@ -58,14 +66,17 @@
 
 	.dreamscapes-posts {
 		padding: 2rem;
-		width: 75%;
+		width: 100%;
+		font-size: 0;
 		margin: 0 auto;
-
+		max-width: $medium;
 	}
 	.dreamscapes-posts-post {
-		max-width: 240px;
+		width: calc(50% - 4rem);
 		max-height: 240px;
-		margin: 2rem 4rem;
+		max-width: none;
+		margin: 2rem;
+		display: inline-block;
 	}
 
 
@@ -73,14 +84,10 @@
 
 }
 @media only screen and (min-width: $large){
-
-
-	.dreamscapes {
-		// max-width: 1440px;
+	.dreamscapes-posts{
+		max-width: $large;
 	}
-
-
-
-
-
+	.dreamscapes-posts-post{
+		width: calc(calc(100% / 3) - 4rem);
+	}
 }

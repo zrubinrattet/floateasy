@@ -32,11 +32,11 @@
 	<nav class="header-fixed">
 		<div class="header-fixed-book header-fixed-collapsed">
 			<i class="fa fa-book"></i>
-			<a href="<?php the_field('book-appointment-url', 'option'); ?>">Book Appointment</a>
+			<a href="<?php echo site_url('/book-an-appointment/'); ?>">Book Appointment</a>
 		</div>
 		<div class="header-fixed-tel header-fixed-collapsed">
 			<i class="fa fa-phone"></i>
-			<a href="tel:18552223279"><?php echo get_the_phone(); ?></a>
+			<a href="tel:<?php the_field('hq-phone-number-for-url', 'option') ?>"><?php echo get_the_phone(); ?></a>
 		</div>
 	</nav>
 </header>

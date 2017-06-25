@@ -2652,8 +2652,7 @@ button.swiper-pagination-bullet {
   .hometestimonials-section-slide {
     padding: 2rem;
     text-align: center;
-    overflow: hidden;
-    box-shadow: 0 0 1rem rgba(46, 40, 42, 0.5); }
+    overflow: hidden; }
 
   .hometestimonials-section-slide-header {
     font-weight: 700;
@@ -2707,7 +2706,10 @@ button.swiper-pagination-bullet {
     padding: 2rem 0;
     padding-top: 0;
     width: 45%;
-    margin: 1rem; } }
+    margin: 1rem; }
+
+  .hometestimonials-section {
+    padding: 8rem 0; } }
 @media only screen {
   .pricing-wrapper {
     max-width: 1600px;
@@ -3498,12 +3500,11 @@ button.swiper-pagination-bullet {
     max-width: none;
     text-align: center;
     width: 100%;
-    padding: 4rem 0;
-    margin: 4rem auto; }
+    padding: 4rem 0 0 0;
+    margin: 4rem auto 0 auto; }
 
   .dreamscapes-posts-post {
-    background-size: cover;
-    box-shadow: 0 0 1rem rgba(46, 40, 42, 0.5); }
+    background-size: cover; }
 
   .dreamscapes-post-content {
     text-align: center !important; }
@@ -3515,7 +3516,7 @@ button.swiper-pagination-bullet {
     background-size: cover; }
 
   .dreamscapes-main {
-    margin: 4rem auto;
+    margin: 4rem auto 0 auto;
     margin-top: 0;
     width: 100%; }
 
@@ -3543,17 +3544,34 @@ button.swiper-pagination-bullet {
     background: rgba(46, 40, 42, 0.5);
     padding: 4rem 8rem;
     display: inline-block;
-    border-radius: 2rem 0; } }
+    border-radius: 2rem 0; }
+
+  .dreamscapes-posts {
+    margin: 0 40px;
+    padding: 4rem 0; }
+
+  .dreamscapes-post-content a {
+    border-bottom: none; } }
 @media only screen and (min-width: 641px) {
   .dreamscapes-posts {
     padding: 2rem;
-    width: 75%;
-    margin: 0 auto; }
+    width: 100%;
+    font-size: 0;
+    margin: 0 auto;
+    max-width: 641px; }
 
   .dreamscapes-posts-post {
-    max-width: 240px;
+    width: calc(50% - 4rem);
     max-height: 240px;
-    margin: 2rem 4rem; } }
+    max-width: none;
+    margin: 2rem;
+    display: inline-block; } }
+@media only screen and (min-width: 1025px) {
+  .dreamscapes-posts {
+    max-width: 1025px; }
+
+  .dreamscapes-posts-post {
+    width: calc(calc(100% / 3) - 4rem); } }
 @media only screen {
   .book-an-appointment .section-header {
     font-size: 3.6rem; }
@@ -3670,8 +3688,7 @@ button.swiper-pagination-bullet {
   .hometestimonials-section-slide {
     padding: 2rem;
     text-align: center;
-    overflow: hidden;
-    box-shadow: 0 0 1rem rgba(46, 40, 42, 0.5); }
+    overflow: hidden; }
 
   .hometestimonials-section-slide-header {
     font-weight: 700;
@@ -3725,6 +3742,9 @@ button.swiper-pagination-bullet {
     padding: 2rem 0;
     padding-top: 0;
     width: 45%;
-    margin: 1rem; } }
+    margin: 1rem; }
+
+  .hometestimonials-section {
+    padding: 8rem 0; } }
 
 /*# sourceMappingURL=build.css.map */

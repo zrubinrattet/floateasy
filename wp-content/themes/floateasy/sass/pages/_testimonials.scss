@@ -58,7 +58,6 @@
 			padding: 2rem;
 			text-align: center;
 			overflow: hidden;
-			box-shadow: 0 0 1rem transparentize( $offblack, 0.5 );
 		}
 		.hometestimonials-section-slide-header {
 			font-weight: 700;
@@ -135,7 +134,9 @@
 		margin: 1rem;
 	}
 
-
+	.hometestimonials-section { // top-level for the module;
+		padding: 8rem 0;
+	}
 
 
 }
