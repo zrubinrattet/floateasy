@@ -5,8 +5,16 @@
 		margin: 0 auto;
 	}
 	.testimonials-posts {
-	}
-	.testimonials-posts-post {
+		.testimonials-posts-post {
+			margin: 4rem auto;
+			padding: 4rem 0;
+			width: 100%;
+			background: transparentize($lightgrey, 0.5);
+		}
+		.testimonials-posts-post:nth-child(odd) {
+			background: $lightgrey;
+		}
+		
 	}
 	
 
@@ -17,9 +25,15 @@
 	}
 	.testimonials-posts-meta-title{
 		font-size: 2.6rem;
+		padding: 5px;
 	}
 	.testimonials-posts-meta-subtitle {
-		font-size: 2rem;
+		display: inline-block;
+		font-size: 1.8rem;
+		padding: 5px;
+		a {
+			text-decoration: none;
+		}
 	}
 
 	.testimonials-posts-post-placeholder {
@@ -31,9 +45,13 @@
 		height: 100%;
 	}
 	.testimonials-posts-video {
+		margin: 1rem auto;
 		width: 100%;
 		height: 100%;
 		object-fit: cover;
+		iframe {
+			min-height: 360px;
+		}
 	}
 
 
@@ -113,15 +131,28 @@
 		margin: 0 auto;
 	}
 
+	.testimonials-posts-meta {
+		text-align: center;
+	}
 }
 @media only screen and (min-width: $large) {
 
 	.testimonials-header {
 		width: 75%;
-		font-size: 9rem;
+		font-size: 7rem;
 		margin-left: 25%;
 		margin-right: 0;
 	}
+
+	.testimonials-posts {
+		margin: 4rem auto;
+		margin-left: 5%;
+	}
+
+	.testimonials-posts-post {
+		margin: 4rem auto;
+	}
+
 
 
 

@@ -2491,15 +2491,28 @@ button.swiper-pagination-bullet {
     width: auto;
     margin: 0 auto; }
 
+  .testimonials-posts .testimonials-posts-post {
+    margin: 4rem auto;
+    padding: 4rem 0;
+    width: 100%;
+    background: rgba(245, 245, 245, 0.5); }
+  .testimonials-posts .testimonials-posts-post:nth-child(odd) {
+    background: #F5F5F5; }
+
   .testimonials-posts-meta {
     text-align: left;
     font-size: 100%; }
 
   .testimonials-posts-meta-title {
-    font-size: 2.6rem; }
+    font-size: 2.6rem;
+    padding: 5px; }
 
   .testimonials-posts-meta-subtitle {
-    font-size: 2rem; }
+    display: inline-block;
+    font-size: 1.8rem;
+    padding: 5px; }
+    .testimonials-posts-meta-subtitle a {
+      text-decoration: none; }
 
   .testimonials-posts-post-placeholder {
     width: 100%;
@@ -2510,9 +2523,12 @@ button.swiper-pagination-bullet {
     height: 100%; }
 
   .testimonials-posts-video {
+    margin: 1rem auto;
     width: 100%;
     height: 100%;
     object-fit: cover; }
+    .testimonials-posts-video iframe {
+      min-height: 360px; }
 
   /* 
   	Home Testimonials
@@ -2567,13 +2583,23 @@ button.swiper-pagination-bullet {
   .testimonials-posts-post-placeholder {
     max-width: 640px;
     max-height: 480px;
-    margin: 0 auto; } }
+    margin: 0 auto; }
+
+  .testimonials-posts-meta {
+    text-align: center; } }
 @media only screen and (min-width: 1025px) {
   .testimonials-header {
     width: 75%;
-    font-size: 9rem;
+    font-size: 7rem;
     margin-left: 25%;
-    margin-right: 0; } }
+    margin-right: 0; }
+
+  .testimonials-posts {
+    margin: 4rem auto;
+    margin-left: 5%; }
+
+  .testimonials-posts-post {
+    margin: 4rem auto; } }
 @media only screen {
   .pricing-wrapper {
     max-width: 1600px;
@@ -3402,15 +3428,28 @@ button.swiper-pagination-bullet {
     width: auto;
     margin: 0 auto; }
 
+  .testimonials-posts .testimonials-posts-post {
+    margin: 4rem auto;
+    padding: 4rem 0;
+    width: 100%;
+    background: rgba(245, 245, 245, 0.5); }
+  .testimonials-posts .testimonials-posts-post:nth-child(odd) {
+    background: #F5F5F5; }
+
   .testimonials-posts-meta {
     text-align: left;
     font-size: 100%; }
 
   .testimonials-posts-meta-title {
-    font-size: 2.6rem; }
+    font-size: 2.6rem;
+    padding: 5px; }
 
   .testimonials-posts-meta-subtitle {
-    font-size: 2rem; }
+    display: inline-block;
+    font-size: 1.8rem;
+    padding: 5px; }
+    .testimonials-posts-meta-subtitle a {
+      text-decoration: none; }
 
   .testimonials-posts-post-placeholder {
     width: 100%;
@@ -3421,9 +3460,12 @@ button.swiper-pagination-bullet {
     height: 100%; }
 
   .testimonials-posts-video {
+    margin: 1rem auto;
     width: 100%;
     height: 100%;
     object-fit: cover; }
+    .testimonials-posts-video iframe {
+      min-height: 360px; }
 
   /* 
   	Home Testimonials
@@ -3478,12 +3520,22 @@ button.swiper-pagination-bullet {
   .testimonials-posts-post-placeholder {
     max-width: 640px;
     max-height: 480px;
-    margin: 0 auto; } }
+    margin: 0 auto; }
+
+  .testimonials-posts-meta {
+    text-align: center; } }
 @media only screen and (min-width: 1025px) {
   .testimonials-header {
     width: 75%;
-    font-size: 9rem;
+    font-size: 7rem;
     margin-left: 25%;
-    margin-right: 0; } }
+    margin-right: 0; }
+
+  .testimonials-posts {
+    margin: 4rem auto;
+    margin-left: 5%; }
+
+  .testimonials-posts-post {
+    margin: 4rem auto; } }
 
 /*# sourceMappingURL=build.css.map */
