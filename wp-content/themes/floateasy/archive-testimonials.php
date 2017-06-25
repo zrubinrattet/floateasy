@@ -1,8 +1,7 @@
 <?php get_header(); ?>
-
 <section class="section page blog testimonials">
 
-		<h1 class="section-header page-header testimonials-header"><?php post_type_archive_title( $prefix, true ); ?></h1>
+		<h1 class="section-header page-header testimonials-header"><?php post_type_archive_title(); ?></h1>
 			
 		<?php include locate_template('modules/subModules/blog-sidebar.php'); ?>
 		<?php 
