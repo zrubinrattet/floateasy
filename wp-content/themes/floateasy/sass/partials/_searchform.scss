@@ -1,9 +1,16 @@
 @media only screen {
 	.searchform {
 		margin: 2rem auto;
+		text-align: left;
+		display: inline-block;
 	}
 	.searchform-label {
 		display: none;
+	}
+
+	.searchform-input {
+		width: calc(100% - 5.4rem);
+		padding: 5px;
 	}
 	.searchform-input,
 	input[type="submit"].searchform-submit {
@@ -16,6 +23,7 @@
 			color: $blue;
 		}
 	}
+
 	input[type="submit"].searchform-submit {
 		font-family: FontAwesome;
 		width: 4.4rem;

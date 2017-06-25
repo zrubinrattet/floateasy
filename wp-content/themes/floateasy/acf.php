@@ -23,16 +23,6 @@ if( function_exists('acf_add_options_page') ) {
 		'redirect'		=> false,
 		'position'      => 88,
 	));
-	// Testimonials
-	acf_add_options_page(array(
-		'page_title' 	=> 'Testimonials',
-		'menu_title'	=> 'Testimonials',
-		'menu_slug' 	=> 'testimonials-settings',
-		'capability'	=> 'read_private_posts',
-		'icon_url'      => 'dashicons-format-quote',
-		'redirect'		=> false,
-		'position'      => 87,
-	));
 	// Benefits
 	acf_add_options_page(array(
 		'page_title' 	=> 'Benefits',
@@ -493,144 +483,6 @@ function add_acf_fields() {
 			),
 		),
 	));
-	// Testimonials Settings !!! depricated??? !!!
-	acf_add_local_field_group(array(
-		'key' => 'group_6',
-		'title' => ' ',
-		'fields' => array (
-			array(
-				'key' => 'field_19',
-				'label' => 'Background Image',
-				'name' => 'testimonials-bg',
-				'type' => 'image',
-				'preview_size' => 'medium',
-				'return_format' => 'url',
-			),	
-			array(
-				'key' => 'field_17',
-				'label' => 'Testimonials',
-				'name' => 'testimonials-repeater',
-				'type' => 'repeater',
-				'button_label' => 'Add Testimonial',
-				'sub_fields' => array(
-					array(
-						'key' => 'field_9fda',
-						'label' => 'Personal Testimonial or YouTube Embed?',
-						'type' => 'select',
-						'name' => 'testimonials-repeater-select',
-						'choices' => array(
-							'personal' => 'Written Testimonial',
-							'youtube' => 'Video Testimonial',
-						),
-					),
-					array(
-						'key' => 'field_18',
-						'label' => 'Image',
-						'name' => 'testimonials-repeater-image',
-						'type' => 'image',
-						'preview_size' => 'medium',
-						'return_format' => 'url',
-						'required' => true,
-						'conditional_logic' => array(
-							array(
-								array(
-									'field' => 'field_9fda',
-									'operator' => '==',
-									'value' => 'personal',
-								),
-							),
-						),
-					),
-					array(
-						'key' => 'field_20',
-						'label' => 'Testimonial',
-						'name' => 'testimonials-repeater-quote',
-						'type' => 'textarea',
-						'instructions' => 'Boundary quotes will be added for you. Also, you can\'t create new lines here',
-						'required' => true,
-						'conditional_logic' => array(
-							array(
-								array(
-									'field' => 'field_9fda',
-									'operator' => '==',
-									'value' => 'personal',
-								),
-							),
-						),
-					),
-					array(
-						'key' => 'field_21',
-						'label' => 'Customer',
-						'name' => 'testimonials-repeater-name',
-						'type' => 'text',
-						'required' => true,
-						'conditional_logic' => array(
-							array(
-								array(
-									'field' => 'field_9fda',
-									'operator' => '==',
-									'value' => 'personal',
-								),
-							),
-						),
-					),
-					array(
-						'key' => 'field_a9d7bh',
-						'label' => 'YouTube Embed',
-						'type' => 'text',
-						'name' => 'testimonials-repeater-youtube',
-						'instructions' => 'Click on "Share" on the YouTube video page and you\'ll find a link like this: https://youtu.be/QPFGfr664og then select & copy the part after the last "/" (in this case: QPFGfr664og) and paste it here.',
-						'conditional_logic' => array(
-							array(
-								array(
-									'field' => 'field_9fda',
-									'operator' => '==',
-									'value' => 'youtube',
-								),
-							),
-						),
-					),
-					array(
-						'key' => 'field_n2107dag',
-						'label' => 'Social Links',
-						'name' => 'testimonials-social-repeater',
-						'type' => 'repeater',
-						'button_label' => 'Add Social Link',
-						'layout' => 'row',
-						'sub_fields' => array(
-							array(
-								'key' => 'field_2721h12',
-								'label' => 'Social Link Type',
-								'name' => 'testimonials-social-repeater-linktype',
-								'type' => 'select',
-								'choices' => array(
-									'yelp' => 'Yelp',
-									'facebook' => 'Facebook',
-									'google-plus' => 'Google +',
-								),
-							),
-							array(
-								'key' => 'field_nzvvh8y213',
-								'label' => 'Social Link URL',
-								'name' => 'testimonials-social-repeater-linkurl',
-								'type' => 'url',
-							),
-						),
-					),
-				),
-				'layout' => 'row',
-			),
-		),
-		'location' => array (
-			array (
-				array (
-					'param' => 'options_page',
-					'operator' => '==',
-					'value' => 'testimonials-settings',
-				),
-			),
-		),
-	));
 	// Locations Settings 
 	acf_add_local_field_group(array(
 		'key' => 'group_7',
@@ -907,7 +759,7 @@ function add_acf_fields() {
 				array (
 					'param' => 'post_type',
 					'operator' => '==',
-					'value' => 'testimonials_cpt',
+					'value' => 'testimonials',
 				),
 			),
 		),

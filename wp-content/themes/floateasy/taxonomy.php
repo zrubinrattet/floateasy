@@ -1,31 +1,49 @@
 <?php get_header(); ?>
 
-
-	
 	<section class="section page category">
 
-
-		<?php include locate_template('modules/subModules/blog-sidebar.php'); ?>
+		<?php 
+			include locate_template('modules/subModules/blog-sidebar.php'); 
+			$term = get_queried_object();
+		?>
 		
 		<div class="blog-posts category-posts">
 			
-			<?php 
-				$cat_ID = get_queried_object_id();
-
-			 ?>
-
-			<h1 class="section-header page-header category-header"><?php echo get_the_category_by_id( $cat_ID ); ?></h1>
+			<h1 class="section-header page-header category-header"><?php echo $term->name; ?></h1>
 
 			<?php 
+
+				$post_type = '';
+
+				if( $term->taxonomy == 'category' ){
+					$post_type = 'post';
+				}
+				else{
+					$post_type = 'testimonials';
+				}
+
 				$args = array(
-					'category' => $cat_ID,
+					'post_type' => $post_type,
+					'tax_query' => array(
+						array(
+							'taxonomy' => $term->taxonomy,
+							'field' => 'term_id',
+							'terms' => $term->term_id
+						)
+					),
 				);
-				$posts = get_posts($args);
-				foreach ( $posts as $post ) :
-			 ?>
 
+				$posts = get_posts($args);
+
+				foreach ( $posts as $post ) :
+					// put the posts here:
+					// if $term->taxonomy = category
+					if( $term->taxonomy == 'category' ):
+
+						// express all the grid item content for the post_type of post
+			 ?>
 				<div class="blog-posts-post">
-						
+
 					<!-- Post Thumbnail -->
 					<?php if( has_post_thumbnail() ): ?>
 						<img src="<?php the_post_thumbnail_url(); ?>" class="blog-posts-post-image">
@@ -40,9 +58,16 @@
 					</div>
 				</div>
 
+				<?php 
+					endif;
+					if( $term->taxonomy == 'testimonial_categories' ):
+						// express all the grid item content for the post_type testimonial_categoryes
+				 ?>
+
+
 			<?php 
+					endif;
 				endforeach;
-				wp_reset_postdata();
 			 ?>
 		</div>
 	</section>
