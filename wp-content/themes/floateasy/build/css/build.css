@@ -1706,9 +1706,10 @@ button.swiper-pagination-bullet {
     color: white;
     border: none;
     font-size: 1.5rem;
-    padding: 7px 10px;
+    padding: 11px 30px;
     text-transform: uppercase;
-    margin-top: 2rem; }
+    margin-top: 5px;
+    width: 100%; }
 
   /* 
   	Social Icons 
@@ -1740,13 +1741,13 @@ button.swiper-pagination-bullet {
     -ms-transition: color 0.3s ease;
     -o-transition: color 0.3s ease;
     transition: color 0.3s ease;
-    font-size: 3.6rem; }
+    font-size: 2.4rem; }
 
   .footer-social-links-item-link {
     background: #27A8E0;
     border-radius: 50%;
-    width: 6.6rem;
-    height: 6.6rem;
+    width: 5.6rem;
+    height: 5.6rem;
     margin: 0 1rem; }
     .footer-social-links-item-link:hover i {
       color: #F5F5F5; }
@@ -1962,13 +1963,14 @@ button.swiper-pagination-bullet {
     z-index: 5;
     display: inline-block;
     color: white;
-    background-color: #E4572E;
+    background-color: #27A8E0;
     text-align: center;
     text-decoration: none;
     padding: 20px;
-    width: 200px;
+    width: calc(100% - 40px);
     border-radius: 4px;
-    font-size: 1.8rem; }
+    font-size: 2.1rem;
+    max-width: 320px; }
 
   .hero-video {
     height: auto;
@@ -1984,8 +1986,7 @@ button.swiper-pagination-bullet {
     position: relative; } }
 @media only screen and (min-width: 641px) {
   .hero-button {
-    font-size: 2.4rem;
-    width: 280px; } }
+    font-size: 2.4rem; } }
 @media only screen {
   .homebenefits {
     position: relative; }
@@ -1993,11 +1994,11 @@ button.swiper-pagination-bullet {
   .homebenefits-module {
     padding: 40px 20px; }
     .homebenefits-module:nth-child(1) {
-      background-color: #27A8E0; }
+      background-color: #718b96; }
     .homebenefits-module:nth-child(3) {
-      background-color: #F9AC00; }
+      background-color: #4c99bb; }
     .homebenefits-module:nth-child(5) {
-      background-color: #E4572E; }
+      background-color: #27A8E0; }
 
   .homebenefits-module-bigheader,
   .homebenefits-module-header {
@@ -2078,14 +2079,14 @@ button.swiper-pagination-bullet {
       font-size: 0px;
       line-height: 0%;
       width: 0;
-      border-top: 160px solid #27A8E0;
+      border-top: 160px solid #718b96;
       border-bottom: 10px solid transparent;
       border-right: 100vw solid transparent; }
     .homebenefits-divider:nth-child(4) {
       font-size: 0px;
       line-height: 0%;
       width: 0;
-      border-bottom: 160px solid #E4572E;
+      border-bottom: 160px solid #27A8E0;
       border-top: 10px solid transparent;
       border-right: 100vw solid transparent;
       bottom: 458px; } }
@@ -2243,7 +2244,7 @@ button.swiper-pagination-bullet {
     margin-bottom: 0; } }
 @media only screen {
   .homepricing {
-    background-color: #76B041; }
+    background-color: #7B7B7B; }
 
   .homepricing-header {
     color: white;
@@ -2300,10 +2301,14 @@ button.swiper-pagination-bullet {
     box-shadow: none; }
 
   .homepricing-nonmember-header {
-    background-color: #618E32; }
+    background-color: #2E282A;
+    color: #b2b2b2; }
+
+  .homepricing-nonmember-grid {
+    background-color: #cacaca; }
 
   .homepricing-nonmember-grid-item-content-price {
-    color: #618E32;
+    color: #2E282A;
     font-size: 5.2rem; }
 
   .homepricing-nonmember-grid-item-content-description {

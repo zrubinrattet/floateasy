@@ -12,13 +12,14 @@
 		z-index: 5;
 		display: inline-block;
 		color: white;
-		background-color: $red;
+		background-color: $blue;
 		text-align: center;
 		text-decoration: none;
 		padding: 20px;
-		width: 200px;
+		width: calc(100% - 40px);
 		border-radius: 4px;
-		font-size: 1.8rem;
+		font-size: 2.1rem;
+		max-width: 320px;
 	}
 	.hero-video{
 		height: auto;
@@ -35,7 +36,6 @@
 @media only screen and (min-width: $medium){
 	.hero-button{
 		font-size: 2.4rem;
-		width: 280px;
 	}
 }
 

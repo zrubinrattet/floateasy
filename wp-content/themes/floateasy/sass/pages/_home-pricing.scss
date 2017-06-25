@@ -1,6 +1,6 @@
 @media only screen {
 	.homepricing{
-		background-color: $green;
+		background-color: $darkgrey;
 	}
 	.homepricing-header{
 		color: white;
@@ -62,10 +62,14 @@
 
 
 	.homepricing-nonmember-header{
-		background-color: $darkgreen;
+		background-color: $offblack;
+		color: #b2b2b2;
+	}
+	.homepricing-nonmember-grid{
+		background-color: #cacaca;
 	}
 	.homepricing-nonmember-grid-item-content-price{
-		color: $darkgreen;
+		color: $offblack;
 		font-size: 5.2rem;
 	}
 	.homepricing-nonmember-grid-item-content-description{
