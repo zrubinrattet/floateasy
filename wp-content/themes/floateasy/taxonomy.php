@@ -4,9 +4,10 @@
 			include locate_template('modules/subModules/blog-sidebar.php'); 
 			$term = get_queried_object();
 		?>
-		
-		<div class="blog-posts category-posts">
+
+		<div class="blog-posts testimonials-posts">
 			<h1 class="section-header page-header category-header"><?php echo $term->name; ?></h1>
+			
 			<?php 
 				$post_type = '';
 				if( $term->taxonomy == 'category' ){
@@ -26,24 +27,9 @@
 					),
 				);
 				$posts = get_posts($args);
-				foreach ( $posts as $post ) :
-					if( $term->taxonomy == 'category' ) :
-			 ?>
-				<div class="blog-posts-post">
-					<?php if( has_post_thumbnail() ): ?>
-						<img src="<?php the_post_thumbnail_url(); ?>" class="blog-posts-post-image">
-					<?php endif; ?>
-					<div class="blog-posts-post-content">
-						<a href="<?php the_permalink(); ?>" class="blog-posts-post-header"><?php the_title(); ?></a>
-						<h3 class="blog-posts-post-date"><?php echo get_the_date('D M j') ?><sup><?php echo get_the_date('S') ?></sup><?php echo get_the_date(' Y') . ' at ' . get_the_date('g:i A') ; ?></h3>
-					</div>
-				</div>
 
-				<?php 
-					endif;
-					if( $term->taxonomy == 'testimonial_categories' ) :
 
-				 ?>
+				foreach ( $posts as $post ) :?>
 					<div class="testimonials-posts-post blog-posts-post">
 						<h1 class="testimonials-posts-title"><?php echo $post->post_title; ?></h1>
 						<div class="testimonials-posts-video">
@@ -75,9 +61,7 @@
 							?>
 						</div>
 					</div>
-
-			<?php 
-					endif;
+				<?php
 				endforeach;
 			 ?>
 		</div>

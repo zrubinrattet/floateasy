@@ -6,13 +6,20 @@
 	$myPostType = '';
 	$myPostTax = '';
 
-	if( strpos($_SERVER['REQUEST_URI'], 'blog') !== false ){
-		$myPostType = 'post';
-		$myPostTax = 'category';
+
+	if( is_tax() || is_category() ){
+		$term = get_queried_object();
+		$myPostTax = $term->taxonomy;
 	}
-	if( strpos($_SERVER['REQUEST_URI'], 'testimonials') !== false ){
-		$myPostType = 'testimonials';
-		$myPostTax = 'testimonial_categories';
+	else{
+		if( strpos($_SERVER['REQUEST_URI'], 'blog') !== false ){
+			$myPostType = 'post';
+			$myPostTax = 'category';
+		}
+		if( strpos($_SERVER['REQUEST_URI'], 'testimonials') !== false ){
+			$myPostType = 'testimonials';
+			$myPostTax = 'testimonial_categories';
+		}
 	}
 
 	// 

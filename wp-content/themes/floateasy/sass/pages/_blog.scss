@@ -107,7 +107,9 @@
 	.category,
 	.blog {
 		width: 90%;
-		max-width: none;
+		max-width: $xlarge;
+		margin: 0 auto;
+		font-size: 0;
 	}
 	.category-posts,
 	.blog-posts {
@@ -115,17 +117,17 @@
 		width: 75%;
 		margin: 0 auto;
 		padding: 4rem 0;
-		margin-left: 25%;
+		display: inline-block;
+		vertical-align: top;
 	}
 	.blog-posts-post {
 		max-width: 360px;
 		max-height: 240px;
 	}
 	.blog-sidebar {
-		position: absolute;
-		width: 20%;
-		top: 20vh;
-		left: -5%;
+		display: inline-block;
+		vertical-align: top;
+		width: 25%;
 		border-right: 1px solid lightgrey;
 		h2 {
 			display: block;
