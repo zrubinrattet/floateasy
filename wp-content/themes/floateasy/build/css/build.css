@@ -1578,7 +1578,7 @@ button.swiper-pagination-bullet {
     position: fixed;
     top: 0px;
     left: 0px;
-    padding: 10px 20px;
+    padding: 10px 40px;
     box-sizing: border-box;
     z-index: 10;
     box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.25); }
@@ -1586,7 +1586,8 @@ button.swiper-pagination-bullet {
       list-style: none; }
 
   .mobileheader-tint {
-    background-color: rgba(255, 255, 255, 0.33);
+    background-color: rgba(255, 255, 255, 0.2);
+    background-color: rgba(0, 0, 0, 0.5);
     width: 100%;
     height: 100%;
     position: fixed;
@@ -1610,6 +1611,15 @@ button.swiper-pagination-bullet {
     left: 0;
     width: 100%;
     z-index: -1; }
+
+  .mobileheader-bar-tint,
+  .mobileheader-tint--show,
+  .mobileheader-tint {
+    -webkit-transition: background-color 0.3s ease;
+    -moz-transition: background-color 0.3s ease;
+    -ms-transition: background-color 0.3s ease;
+    -o-transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease; }
 
   .mobileheader-bar-menutoggle,
   .mobileheader-bar-logo {
@@ -1646,13 +1656,16 @@ button.swiper-pagination-bullet {
     width: 100%;
     max-width: 640px;
     margin: 0 auto;
-    display: none; }
+    display: none;
+    background: rgba(0, 0, 0, 0.34);
+    padding: 5%; }
 
   .mobileheader-menus--show {
     display: block; }
 
   .mobileheader-menus-pages-menu-item-link {
     color: #2E282A;
+    color: #F5F5F5;
     font-weight: normal;
     text-transform: uppercase;
     text-decoration: none;
@@ -1674,10 +1687,13 @@ button.swiper-pagination-bullet {
 
   .mobileheader-menus-contact-email,
   .mobileheader-menus-contact-phone {
-    color: #2E282A;
+    color: #F5F5F5;
     text-decoration: none;
     font-size: 2.4rem;
     padding: 15px; }
+    .mobileheader-menus-contact-email span,
+    .mobileheader-menus-contact-phone span {
+      color: #F5F5F5; }
 
   .mobileheader-menus-social {
     padding-top: 20px; }
@@ -1707,7 +1723,8 @@ button.swiper-pagination-bullet {
     transform: translate(-50%, -50%); }
 
   .mobileheader-menus-social-menu-item-link-icon {
-    color: #27A8E0; }
+    color: #27A8E0;
+    position: relative; }
     .mobileheader-menus-social-menu-item-link-icon.fa-instagram {
       position: relative;
       top: -2px;
