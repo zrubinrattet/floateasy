@@ -1344,6 +1344,8 @@ button.swiper-pagination-bullet {
     background: transparent; }
   .header-ghosted .header-content a {
     color: #F5F5F5; }
+  .header-ghosted .header-content .sub-menu a {
+    color: #2E282A; }
   .header-ghosted i {
     color: #F5F5F5; } }
 @media only screen and (min-width: 1025px) {
