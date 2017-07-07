@@ -3230,6 +3230,8 @@ button.swiper-pagination-bullet {
     color: #F5F5F5; }
     .location-hero-content a, .location-hero-content a:visited {
       color: #F5F5F5; }
+    .location-hero-content .locations-sidebar-grid-item-hours span {
+      color: #F5F5F5; }
 
   .location-hero-content-header h1 {
     display: inline-block;
