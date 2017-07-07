@@ -14,6 +14,7 @@
 		<div class="header-content-rightwrap">
 			<div class="header-content-menus">
 				<nav class="header-content-menus-pages">
+					<a class="header-content-menus-pages-tel" href="tel:<?php the_field('hq-phone-number-for-url', 'option') ?>"><?php echo get_the_phone(); ?></a>
 					<?php 
 						wp_nav_menu(array(
 							'container' => false,
@@ -23,7 +24,7 @@
 						));
 					?>
 				</nav>
-				<a href="<?php the_field('book-appointment-url', 'option'); ?>" class="header-content-bookappointment">Book Appointment</a>
+				<a href="<?php echo site_url('/book-an-appointment/'); ?>" class="header-content-bookappointment">Book Appointment</a>
 			</div>
 		</div>
 	</div>

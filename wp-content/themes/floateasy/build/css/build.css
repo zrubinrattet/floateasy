@@ -1646,6 +1646,22 @@ button.swiper-pagination-bullet {
     vertical-align: middle;
     text-align: initial; }
 
+  .header-content-bookappointment,
+  .header-content-menus-pages {
+    vertical-align: bottom; }
+
+  .header-content-menus-pages-tel {
+    font-size: initial;
+    vertical-align: top;
+    display: block;
+    text-align: right;
+    position: relative;
+    bottom: 5px;
+    text-decoration: none;
+    font-weight: 600; }
+    .header-content-menus-pages-tel span {
+      color: #F5F5F5; }
+
   .header-content-bookappointment {
     font-size: 1.6rem;
     text-align: center;
