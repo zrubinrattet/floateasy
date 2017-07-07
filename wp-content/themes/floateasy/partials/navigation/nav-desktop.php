@@ -1,6 +1,6 @@
 
 
-<header class="header">
+<header class="header header-ghosted">
 
 	<div class="header-content">
 		
@@ -23,15 +23,12 @@
 						));
 					?>
 				</nav>
+				<a href="<?php the_field('book-appointment-url', 'option'); ?>" class="header-content-bookappointment">Book Appointment</a>
 			</div>
 		</div>
-		<div class="header-bookc2a">
-			<a href="<?php the_field('book-appointment-url', 'option'); ?>">Book Appointment</a>
-		</div>
-	<div class="header-tint"></div>
-	
-
-
+	</div>
+	<div class="header-tint"></div>	
+</header>
 	<!-- Fixed C2A Technically Outside the Header -->
 	<nav class="header-fixed">
 		<div class="header-fixed-book header-fixed-collapsed">
@@ -43,5 +40,4 @@
 			<a href="tel:<?php the_field('hq-phone-number-for-url', 'option') ?>"><?php echo get_the_phone(); ?></a>
 		</div>
 	</nav>
-</header>
 			

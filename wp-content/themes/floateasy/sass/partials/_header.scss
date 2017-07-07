@@ -15,6 +15,22 @@
 	.header-content-rightwrap {
 		position: relative;
 	}
+
+	.header-ghosted {
+		.header-tint,
+		.mobileheader-bar-tint {
+			background-color: transparent;
+			background: transparent;
+		}
+		.header-content {
+			a {
+				color: $lightgrey;
+			}
+		}
+		i {
+			color: $lightgrey;
+		}
+	}
 }
 
 @media only screen and (min-width: $medium){
@@ -22,29 +38,19 @@
 }
 
 @media only screen and (min-width: $large){
-	
-	// C2A IN the NAVBAR:
-	.header-bookc2a,
-	.header-bookc2a a{
-		display: inline-block;
-		font-size: initial;
-		vertical-align: middle;
-
-	}
-
-
 	/* 
 		Fixed C2A's
 			Book + Tel
 	*/
 	.header-fixed {
+		position: fixed;
+		top: 12rem;
+		z-index: 4;
 		display: inline-block;
 	}
 	.header-fixed-tel,
 	.header-fixed-book {
-		position: fixed;
-		top: 12rem;
-		left: 0;
+		margin: 1rem auto;
 		background: $blue;
 		height: 5.8rem;
 		width: 28rem;
@@ -73,7 +79,6 @@
 		}
 	}
 	.header-fixed-tel {
-		top: 20rem;
 		a {
 			position: relative;
 			overflow: visible;
@@ -83,7 +88,7 @@
 			position: absolute;
 			z-index: 10;
 			top: 90%;
-			left: 0.5rem;
+			right: 0.5rem;
 			font-size: 1.4rem;
 		}
 	}
@@ -100,7 +105,7 @@
 	.header-content-logo-wrapper {
 		display: inline-block;
 		position: relative;
-		width: 180px;
+		min-width: 130px;
 		text-align: center;
 	}
 	.header {
@@ -112,7 +117,7 @@
 		width: 100%;
 	}
 	.header-content{
-		padding: 10px 40px;
+		padding: 10px 20px;
 		font-size: 0;
 		text-align: justify;
 		text-justify: distribute;
@@ -127,11 +132,29 @@
 		    line-height:0;
 		}
 	}
+
 	.header-content-logo,
 	.header-content-rightwrap,
-	.header-content-menus {
+	.header-content-menus,
+	.header-content-bookappointment,
+	.header-content-menus-pages {
 		display: inline-block;
 		vertical-align: middle;
+		text-align: initial;
+	}
+	.header-content-bookappointment{
+		font-size: 1.6rem;
+		text-align: center;
+		text-transform: uppercase;
+		background-color: $blue;
+		padding: 16px 10px;
+		display: inline-block;
+		position: relative;
+		bottom: 0px;
+		margin-left: 10px;
+		font-weight: normal;
+		text-decoration: none;
+		border-radius: 4px;
 	}
 	.header-content-logo{
 		padding-right: 10px;
@@ -219,12 +242,14 @@
 		width: 100%;
 		height: 78px;
 		z-index: -1;
+		@include transition(background-color 0.3s ease);
 	}
 	.topbar-removed{
 		height: 82px;
 	}
-}
 
+
+}
 @media only screen and (min-width: $xlarge){
 	.header-content-menus-pages-menu-item{
 		margin: 0 7px 0 10px;

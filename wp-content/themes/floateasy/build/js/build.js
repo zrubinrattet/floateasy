@@ -57,7 +57,6 @@ var objectFitImages=function(){"use strict";function t(t){for(var e,r=getCompute
 
 
 
-
 		/*
 			Breakpoints
 		*/
@@ -218,6 +217,30 @@ var objectFitImages=function(){"use strict";function t(t){for(var e,r=getCompute
 
 		LocationGallery._init();
 		
+
+
+		var GhostNav = {
+
+			navtint: $('.header, .mobileheader'),
+			hero: $('.hero'),
+
+			_init: function(){
+				$(window).on('scroll load', GhostNav._eventHandler);
+			},
+			_eventHandler: function(){
+				// when you scroll past the normal height of the window
+				if ( $(window).scrollTop() > $(GhostNav.hero).height() ) {
+					$(GhostNav.navtint).removeClass('header-ghosted');
+				} else {
+					$(GhostNav.navtint).addClass('header-ghosted');
+				}
+
+
+			},
+		}
+		GhostNav._init();
+
+
 
 
 		var MobileNav = {

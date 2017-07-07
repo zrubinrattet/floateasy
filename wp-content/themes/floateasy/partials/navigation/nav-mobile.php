@@ -1,4 +1,4 @@
-<header class="mobileheader">
+<header class="mobileheader header-ghosted">
 	<div class="mobileheader-bar">
 		<a href="<?php echo site_url(); ?>" class="mobileheader-bar-logo">
 			<img src="<?php echo get_logo(); ?>" class="mobileheader-bar-logo-image">
