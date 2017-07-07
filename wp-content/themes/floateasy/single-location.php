@@ -56,10 +56,10 @@
 				<?php if( empty(get_field('yelp', $post->ID)) && empty(get_field('yelp', $post->ID)) ) : else :	?>
 					<div class="location-hero-buttons">
 						<?php if( !empty(get_field('yelp', $post->ID)) ): ?>
-							<a target="_blank" href="<?php the_field('yelp', $post->ID); ?>" class="location-hero-buttons-button">Write a Review</a>
+							<a href="<?php the_field('yelp', $post->ID); ?>" class="location-hero-buttons-button">Write a Review</a>
 						<?php endif; ?>
 						<?php if( !empty(get_field('mindbody', $post->ID)) ): ?>
-							<a target="_blank" href="<?php the_field('mindbody', $post->ID); ?>" class="location-hero-buttons-button">Book an Appointment</a>
+							<a href="<?php echo site_url('/book-an-appointment/'); ?>" class="location-hero-buttons-button">Book an Appointment</a>
 						<?php endif; ?>
 					</div>
 				<?php endif; ?>

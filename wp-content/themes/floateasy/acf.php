@@ -699,13 +699,6 @@ function add_acf_fields() {
 				'instructions' => 'This is used to generate the "Write a Review" button',
 			),
 			array(
-				'key' => 'field_n21n12fhahhe',
-				'label' => 'Mindbody Link',
-				'type' => 'url',
-				'name' => 'mindbody',
-				'instructions' => 'This is used to generate the "Book an Appointment" button',
-			),
-			array(
 				'key' => 'field_nzpuewhf123',
 				'label' => 'Other Social Links',
 				'type' => 'repeater',
