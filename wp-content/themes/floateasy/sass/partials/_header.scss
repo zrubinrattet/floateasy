@@ -1,7 +1,7 @@
 @media only screen {
 	.header{
 		display: none;
-	}
+		}
 	.removefadein{
 		div:last-of-type{
 			opacity: 1;
@@ -23,24 +23,31 @@
 
 @media only screen and (min-width: $large){
 	
+	// C2A IN the NAVBAR:
+	.header-bookc2a,
+	.header-bookc2a a{
+		display: inline-block;
+		font-size: initial;
+		vertical-align: middle;
+
+	}
+
+
 	/* 
 		Fixed C2A's
 			Book + Tel
 	*/
-
 	.header-fixed {
 		display: inline-block;
 	}
-
 	.header-fixed-tel,
 	.header-fixed-book {
 		position: fixed;
 		top: 12rem;
-		right: 0;
+		left: 0;
 		background: $blue;
 		height: 5.8rem;
 		width: 28rem;
-		text-align: right;
 		box-shadow: 0 0 1px 1px transparentize( black, 0.66 );
 		a, i {
 			color: $lightgrey;
@@ -52,7 +59,7 @@
 		}
 		i {
 			top: 50%;
-			left: 1rem;
+			right: 1rem;
 			font-size: 2.8rem;
 			padding: 1rem;
 		}
@@ -61,7 +68,7 @@
 			text-transform: uppercase;
 			overflow: hidden;
 			transform-origin: 100% 50%;
-			right: 2rem;
+			left: 2rem;
 			font-size: 2rem;
 		}
 	}
@@ -76,31 +83,26 @@
 			position: absolute;
 			z-index: 10;
 			top: 90%;
-			right: 0.5rem;
+			left: 0.5rem;
 			font-size: 1.4rem;
 		}
 	}
-
 	.header-fixed-collapsed {
 		@include transition(all 0.3s ease);
-		@include transform(translateX(22rem));
+		@include transform(translateX(-22rem));
 		&:hover {
 			@include transform(translateX(0));
 		}
 	}
-			
-
-
-
+	/* 
+		End Fixed C2As
+	*/		
 	.header-content-logo-wrapper {
 		display: inline-block;
 		position: relative;
 		width: 180px;
 		text-align: center;
 	}
-
-
-
 	.header {
 		display: block;
 		position: fixed;
@@ -109,7 +111,6 @@
 		z-index: 10;
 		width: 100%;
 	}
-
 	.header-content{
 		padding: 10px 40px;
 		font-size: 0;
@@ -126,8 +127,6 @@
 		    line-height:0;
 		}
 	}
-
-
 	.header-content-logo,
 	.header-content-rightwrap,
 	.header-content-menus {

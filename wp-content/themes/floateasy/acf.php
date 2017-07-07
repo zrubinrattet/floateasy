@@ -141,7 +141,7 @@ function add_acf_fields() {
 			),
 		),
 	));
-	// FAQ Settings    !!! NOT FINISHED
+	// FAQ Settings
 	acf_add_local_field_group(array(
 		'key' => 'group_1032hf0329238d',
 		'title' => ' ',
@@ -180,7 +180,7 @@ function add_acf_fields() {
 			),
 		),
 	));
-	// Benefits Page (not homepage) !!! NOT FINISHED
+	// Benefits Page (not homepage)
 	acf_add_local_field_group(array(
 		'key' => 'group_1329238dasfeggsc',
 		'title' => ' ',
@@ -263,6 +263,7 @@ function add_acf_fields() {
 			),
 		),
 	));
+
 	// General Settings 
 	acf_add_local_field_group(array(
 		'key' => 'group_5',
@@ -273,6 +274,9 @@ function add_acf_fields() {
 				'message' => '<h1>Click on a tab below to see its corresponding settings. Click "Update" in the top right to save.</h1>',
 				'type' => 'message',
 			),
+			/*
+				Sitewide Misc
+		*/
 			array(
 				'key' => 'field_876646',
 				'label' => 'Sitewide Misc.',
@@ -308,6 +312,9 @@ function add_acf_fields() {
 				'name' => 'gmaps-api-key',
 				'instructions' => 'Anything here but a Google API Key won\'t work. Please make sure that on your project on console.developers.google.com has the Google Maps Geocode API and the Google Maps Javascript API enabled and it\'s restrictions are set appropriately.',
 			),
+		/*
+				Home Settings Tab
+			*/
 			array(
 				'key' => 'field_218372173',
 				'label' => 'Home',
@@ -320,11 +327,30 @@ function add_acf_fields() {
 				'label' => 'The placeholder field is a fallback if none of the videos load and while the videos load.<br/> The reason for multiple video formats is for maximizing cross-browser compatibility.<br/>If you\'re converting files on your own use handbrake (cross-platform) or miro if you\'re on a mac.',
 			),
 			array(
+				'key' => 'field_ngog8gan',
+				'label' => 'Image or Video',
+				'name' => 'home-imgvidtoggle',
+				'type' => 'select',
+				'choices' => array(
+					'video' => 'Video',
+					'image' => 'Image',
+				),
+			),
+			array(
 				'key' => 'field_323412fadfcza',
 				'label' => 'Video Placeholder Image',
 				'name' => 'hero-placeholder',
 				'type' => 'image',
 				'return_format' => 'url',
+				'conditional_logic' => array(
+					array(
+						array(
+							'field' => 'field_ngog8gan',
+							'operator' => '==',
+							'value' => 'image',
+						),
+					),
+				),
 			),
 			array(
 				'key' => 'field_71bzhdg2afe',
@@ -332,6 +358,15 @@ function add_acf_fields() {
 				'name' => 'hero-mp4',
 				'type' => 'file',
 				'return_format' => 'url',
+				'conditional_logic' => array(
+					array(
+						array(
+							'field' => 'field_ngog8gan',
+							'operator' => '==',
+							'value' => 'video',
+						),
+					),
+				),
 			),
 			array(
 				'key' => 'field_7afjbhdg2afe',
@@ -339,7 +374,19 @@ function add_acf_fields() {
 				'name' => 'hero-webm',
 				'type' => 'file',
 				'return_format' => 'url',
+				'conditional_logic' => array(
+					array(
+						array(
+							'field' => 'field_ngog8gan',
+							'operator' => '==',
+							'value' => 'video',
+						),
+					),
+				),
 			),
+		/*
+				404
+			*/
 			array(
 				'key' => 'field_218372012112173',
 				'label' => '404',
@@ -703,7 +750,7 @@ function add_acf_fields() {
 			),
 		),
 	));
-	// Testimonials CPT !!!!!!
+	// Testimonials Custom Post Type
 	acf_add_local_field_group(array(
 		'key' => 'group_a8s4ag81b28af1',
 		'title' => 'Testimonial Settings',

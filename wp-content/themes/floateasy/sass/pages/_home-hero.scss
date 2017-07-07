@@ -30,6 +30,18 @@
 		left: 50%;
 		position: relative;
 	}
+	.hero-image {
+		height: auto;
+		width: auto;
+		min-width: 100%;
+		min-height: 100%;
+		@include transform(translateX(-50%));
+		left: 50%;
+		position: relative;
+		background-size: cover;
+		background-repeat: no-repeat;
+		
+	}
 
 }
 

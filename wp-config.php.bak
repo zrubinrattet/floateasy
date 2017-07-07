@@ -23,10 +23,10 @@
 define('DB_NAME', 'floateasy');
 
 /** MySQL database username */
-define('DB_USER', 'Kyle');
+define('DB_USER', 'kyle');
 
 /** MySQL database password */
-define('DB_PASSWORD', 'S1moiktih1');
+define('DB_PASSWORD', 'S1moiktih');
 
 /** MySQL hostname */
 define('DB_HOST', 'localhost');

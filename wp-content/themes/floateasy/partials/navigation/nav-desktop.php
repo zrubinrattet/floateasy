@@ -25,10 +25,14 @@
 				</nav>
 			</div>
 		</div>
-	</div>
+		<div class="header-bookc2a">
+			<a href="<?php the_field('book-appointment-url', 'option'); ?>">Book Appointment</a>
+		</div>
 	<div class="header-tint"></div>
 	
-	<!-- Fixed C2A -->
+
+
+	<!-- Fixed C2A Technically Outside the Header -->
 	<nav class="header-fixed">
 		<div class="header-fixed-book header-fixed-collapsed">
 			<i class="fa fa-book"></i>
