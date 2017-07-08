@@ -72,7 +72,7 @@ var objectFitImages=function(){"use strict";function t(t){for(var e,r=getCompute
 				var $currentImage = $('.hero-image-images--active');
 				var $nextImage = ($currentImage.next().length > 0) ? $currentImage.next() : $(HomeImageSlider.images).first();
 
-				$nextImage.css('z-index', '-1');
+				$nextImage.css('z-index', '-2');
 
 				$($currentImage).fadeOut( 1500, function() {
 

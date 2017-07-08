@@ -162,11 +162,12 @@
 		display: block;
 		text-align: right;
 		text-decoration: none;
-		font-weight: 600;
+		font-weight: 400;
 		position: relative;
-		bottom: 4px;
+		bottom: 2px;
 		span {
 			color: $offblack;
+			display: none;
 		}
 	}
 
@@ -200,7 +201,7 @@
 		> .header-content-menus-pages-menu-item {
 			padding-left: 30px;
 			> .header-content-menus-pages-menu-item-link{
-				font-weight: 600;
+				font-weight: 700;
 			}
 		}
 	}

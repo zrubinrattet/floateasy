@@ -1487,7 +1487,7 @@ button.swiper-pagination-bullet {
       top: -1px; } }
 @media only screen and (min-width: 641px) {
   .mobileheader-bar-logo-image {
-    max-height: 56px; }
+    max-height: 50px; }
 
   .mobileheader-bar-menutoggle-icon {
     font-size: 2.8rem; }
@@ -1660,11 +1660,12 @@ button.swiper-pagination-bullet {
     display: block;
     text-align: right;
     text-decoration: none;
-    font-weight: 600;
+    font-weight: 400;
     position: relative;
-    bottom: 4px; }
+    bottom: 2px; }
     .header-content-menus-pages-tel span {
-      color: #2E282A; }
+      color: #2E282A;
+      display: none; }
 
   .header-content-bookappointment {
     font-size: 1.6rem;
@@ -1696,7 +1697,7 @@ button.swiper-pagination-bullet {
     .header-content-menus-pages-menu > .header-content-menus-pages-menu-item {
       padding-left: 30px; }
       .header-content-menus-pages-menu > .header-content-menus-pages-menu-item > .header-content-menus-pages-menu-item-link {
-        font-weight: 600; }
+        font-weight: 700; }
 
   .header-content-menus-pages-menu-item {
     display: inline-block;
@@ -2199,11 +2200,11 @@ button.swiper-pagination-bullet {
     left: 0;
     z-index: -3;
     object-fit: cover;
-    -webkit-transition: all 0.3s ease;
-    -moz-transition: all 0.3s ease;
-    -ms-transition: all 0.3s ease;
-    -o-transition: all 0.3s ease;
-    transition: all 0.3s ease;
+    -webkit-transition: all 0.4s ease-in-out;
+    -moz-transition: all 0.4s ease-in-out;
+    -ms-transition: all 0.4s ease-in-out;
+    -o-transition: all 0.4s ease-in-out;
+    transition: all 0.4s ease-in-out;
     display: block; }
 
   .hero-image-images--active {
