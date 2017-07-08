@@ -56,6 +56,40 @@ var objectFitImages=function(){"use strict";function t(t){for(var e,r=getCompute
 		
 
 
+		// Hero Image Slider
+
+		var HomeImageSlider = {
+
+			images: $('.hero-image-images'),
+
+			_init: function(){
+			
+				$(window).on('load', setInterval(HomeImageSlider._eventHandler, 7000));
+			
+			},
+			_eventHandler: function(e){
+
+				var $currentImage = $('.hero-image-images--active');
+				var $nextImage = ($currentImage.next().length > 0) ? $currentImage.next() : $(HomeImageSlider.images).first();
+
+				$nextImage.css('z-index', '-1');
+
+				$($currentImage).fadeOut( 1500, function() {
+
+					$($currentImage).css('z-index', '-3').show().removeClass('hero-image-images--active');
+
+		        	$nextImage.css('z-index', '-1').addClass('hero-image-images--active');
+
+			    });
+
+
+
+			},
+		}
+		HomeImageSlider._init();
+
+
+
 
 		/*
 			Breakpoints

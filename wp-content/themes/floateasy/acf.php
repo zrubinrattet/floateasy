@@ -340,7 +340,7 @@ function add_acf_fields() {
 				'key' => 'field_323412fadfcza',
 				'label' => 'Video Placeholder Image',
 				'name' => 'hero-placeholder',
-				'type' => 'image',
+				'type' => 'gallery',
 				'return_format' => 'url',
 				'conditional_logic' => array(
 					array(
