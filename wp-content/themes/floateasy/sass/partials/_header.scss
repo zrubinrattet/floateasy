@@ -32,7 +32,10 @@
 				color: $offblack;
 			}
 		}
-		i {
+			i {
+			color: $lightgrey;
+		}
+		.header-content-menus-pages-tel span {
 			color: $lightgrey;
 		}
 	}
@@ -150,22 +153,18 @@
 		vertical-align: middle;
 		text-align: initial;
 	}
-	
-	.header-content-bookappointment,
 	.header-content-menus-pages {
-		vertical-align: bottom;
+		height: 5rem;
 	}
 	.header-content-menus-pages-tel {
 		font-size: initial;
-		vertical-align: top;
+		// vertical-align: top;
 		display: block;
 		text-align: right;
-		position: relative;
-		bottom: 5px;
 		text-decoration: none;
 		font-weight: 600;
 		span {
-			color: $lightgrey;
+			color: $offblack;
 		}
 	}
 
@@ -194,6 +193,8 @@
 	.header-content-menus-pages-menu{
 		font-size: 0;
 		text-align: right;
+		position: relative;
+		top: 12px;
 		> .header-content-menus-pages-menu-item {
 			padding-left: 30px;
 			> .header-content-menus-pages-menu-item-link{
