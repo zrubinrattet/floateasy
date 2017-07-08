@@ -1656,7 +1656,7 @@ button.swiper-pagination-bullet {
     height: 5rem; }
 
   .header-content-menus-pages-tel {
-    font-size: initial;
+    font-size: 2.4rem;
     display: block;
     text-align: right;
     text-decoration: none;
@@ -1693,7 +1693,7 @@ button.swiper-pagination-bullet {
     font-size: 0;
     text-align: right;
     position: relative;
-    top: 14px; }
+    top: 5px; }
     .header-content-menus-pages-menu > .header-content-menus-pages-menu-item {
       padding-left: 30px; }
       .header-content-menus-pages-menu > .header-content-menus-pages-menu-item > .header-content-menus-pages-menu-item-link {

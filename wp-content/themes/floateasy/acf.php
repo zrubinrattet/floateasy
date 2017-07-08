@@ -337,9 +337,25 @@ function add_acf_fields() {
 				),
 			),
 			array(
-				'key' => 'field_323412fadfcza',
+				'key' => 'field_glaksgmgin',
 				'label' => 'Video Placeholder Image',
 				'name' => 'hero-placeholder',
+				'type' => 'image',
+				'return_format' => 'url',
+				'conditional_logic' => array(
+					array(
+						array(
+							'field' => 'field_ngog8gan',
+							'operator' => '==',
+							'value' => 'video',
+						),
+					),
+				),
+			),
+			array(
+				'key' => 'field_323412fadfcza',
+				'label' => 'Hero Image Gallery',
+				'name' => 'hero-gallery',
 				'type' => 'gallery',
 				'return_format' => 'url',
 				'conditional_logic' => array(

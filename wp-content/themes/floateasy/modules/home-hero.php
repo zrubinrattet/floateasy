@@ -11,7 +11,7 @@
 			if ( $myToggle == 'image' ) :
 		 ?>
 		<?php 
-			$images = get_field('hero-placeholder', 'option');
+			$images = get_field('hero-gallery', 'option');
 			$i = 0;
 			foreach ($images as $image ) :
 				$i++;
