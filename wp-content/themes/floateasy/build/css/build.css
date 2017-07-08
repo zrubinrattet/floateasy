@@ -1538,6 +1538,7 @@ button.swiper-pagination-bullet {
   .header-fixed {
     position: fixed;
     top: 12rem;
+    right: 0;
     z-index: 4;
     display: inline-block; }
 
@@ -1547,7 +1548,8 @@ button.swiper-pagination-bullet {
     background: #27A8E0;
     height: 5.8rem;
     width: 28rem;
-    box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.34); }
+    box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.34);
+    text-align: right; }
     .header-fixed-tel a, .header-fixed-tel i,
     .header-fixed-book a,
     .header-fixed-book i {
@@ -1564,7 +1566,7 @@ button.swiper-pagination-bullet {
     .header-fixed-tel i,
     .header-fixed-book i {
       top: 50%;
-      right: 1rem;
+      left: 1rem;
       font-size: 2.8rem;
       padding: 1rem; }
     .header-fixed-tel a,
@@ -1573,19 +1575,21 @@ button.swiper-pagination-bullet {
       text-transform: uppercase;
       overflow: hidden;
       transform-origin: 100% 50%;
-      left: 2rem;
+      right: 2rem;
       font-size: 2rem; }
 
-  .header-fixed-tel a {
-    position: relative;
-    overflow: visible; }
-  .header-fixed-tel span {
-    color: #F5F5F5;
-    position: absolute;
-    z-index: 10;
-    top: 90%;
-    right: 0.5rem;
-    font-size: 1.4rem; }
+  .header-fixed-tel {
+    position: relative; }
+    .header-fixed-tel a {
+      position: relative;
+      overflow: visible; }
+    .header-fixed-tel span {
+      color: #F5F5F5;
+      position: absolute;
+      z-index: 10;
+      top: 90%;
+      right: 0.5rem;
+      font-size: 1.4rem; }
 
   .header-fixed-collapsed {
     -webkit-transition: all 0.3s ease;
@@ -1593,11 +1597,11 @@ button.swiper-pagination-bullet {
     -ms-transition: all 0.3s ease;
     -o-transition: all 0.3s ease;
     transition: all 0.3s ease;
-    -moz-transform: translateX(-22rem);
-    -o-transform: translateX(-22rem);
-    -ms-transform: translateX(-22rem);
-    -webkit-transform: translateX(-22rem);
-    transform: translateX(-22rem); }
+    -moz-transform: translateX(22rem);
+    -o-transform: translateX(22rem);
+    -ms-transform: translateX(22rem);
+    -webkit-transform: translateX(22rem);
+    transform: translateX(22rem); }
     .header-fixed-collapsed:hover {
       -moz-transform: translateX(0);
       -o-transform: translateX(0);

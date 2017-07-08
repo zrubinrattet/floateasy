@@ -50,6 +50,7 @@
 	.header-fixed {
 		position: fixed;
 		top: 12rem;
+		right: 0;
 		z-index: 4;
 		display: inline-block;
 	}
@@ -60,6 +61,7 @@
 		height: 5.8rem;
 		width: 28rem;
 		box-shadow: 0 0 1px 1px transparentize( black, 0.66 );
+		text-align: right;
 		a, i {
 			color: $lightgrey;
 			font-weight: 500;
@@ -70,7 +72,7 @@
 		}
 		i {
 			top: 50%;
-			right: 1rem;
+			left: 1rem;
 			font-size: 2.8rem;
 			padding: 1rem;
 		}
@@ -79,11 +81,12 @@
 			text-transform: uppercase;
 			overflow: hidden;
 			transform-origin: 100% 50%;
-			left: 2rem;
+			right: 2rem;
 			font-size: 2rem;
 		}
 	}
 	.header-fixed-tel {
+		position: relative;
 		a {
 			position: relative;
 			overflow: visible;
@@ -99,7 +102,7 @@
 	}
 	.header-fixed-collapsed {
 		@include transition(all 0.3s ease);
-		@include transform(translateX(-22rem));
+		@include transform(translateX(22rem));
 		&:hover {
 			@include transform(translateX(0));
 		}
