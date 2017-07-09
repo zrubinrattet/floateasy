@@ -207,6 +207,8 @@
 
 			navtint: $('.header, .mobileheader'),
 			hero: $('.hero, .location-hero'),
+			logo: $('.header-content-logo-image'),
+			altLogo: $('.header-content-logo-image--alternate'),
 
 			_init: function(){
 				if( GhostNav.hero.length > 0 ){
@@ -220,8 +222,11 @@
 				// when you scroll past the normal height of the window
 				if ( $(window).scrollTop() > $(GhostNav.hero).height() ) {
 					$(GhostNav.navtint).removeClass('header-ghosted');
+					// use the default logo
 				} else {
 					$(GhostNav.navtint).addClass('header-ghosted');
+					// use the alternate logo
+
 				}
 			},
 		}

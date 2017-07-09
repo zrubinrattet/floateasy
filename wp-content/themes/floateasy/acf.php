@@ -291,6 +291,13 @@ function add_acf_fields() {
 				'return_format' => 'url',
 			),
 			array(
+				'key' => 'field_agnignbgngi',
+				'label' => 'Alternate Logo',
+				'name' => 'general-logo-alternate',
+				'type' => 'image',
+				'return_format' => 'url',
+			),
+			array(
 				'key' => 'field_13366',
 				'label' => 'Login Background Image URL',
 				'name' => 'general-admin-bg',
@@ -488,6 +495,7 @@ function add_acf_fields() {
 				'type' => 'text',
 				'instructions' => 'Only numbers',
 			),
+			// Locations Tab (gen settings)
 			array(
 				'key' => 'field_n16SDtg21',
 				'label' => 'Locations',
@@ -502,6 +510,20 @@ function add_acf_fields() {
 				'wrapper' => array(
 					'width' => '50',
 				),
+			),
+			// Customizations:
+			array(
+				'key' => 'field_gbwrDtgn',
+				'label' => 'Customization',
+				'type' => 'tab',
+			),
+			array(
+				'key' => 'field_98g9ng8jahe',
+				'label' => 'add Custom CSS',
+				'name' => 'general-codecustomizer',
+				'type' => 'acf_code_field',
+				'default_value' => '// Input Custom CSS below',
+				'mode' => 'css',
 			),
 		),
 		'location' => array (

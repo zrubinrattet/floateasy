@@ -24,7 +24,11 @@
 		<meta property="og:url" content="<?php echo $_SERVER['HTTP_REFERER']; ?>"/>
 		<?php endif; ?>
 		<title><?php echo get_bloginfo('name');?></title>
-		<?php wp_head(); ?>		
+		<?php wp_head(); ?>
+
+		<style type="text/css">
+			<?php the_field('general-codecustomizer', 'option') ?>
+		</style>
 		<!--[if lt IE 9]>
 		<script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
 		<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
@@ -43,3 +47,5 @@
 		
 		<?php get_template_part('partials/navigation/nav', 'desktop'); ?>
 		<?php get_template_part('partials/navigation/nav', 'mobile'); ?>
+
+

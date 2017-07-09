@@ -188,11 +188,30 @@
 	}
 	.header-content-logo{
 		padding-right: 10px;
+		position: relative;
+		bottom: 2rem;
 	}
-	.header-content-logo-image{
+
+	.header-content-logo-image--alternate,
+	.header-content-logo-image {
+		position: absolute;
+		top: 0;
+		left: 0;
 		max-width: 195px;
 		max-height: 56px;
+		opacity: 1;
+		@include transition(opacity 0.4s ease);
 	}
+	.header-content-logo-image--alternate {
+		opacity: 0;
+	}
+
+	.header-ghosted {
+		.header-content-logo-image--alternate {
+			opacity: 1;
+		}
+	}
+
 	.header-content-menus-pages-menu{
 		font-size: 0;
 		text-align: right;

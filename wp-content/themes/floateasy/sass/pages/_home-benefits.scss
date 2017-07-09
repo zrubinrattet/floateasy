@@ -5,13 +5,13 @@
 	.homebenefits-module{
 		padding: 40px 20px;
 		&:nth-child(1){
-			background-color: desaturate($blue, 60%);
+			background-color: $blue;
 		}
 		&:nth-child(3){
 			background-color: desaturate($blue, 30%);
 		}
 		&:nth-child(5){
-			background-color: $blue;
+			background-color: desaturate($blue, 60%);
 		}
 	}
 
@@ -124,7 +124,7 @@
 			font-size: 0px;
 			line-height: 0%;
 			width: 0;
-			border-top: 160px solid desaturate($blue, 60%);
+			border-top: 160px solid $blue;
 			border-bottom: 10px solid transparent;
 			border-right: 100vw solid transparent;	
 		}
@@ -133,7 +133,7 @@
 			font-size: 0px;
 			line-height: 0%;
 			width: 0;
-			border-bottom: 160px solid $blue;
+			border-bottom: 160px solid desaturate($blue, 60%);
 			border-top: 10px solid transparent;
 			border-right: 100vw solid transparent;	
 			bottom: 458px;	

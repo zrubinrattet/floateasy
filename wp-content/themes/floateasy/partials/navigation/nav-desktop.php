@@ -7,7 +7,8 @@
 			
 		<div class="header-content-logo-wrapper">
 			<a href="<?php echo site_url(); ?>" class="header-content-logo">
-				<img src="<?php echo get_logo(); ?>" class="header-content-logo-image">
+				<img src="<?php echo get_field('general-logo', 'option'); ?>" class="header-content-logo-image">
+				<img src="<?php echo get_field('general-logo-alternate', 'option'); ?>" class="header-content-logo-image--alternate">
 			</a>
 		</div>
 

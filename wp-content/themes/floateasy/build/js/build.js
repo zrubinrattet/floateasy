@@ -259,6 +259,8 @@ var objectFitImages=function(){"use strict";function t(t){for(var e,r=getCompute
 
 			navtint: $('.header, .mobileheader'),
 			hero: $('.hero, .location-hero'),
+			logo: $('.header-content-logo-image'),
+			altLogo: $('.header-content-logo-image--alternate'),
 
 			_init: function(){
 				if( GhostNav.hero.length > 0 ){
@@ -272,8 +274,11 @@ var objectFitImages=function(){"use strict";function t(t){for(var e,r=getCompute
 				// when you scroll past the normal height of the window
 				if ( $(window).scrollTop() > $(GhostNav.hero).height() ) {
 					$(GhostNav.navtint).removeClass('header-ghosted');
+					// use the default logo
 				} else {
 					$(GhostNav.navtint).addClass('header-ghosted');
+					// use the alternate logo
+
 				}
 			},
 		}
