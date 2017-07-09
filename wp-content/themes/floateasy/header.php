@@ -35,6 +35,9 @@
 		if( $post->post_name == 'book-an-appointment' ){
 			$extra_body_class = $post->post_name;
 		}
+		if( is_home() ){
+			$extra_body_class = 'home';
+		}
 	?>
 	<body<?php echo $extra_body_class == '' ? '' : ' class="' . $extra_body_class . '"' ?>>
 		

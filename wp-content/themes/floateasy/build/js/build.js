@@ -60,34 +60,43 @@ var objectFitImages=function(){"use strict";function t(t){for(var e,r=getCompute
 
 		var HomeImageSlider = {
 
+			container : $('.hero-image'),
+
 			images: $('.hero-image-images'),
+
+			speed: 1000,
 
 			_init: function(){
 			
-				$(window).on('load', setInterval(HomeImageSlider._eventHandler, 7000));
-			
+				// this will run the event handler once the images have all loaded
+				// not the whole document
+				if( $('body.home') ){
+					if( HomeImageSlider.images ){
+						HomeImageSlider._eventHandler();
+					}
+					else{
+						setTimeout(HomeImageSlider._init, 15);
+					}
+				} 
 			},
 			_eventHandler: function(e){
 
-				var $currentImage = $('.hero-image-images--active');
-				var $nextImage = ($currentImage.next().length > 0) ? $currentImage.next() : $(HomeImageSlider.images).first();
+				var $currentImage = $('.hero-image-images').last();
 
-				$nextImage.css('z-index', '-2');
+				$currentImage.animate({opacity: 0}, HomeImageSlider.speed, 'linear', function() {
 
-				$($currentImage).fadeOut( 1500, function() {
+					setTimeout(function(){
 
-					$($currentImage).css('z-index', '-3').show().removeClass('hero-image-images--active');
+						$currentImage.prependTo(HomeImageSlider.container).css('opacity', 1);
+			        	HomeImageSlider._eventHandler();
 
-		        	$nextImage.css('z-index', '-1').addClass('hero-image-images--active');
+					}, HomeImageSlider.speed * 5);
 
-			    });
-
-
+			    });				
 
 			},
 		}
 		HomeImageSlider._init();
-
 
 
 

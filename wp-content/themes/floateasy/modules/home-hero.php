@@ -12,19 +12,13 @@
 		 ?>
 		<?php 
 			$images = get_field('hero-gallery', 'option');
-			$i = 0;
-			foreach ($images as $image ) :
-				$i++;
-				if ( $i == 1 ) :
-		 ?>
-				<img class="hero-image-images hero-image-images--active" src="<?php echo $image['url']; ?>">
-
-				<?php else: ?>
-
+			if( !empty($images) ):
+				foreach ($images as $index => $image ) :
+			 ?>
 				<img class="hero-image-images" src="<?php echo $image['url']; ?>">
-		<?php 
-				endif;
-			endforeach;
+			<?php
+				endforeach;
+			endif;
 		 ?>
 	</div>
 
