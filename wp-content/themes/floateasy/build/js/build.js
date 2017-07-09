@@ -259,8 +259,6 @@ var objectFitImages=function(){"use strict";function t(t){for(var e,r=getCompute
 
 			navtint: $('.header, .mobileheader'),
 			hero: $('.hero, .location-hero'),
-			logo: $('.header-content-logo-image'),
-			altLogo: $('.header-content-logo-image--alternate'),
 
 			_init: function(){
 				if( GhostNav.hero.length > 0 ){
