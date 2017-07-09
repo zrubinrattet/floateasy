@@ -67,16 +67,9 @@ var objectFitImages=function(){"use strict";function t(t){for(var e,r=getCompute
 			speed: 1000,
 
 			_init: function(){
-			
-				// this will run the event handler once the images have all loaded
-				// not the whole document
-				if( $('body.home') ){
-					if( HomeImageSlider.images ){
-						HomeImageSlider._eventHandler();
-					}
-					else{
-						setTimeout(HomeImageSlider._init, 15);
-					}
+				// only run on the home page
+				if( $('body.home') ){	
+					$(window).on('load', HomeImageSlider._eventHandler);
 				} 
 			},
 			_eventHandler: function(e){
