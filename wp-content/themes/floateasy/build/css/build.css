@@ -3276,7 +3276,7 @@ button.swiper-pagination-bullet {
   .location-hero-content-header h1 {
     display: inline-block;
     color: #F5F5F5;
-    font-size: 7.6rem;
+    font-size: 3.8rem;
     font-weight: 700;
     text-transform: uppercase; }
 
@@ -3399,8 +3399,8 @@ button.swiper-pagination-bullet {
     line-height: 1.5;
     font-size: 1.6rem; } }
 @media only screen and (min-width: 641px) {
-  .location-hero-content-header {
-    font-size: 7rem; }
+  .location-hero-content-header h1 {
+    font-size: 6rem; }
 
   .location-hero-content-address {
     font-size: 1.8rem; }
@@ -3420,7 +3420,7 @@ button.swiper-pagination-bullet {
     width: auto;
     margin: 0; } }
 @media only screen and (min-width: 1025px) {
-  .location-hero-content-header {
+  .location-hero-content-header h1 {
     font-size: 8rem; }
 
   .location-main-gallery-header,
