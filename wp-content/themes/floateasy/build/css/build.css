@@ -1685,15 +1685,15 @@ button.swiper-pagination-bullet {
   .header-content-logo {
     padding-right: 10px;
     position: relative;
-    bottom: 2rem; }
+    bottom: 26px; }
 
   .header-content-logo-image--alternate,
   .header-content-logo-image {
     position: absolute;
     top: 0;
     left: 0;
-    max-width: 195px;
-    max-height: 56px;
+    max-width: none;
+    max-height: 52px;
     opacity: 1;
     -webkit-transition: opacity 0.4s ease;
     -moz-transition: opacity 0.4s ease;
@@ -2218,11 +2218,6 @@ button.swiper-pagination-bullet {
     left: 0;
     z-index: 1;
     object-fit: cover;
-    -webkit-transition: all 0.4s ease-in-out;
-    -moz-transition: all 0.4s ease-in-out;
-    -ms-transition: all 0.4s ease-in-out;
-    -o-transition: all 0.4s ease-in-out;
-    transition: all 0.4s ease-in-out;
     display: block; } }
 @media only screen and (min-width: 641px) {
   .hero-button {

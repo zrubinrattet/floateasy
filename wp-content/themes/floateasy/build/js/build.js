@@ -64,7 +64,7 @@ var objectFitImages=function(){"use strict";function t(t){for(var e,r=getCompute
 
 			images: $('.hero-image-images'),
 
-			speed: 1000,
+			speed: 3000,
 
 			_init: function(){
 				// only run on the home page
@@ -76,14 +76,14 @@ var objectFitImages=function(){"use strict";function t(t){for(var e,r=getCompute
 
 				var $currentImage = $('.hero-image-images').last();
 
-				$currentImage.animate({opacity: 0}, HomeImageSlider.speed, 'linear', function() {
+				$currentImage.animate({opacity: 0}, HomeImageSlider.speed, "linear", function() {
 
 					setTimeout(function(){
 
 						$currentImage.prependTo(HomeImageSlider.container).css('opacity', 1);
 			        	HomeImageSlider._eventHandler();
 
-					}, HomeImageSlider.speed * 5);
+					}, HomeImageSlider.speed * 2);
 
 			    });				
 
