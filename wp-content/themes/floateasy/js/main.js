@@ -16,7 +16,7 @@
 
 			_init: function(){
 				// only run on the home page
-				if( $('body.home') ){	
+				if( $('body.home') && HomeImageSlider.images.length > 1 ){	
 					$(window).on('load', HomeImageSlider._eventHandler);
 				} 
 			},

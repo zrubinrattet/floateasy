@@ -68,7 +68,7 @@ var objectFitImages=function(){"use strict";function t(t){for(var e,r=getCompute
 
 			_init: function(){
 				// only run on the home page
-				if( $('body.home') ){	
+				if( $('body.home') && HomeImageSlider.images.length > 1 ){	
 					$(window).on('load', HomeImageSlider._eventHandler);
 				} 
 			},
