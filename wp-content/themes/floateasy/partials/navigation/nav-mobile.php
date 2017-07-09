@@ -2,6 +2,7 @@
 	<div class="mobileheader-bar">
 		<a href="<?php echo site_url(); ?>" class="mobileheader-bar-logo">
 			<img src="<?php echo get_logo(); ?>" class="mobileheader-bar-logo-image">
+			<img src="<?php echo get_field('general-logo-alternate', 'option'); ?>" class="mobileheader-bar-logo-image--alternate">
 		</a>
 		<a class="mobileheader-bar-menutoggle">
 			<i class="mobileheader-bar-menutoggle-icon fa fa-bars"></i>
