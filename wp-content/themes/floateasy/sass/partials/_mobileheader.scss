@@ -4,7 +4,7 @@
 		position: fixed;
 		top: 0px;
 		left: 0px;
-		padding: 10px 40px;
+		padding: 10px 20px;
 		box-sizing: border-box;
 		z-index: 10;
 		box-shadow: 0px 0px 5px rgba(0,0,0,0.25);
@@ -177,6 +177,9 @@
 }
 
 @media only screen and (min-width: $medium){
+	.mobileheader{
+		padding: 10px 40px;
+	}
 	.mobileheader-bar-logo-image{
 		max-height: 50px;
 	}
