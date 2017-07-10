@@ -2179,7 +2179,7 @@ button.swiper-pagination-bullet {
     width: auto; } }
 @media only screen {
   .hero {
-    height: 60%;
+    height: 55%;
     width: 100%;
     overflow: hidden;
     position: relative; }
