@@ -34,3 +34,4 @@ wp-trackback.php
 xmlrpc.php
 !wp-content/themes/*/index.php
 !wp-content/themes/floateasy/*
+wp-content/themes/floateasy/build/css/custom.css
