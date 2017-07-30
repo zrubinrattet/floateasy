@@ -6,7 +6,7 @@ $modules = array(
 	'hero',
 	'benefits',
 	'testimonials',
-	'pricing'
+	'pricing',
 );
 
 foreach($modules as $module){
