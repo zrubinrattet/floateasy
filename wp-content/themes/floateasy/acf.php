@@ -522,7 +522,6 @@ function add_acf_fields() {
 				'label' => 'add Custom CSS',
 				'name' => 'general-codecustomizer',
 				'type' => 'acf_code_field',
-				'default_value' => '// Input Custom CSS below',
 				'mode' => 'css',
 			),
 		),

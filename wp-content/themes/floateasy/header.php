@@ -29,6 +29,7 @@
 		<style type="text/css">
 			<?php the_field('general-codecustomizer', 'option') ?>
 		</style>
+		<link rel="stylesheet" type="text/css" href="<?php echo get_template_directory_uri() . '/build/css/custom.css' ?>">
 		<!--[if lt IE 9]>
 		<script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
 		<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
