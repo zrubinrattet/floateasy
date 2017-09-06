@@ -13,16 +13,7 @@ if( function_exists('acf_add_options_page') ) {
 		'redirect'		=> false,
 		'position'      => 7,
 	));
-	// Terms and Conditions
-	acf_add_options_page(array(
-		'page_title' 	=> 'Terms & Conditions',
-		'menu_title'	=> 'Terms & Conditions',
-		'menu_slug' 	=> 'terms-settings',
-		'capability'	=> 'read_private_posts',
-		'icon_url'      => 'dashicons-list-view',
-		'redirect'		=> false,
-		'position'      => 88,
-	));
+	
 	// Benefits
 	acf_add_options_page(array(
 		'page_title' 	=> 'Benefits',
@@ -219,29 +210,8 @@ function add_acf_fields() {
 			),
 		),
 	));
-	// Terms & Conditions Settings
-	acf_add_local_field_group(array(
-		'key' => 'group_1032hfd',
-		'title' => ' ',
-		'fields' => array (
-			array (
-				'key' => 'field_89ahzbdjao',
-				'label' => 'Content',
-				'name' => 'terms-content',
-				'type' => 'wysiwyg',
-			)
-		),
-		'location' => array (
-			array (
-				array (
-					'param' => 'options_page',
-					'operator' => '==',
-					'value' => 'terms-settings',
-				),
-			),
-		),
-	));
-	// Terms & Conditions Settings
+	
+
 	acf_add_local_field_group(array(
 		'key' => 'group_10aefuahi32hfd',
 		'title' => ' ',
