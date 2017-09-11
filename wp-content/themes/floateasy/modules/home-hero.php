@@ -1,7 +1,7 @@
 
 <section class="hero">
 
-	<a href="<?php echo site_url('/book-an-appointment/') ?>" class="hero-button">Book Your First Float FREE!</a>
+	<a href="<?php echo site_url('/book-an-appointment/') ?>" class="hero-button"><?php the_field('home_hero_button_text', 'option'); ?></a>
 
 
 	<div class="hero-image">

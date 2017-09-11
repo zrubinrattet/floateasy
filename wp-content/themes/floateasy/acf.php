@@ -289,6 +289,13 @@ function add_acf_fields() {
 				'name' => 'gmaps-api-key',
 				'instructions' => 'Anything here but a Google API Key won\'t work. Please make sure that on your project on console.developers.google.com has the Google Maps Geocode API and the Google Maps Javascript API enabled and it\'s restrictions are set appropriately.',
 			),
+			array(
+				'key' => 'field_987dshga12',
+				'label' => 'Popup Header',
+				'name' => 'popup_header',
+				'type' => 'text',
+				'instructions' => 'This is the text that appears above the button on the popup',
+			),
 		/*
 				Home Settings Tab
 			*/
@@ -376,6 +383,13 @@ function add_acf_fields() {
 						),
 					),
 				),
+			),
+			array(
+				'key' => 'field_1289dsafuh',
+				'label' => 'Home Hero Button Text',
+				'name' => 'home_hero_button_text',
+				'type' => 'text',
+				'instructions' => 'This is the text for the button that appears on top of the slider when you first go to this site.',
 			),
 		/*
 				404
