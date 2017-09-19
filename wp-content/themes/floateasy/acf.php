@@ -798,11 +798,52 @@ function add_acf_fields() {
 			),
 		),
 	));
+	// mindbody page settings
+	acf_add_local_field_group(array (
+		'key' => 'group_59c15362b5c94',
+		'title' => 'Page Settings',
+		'fields' => array (
+			array(
+				'key' => 'field_cozvg123',
+				'label' => 'Use Redirect instead of Mindbody Widget?',
+				'type' => 'true_false',
+				'name' => 'redirect_or_widget',
+				'ui' => true,
+				'instructions' => 'If set to Yes, clicking on the book appointment button will redirect you to the link below. Otherwise the default widget-based behavior will be used.'
+			),
+			array(
+				'key' => 'field_z8cvhfa123',
+				'label' => 'Redirect URL',
+				'type' => 'url',
+				'name' => 'redirect_url',
+				'conditional_logic' => array(
+					array(
+						array(
+							'field' => 'field_cozvg123',
+							'operator' => '==',
+							'value' => 1
+						),
+					),
+				),
+			),
+		),
+		'location' => array (
+			array (
+				array (
+					'param' => 'page',
+					'operator' => '==',
+					'value' => 2064,
+				),
+			),
+		),
+	));
+
+
 }
 /*
 	End Registering Fields
 */
-add_action('acf/init', 'add_acf_fields');
+add_action('acf/init', 'add_acf_fields', null, 999);
 /*
 	End Add Action
 */

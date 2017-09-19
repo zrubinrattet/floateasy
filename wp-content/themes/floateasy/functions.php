@@ -817,4 +817,20 @@ class Locations_Query{
 	}
 }
 
+function get_book_appointment_link(){
+
+	$page_id = get_page_by_path( '/book-an-appointment/' )->ID;
+	$book_url = [];
+	if( get_field('redirect_or_widget', $page_id ) ){
+		$book_url['url'] = get_field('redirect_url', $page_id);
+		$book_url['target'] = '_blank';
+	}
+	else{
+		$book_url['url'] = site_url('/book-an-appointment/');		
+		$book_url['target'] = null;
+	}
+	return $book_url;
+	
+}
+
 ?>

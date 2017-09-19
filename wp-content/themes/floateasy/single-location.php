@@ -58,8 +58,11 @@
 						<?php if( !empty(get_field('yelp', $post->ID)) ): ?>
 							<a href="<?php the_field('yelp', $post->ID); ?>" class="location-hero-buttons-button">Write a Review</a>
 						<?php endif; ?>
+						<?php 
+							$book_url = get_book_appointment_link();
+						?>
 						<?php if( !empty(get_field('mindbody', $post->ID)) ): ?>
-							<a href="<?php echo site_url('/book-an-appointment/'); ?>" class="location-hero-buttons-button">Book an Appointment</a>
+							<a<?php echo $book_url['target'] !== null ? ' target="' . $book_url['target'] . '"' : ''; ?> href="<?php echo $book_url['url']; ?>" class="location-hero-buttons-button">Book an Appointment</a>
 						<?php endif; ?>
 					</div>
 				<?php endif; ?>

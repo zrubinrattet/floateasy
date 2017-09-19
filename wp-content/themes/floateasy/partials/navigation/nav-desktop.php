@@ -25,7 +25,12 @@
 						));
 					?>
 				</nav>
-				<a href="<?php echo site_url('/book-an-appointment/'); ?>" class="header-content-bookappointment">Book Appointment</a>
+				<?php 
+					$book_url = get_book_appointment_link();
+					error_log(print_r($book_url, true));
+				?>
+					<a<?php echo $book_url['target'] !== null ? ' target="' . $book_url['target'] . '"' : ''; ?> href="<?php echo $book_url['url']; ?>" class="header-content-bookappointment">Book Appointment</a>
+
 			</div>
 		</div>
 	</div>
@@ -35,7 +40,7 @@
 	<nav class="header-fixed">
 		<div class="header-fixed-book header-fixed-collapsed">
 			<i class="fa fa-book"></i>
-			<a href="<?php echo site_url('/book-an-appointment/'); ?>">Book Appointment</a>
+			<a<?php echo $book_url['target'] !== null ? ' target="' . $book_url['target'] . '"' : ''; ?> href="<?php echo $book_url['url']; ?>">Book Appointment</a>
 		</div>
 		<div class="header-fixed-tel header-fixed-collapsed">
 			<i class="fa fa-phone"></i>

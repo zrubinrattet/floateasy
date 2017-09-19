@@ -1,7 +1,9 @@
 
 <section class="hero">
-
-	<a href="<?php echo site_url('/book-an-appointment/') ?>" class="hero-button"><?php the_field('home_hero_button_text', 'option'); ?></a>
+	<?php 
+		$book_url = get_book_appointment_link();
+	?>
+	<a<?php echo $book_url['target'] !== null ? ' target="' . $book_url['target'] . '"' : ''; ?> href="<?php echo $book_url['url']; ?>" class="hero-button"><?php the_field('home_hero_button_text', 'option'); ?></a>
 
 
 	<div class="hero-image">
