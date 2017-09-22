@@ -5,7 +5,7 @@
 if( function_exists('acf_add_options_page') ) {
 	// General Settings
 	acf_add_options_page(array(
-		'page_title' 	=> 'General Settings',
+		'page_title' 	=> 'All General Settings',
 		'menu_title'	=> 'General Settings',
 		'menu_slug' 	=> 'general-settings',
 		'capability'	=> 'read_private_posts',
